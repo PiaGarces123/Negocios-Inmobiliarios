@@ -22,6 +22,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const isOpen = mobileNav.classList.toggle('open');
     hamburger.classList.toggle('open', isOpen);
     hamburger.setAttribute('aria-expanded', isOpen);
+    navbar.classList.toggle('nav-open', isOpen);
   });
 
   // Close mobile nav on link click
@@ -30,6 +31,7 @@ document.addEventListener('DOMContentLoaded', () => {
       mobileNav.classList.remove('open');
       hamburger.classList.remove('open');
       hamburger.setAttribute('aria-expanded', 'false');
+      navbar.classList.remove('nav-open');
     });
   });
 

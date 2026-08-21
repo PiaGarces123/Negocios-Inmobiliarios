@@ -77,11 +77,9 @@
   <header>
     <nav id="navbar" class="navbar" role="navigation" aria-label="Navegación principal">
       <a href="/" class="nav-logo" aria-label="Negocios Inmobiliarios - Inicio">
-        <div class="nav-logo-icon" aria-hidden="true">🏠</div>
-        <div>
-          <span class="nav-logo-text">Negocios Inmobiliarios</span>
-          <span class="nav-logo-sub">Argentina</span>
-        </div>
+        <img src="assets/media/logoLight.png" alt="Negocios Inmobiliarios" class="logo-light" />
+        <img src="assets/media/logoDark.png" alt="Negocios Inmobiliarios" class="logo-dark" />
+        <span class="logo-text">Negocios Inmobiliarios</span>
       </a>
 
       <ul class="nav-menu" role="list">
@@ -94,6 +92,10 @@
       <div class="nav-actions">
         <a href="#contacto" class="nav-cta" id="nav-cta-tasar">Tasar mi propiedad</a>
         <a href="#propiedades" class="btn-nav-primary" id="nav-cta-ver">Ver propiedades</a>
+        <a href="pages/admin/paneladmin.html" class="nav-login-btn" aria-label="Iniciar Sesión" title="Panel de Administración">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+          Ingresar
+        </a>
       </div>
 
       <button class="hamburger" id="hamburger" aria-label="Abrir menú" aria-expanded="false" aria-controls="mobileNav">
@@ -107,9 +109,13 @@
       <a href="#propiedades" class="nav-link">Alquilar</a>
       <a href="#nosotros" class="nav-link">Nosotros</a>
       <a href="#contacto" class="nav-link">Contacto</a>
-      <div class="mobile-nav-actions">
-        <a href="#contacto" class="nav-cta" style="border-color:var(--navy-800);color:var(--navy-800);">Tasar mi propiedad</a>
-        <a href="#propiedades" class="btn-nav-primary">Ver propiedades</a>
+      <div class="mobile-nav-actions" style="flex-direction:column; gap:0.5rem;">
+        <a href="#contacto" class="nav-cta" style="border-color:var(--navy-800);color:var(--navy-800); text-align:center;">Tasar mi propiedad</a>
+        <a href="#propiedades" class="btn-nav-primary" style="text-align:center;">Ver propiedades</a>
+        <a href="pages/admin/paneladmin.html" class="btn-nav-primary" style="background:var(--navy-900); color:var(--white); text-align:center; display:flex; align-items:center; justify-content:center; gap:0.5rem;">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+          Ingresar
+        </a>
       </div>
     </nav>
   </header>
@@ -633,11 +639,8 @@
         <!-- Brand -->
         <div class="footer-brand">
           <a href="/" class="nav-logo" aria-label="Negocios Inmobiliarios">
-            <div class="nav-logo-icon" aria-hidden="true">🏠</div>
-            <div>
-              <span class="nav-logo-text">Negocios Inmobiliarios</span>
-              <span class="nav-logo-sub">Argentina</span>
-            </div>
+            <img src="assets/media/logoLight.png" alt="Negocios Inmobiliarios" style="height: 45px; width: auto;" />
+            <span class="logo-text">Negocios Inmobiliarios</span>
           </a>
           <p class="footer-desc">
             Inmobiliaria especializada en compra, venta y alquiler de propiedades residenciales en Argentina. Tu hogar es nuestra prioridad.
