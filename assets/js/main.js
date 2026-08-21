@@ -210,4 +210,76 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
+  // ── Contact Form in index.html ────────────
+  const mainContactForm = document.getElementById('mainContactForm');
+  const selectorBuscando = document.getElementById('cBuscando');
+  const groupPresupuesto = document.getElementById('groupPresupuesto');
+
+  if (selectorBuscando && groupPresupuesto) {
+    const togglePresupuesto = () => {
+      const show = selectorBuscando.value === 'alquilar';
+      groupPresupuesto.style.display = show ? 'flex' : 'none';
+      const inputPresupuesto = groupPresupuesto.querySelector('input');
+      if (inputPresupuesto) {
+        inputPresupuesto.required = show;
+      }
+    };
+    selectorBuscando.addEventListener('change', togglePresupuesto);
+    togglePresupuesto(); // Run on init
+  }
+
+  if (mainContactForm) {
+    mainContactForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      
+      // Basic validation
+      const fields = ['cNombre', 'cEmail', 'cTel', 'cUbicacion'];
+      let valid = true;
+      fields.forEach(fid => {
+        const input = document.getElementById(fid);
+        if (input && !input.value.trim()) {
+          input.style.borderColor = '#dc2626';
+          valid = false;
+        } else if (input) {
+          input.style.borderColor = '';
+        }
+      });
+
+      if (selectorBuscando.value === 'alquilar') {
+        const cPres = document.getElementById('cPresupuesto');
+        if (cPres && !cPres.value.trim()) {
+          cPres.style.borderColor = '#dc2626';
+          valid = false;
+        } else if (cPres) {
+          cPres.style.borderColor = '';
+        }
+      }
+
+      if (!valid) {
+        showToast('⚠️ Por favor completa los campos requeridos.');
+        return;
+      }
+
+      const submitBtn = mainContactForm.querySelector('button[type="submit"]');
+      const originalText = submitBtn.innerHTML;
+      submitBtn.innerHTML = '✅ ¡Consulta enviada!';
+      submitBtn.style.background = 'linear-gradient(135deg,#10b981,#059669)';
+      submitBtn.disabled = true;
+
+      showToast('✅ Consulta recibida. Un asesor te contactará a la brevedad.');
+
+      setTimeout(() => {
+        submitBtn.innerHTML = originalText;
+        submitBtn.style.background = '';
+        submitBtn.disabled = false;
+        mainContactForm.reset();
+        if (selectorBuscando) {
+          // Reset conditional field visibility
+          selectorBuscando.dispatchEvent(new Event('change'));
+        }
+      }, 3500);
+    });
+  }
+
 });
+
