@@ -783,7 +783,12 @@
         </div>
 
         <!-- ========== Grid de propiedades similares ========== -->
-        <div class="similar-grid">
+        <div class="similar-carousel-container">
+          <button class="similar-carousel-btn prev" id="btnSimilarPrev" aria-label="Propiedad anterior" type="button">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="m15 18-6-6 6-6"/></svg>
+          </button>
+
+          <div class="similar-grid" id="similarGridTrack">
 
           <!-- Similar card 1 -->
           <article class="property-card reveal reveal-delay-1" data-id="2"
@@ -1020,8 +1025,13 @@
             </div>
           </article>
         </div>
+
+        <button class="similar-carousel-btn next" id="btnSimilarNext" aria-label="Propiedad siguiente" type="button">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg>
+        </button>
       </div>
-    </section>
+    </div>
+  </section>
 
   </main>
 

@@ -410,11 +410,43 @@
 .info-row-value { font-weight: 600; color: var(--navy-900); }
 .info-row-value.highlight { color: var(--gold-500); }
 
-/* ── Similar section ─────────────────────────── */
 .similar-section {
   padding: 4rem 0;
   background: var(--off-white);
   border-top: 1px solid var(--gray-200);
+}
+.similar-carousel-container {
+  position: relative;
+  width: 100%;
+}
+.similar-carousel-btn {
+  display: none;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: var(--white);
+  border: 1.5px solid var(--gray-200);
+  box-shadow: var(--shadow-md);
+  color: var(--navy-800);
+  align-items: center;
+  justify-content: center;
+  z-index: 10;
+  cursor: pointer;
+  transition: all var(--transition);
+}
+.similar-carousel-btn:hover {
+  background: var(--navy-900);
+  color: var(--white);
+  border-color: var(--navy-900);
+}
+.similar-carousel-btn.prev {
+  left: -20px;
+}
+.similar-carousel-btn.next {
+  right: -20px;
 }
 
 /* ── Responsive ──────────────────────────────── */
@@ -430,6 +462,15 @@
 }
 @media (max-width: 768px) {
   /* Carrusel de propiedades similares en tablet y móvil */
+  .similar-carousel-btn {
+    display: flex;
+  }
+  .similar-carousel-btn.prev {
+    left: 8px;
+  }
+  .similar-carousel-btn.next {
+    right: 8px;
+  }
   .similar-grid {
     display: flex;
     overflow-x: auto;
@@ -438,17 +479,11 @@
     -webkit-overflow-scrolling: touch;
     gap: 1.5rem;
     padding: 0.5rem 0.25rem 1.5rem;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
   }
   .similar-grid::-webkit-scrollbar {
-    height: 5px;
-  }
-  .similar-grid::-webkit-scrollbar-track {
-    background: var(--gray-100);
-    border-radius: 10px;
-  }
-  .similar-grid::-webkit-scrollbar-thumb {
-    background: var(--gold-300);
-    border-radius: 10px;
+    display: none;
   }
   .similar-grid .property-card {
     flex: 0 0 100%;

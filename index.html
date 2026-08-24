@@ -931,7 +931,12 @@
         </div>
 
         <!-- Grid de testimonios -->
-        <div class="testimonials-grid">
+        <div class="testimonials-carousel-container">
+          <button class="testimonials-carousel-btn prev" id="btnTestimonialsPrev" aria-label="Testimonio anterior" type="button">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="m15 18-6-6 6-6"/></svg>
+          </button>
+
+          <div class="testimonials-grid" id="testimonialsTrack">
 
           <!-- Testimonio 1 -->
           <div class="testimonial-card reveal reveal-delay-1">
@@ -995,7 +1000,11 @@
 
           </div>
         </div>
-        <!-- Fin de Grid de Testimonios -->
+
+        <button class="testimonials-carousel-btn next" id="btnTestimonialsNext" aria-label="Testimonio siguiente" type="button">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg>
+        </button>
+      </div>
 
       </div>
     </section>

@@ -110,6 +110,37 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
+  // ── Similar Properties Carousel ────────────────
+  const similarTrack = document.getElementById('similarGridTrack');
+  const similarPrevBtn = document.getElementById('btnSimilarPrev');
+  const similarNextBtn = document.getElementById('btnSimilarNext');
+  if (similarTrack && similarPrevBtn && similarNextBtn) {
+    similarPrevBtn.addEventListener('click', () => {
+      const cards = Array.from(similarTrack.querySelectorAll('.property-card'));
+      if (cards.length === 0) return;
+      const trackLeft = similarTrack.getBoundingClientRect().left;
+      let activeIndex = cards.findIndex(card => {
+        const cardLeft = card.getBoundingClientRect().left;
+        return Math.abs(cardLeft - trackLeft) < 30; // 30px threshold for snapping detection
+      });
+      if (activeIndex === -1) activeIndex = 0;
+      const prevIndex = (activeIndex - 1 + cards.length) % cards.length;
+      cards[prevIndex].scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'start' });
+    });
+    similarNextBtn.addEventListener('click', () => {
+      const cards = Array.from(similarTrack.querySelectorAll('.property-card'));
+      if (cards.length === 0) return;
+      const trackLeft = similarTrack.getBoundingClientRect().left;
+      let activeIndex = cards.findIndex(card => {
+        const cardLeft = card.getBoundingClientRect().left;
+        return Math.abs(cardLeft - trackLeft) < 30;
+      });
+      if (activeIndex === -1) activeIndex = 0;
+      const nextIndex = (activeIndex + 1) % cards.length;
+      cards[nextIndex].scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'start' });
+    });
+  }
+
   // ── Contact form ────────────────────────────
   const contactForm = document.getElementById('contactForm');
   if (contactForm) {

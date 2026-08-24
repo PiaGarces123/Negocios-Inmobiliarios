@@ -1356,6 +1356,39 @@ section {
   gap: 1.5rem;
   margin-top: 3rem;
 }
+.testimonials-carousel-container {
+  position: relative;
+  width: 100%;
+}
+.testimonials-carousel-btn {
+  display: none;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: var(--white);
+  border: 1.5px solid var(--gray-200);
+  box-shadow: var(--shadow-md);
+  color: var(--navy-800);
+  align-items: center;
+  justify-content: center;
+  z-index: 10;
+  cursor: pointer;
+  transition: all var(--transition);
+}
+.testimonials-carousel-btn:hover {
+  background: var(--navy-900);
+  color: var(--white);
+  border-color: var(--navy-900);
+}
+.testimonials-carousel-btn.prev {
+  left: -20px;
+}
+.testimonials-carousel-btn.next {
+  right: -20px;
+}
 
 .testimonial-card {
   background: var(--white);
@@ -1827,7 +1860,7 @@ section {
   }
 
   .container {
-    padding: 0 1.25rem;
+    padding: 0 1.5rem;
   }
 
   .hero {
@@ -1882,8 +1915,37 @@ section {
     display: none;
   }
 
+  .testimonials-carousel-btn {
+    display: flex;
+  }
+  .testimonials-carousel-btn.prev {
+    left: 8px;
+  }
+  .testimonials-carousel-btn.next {
+    right: 8px;
+  }
+
   .testimonials-grid {
-    grid-template-columns: 1fr;
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
+    gap: 1.5rem;
+    padding: 0.5rem 0.25rem 1.5rem;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    margin-top: 2rem;
+  }
+
+  .testimonials-grid::-webkit-scrollbar {
+    display: none;
+  }
+
+  .testimonials-grid .testimonial-card {
+    flex: 0 0 100%;
+    scroll-snap-align: start;
+    margin-bottom: 0;
   }
 
   .footer-main {
@@ -2474,7 +2536,7 @@ body.inner-page .navbar .nav-logo .logo-dark {
 
 @media (max-width: 480px) {
   .nosotros-hero {
-    padding: 6.5rem 1rem 3rem;
+    padding: 6.5rem 1.5rem 3rem;
   }
 
   .nosotros-title {
@@ -2494,7 +2556,7 @@ body.inner-page .navbar .nav-logo .logo-dark {
   }
 
   .nosotros-address {
-    padding: 1.5rem 1rem;
+    padding: 1.5rem 1.5rem;
   }
 
   .nosotros-address p {

@@ -300,5 +300,36 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
+  // ── Testimonials Carousel (Mobile) ─────────────
+  const testTrack = document.getElementById('testimonialsTrack');
+  const testPrevBtn = document.getElementById('btnTestimonialsPrev');
+  const testNextBtn = document.getElementById('btnTestimonialsNext');
+  if (testTrack && testPrevBtn && testNextBtn) {
+    testPrevBtn.addEventListener('click', () => {
+      const cards = Array.from(testTrack.querySelectorAll('.testimonial-card'));
+      if (cards.length === 0) return;
+      const trackLeft = testTrack.getBoundingClientRect().left;
+      let activeIndex = cards.findIndex(card => {
+        const cardLeft = card.getBoundingClientRect().left;
+        return Math.abs(cardLeft - trackLeft) < 30; // 30px threshold for snapping detection
+      });
+      if (activeIndex === -1) activeIndex = 0;
+      const prevIndex = (activeIndex - 1 + cards.length) % cards.length;
+      cards[prevIndex].scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'start' });
+    });
+    testNextBtn.addEventListener('click', () => {
+      const cards = Array.from(testTrack.querySelectorAll('.testimonial-card'));
+      if (cards.length === 0) return;
+      const trackLeft = testTrack.getBoundingClientRect().left;
+      let activeIndex = cards.findIndex(card => {
+        const cardLeft = card.getBoundingClientRect().left;
+        return Math.abs(cardLeft - trackLeft) < 30;
+      });
+      if (activeIndex === -1) activeIndex = 0;
+      const nextIndex = (activeIndex + 1) % cards.length;
+      cards[nextIndex].scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'start' });
+    });
+  }
+
 });
 
