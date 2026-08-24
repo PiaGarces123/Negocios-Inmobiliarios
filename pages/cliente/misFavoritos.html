@@ -48,9 +48,16 @@
             <div class="nav-actions">
                 <a href="../../index.html#contacto" class="nav-cta">Tasar mi propiedad</a>
                 <a href="../../index.html#propiedades" class="btn-nav-primary">Ver propiedades</a>
-                <a href="../admin/panelAdmin.html" class="nav-login-btn" aria-label="Iniciar Sesión" title="Panel de Administración">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
-                  Ingresar
+                <a href="misFavoritos.html" class="btn-nav-primary"
+                    style="background:var(--white); color:var(--black); display:inline-flex; align-items:center; gap:0.5rem; text-decoration:none;"
+                    aria-label="Mi Cuenta">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"
+                        aria-hidden="true">
+                        <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" />
+                        <circle cx="12" cy="7" r="4" />
+                    </svg>
+                    Mi Cuenta
                 </a>
             </div>
 
@@ -67,11 +74,20 @@
             <a href="../../index.html#contacto" class="nav-link">Contacto</a>
             <div class="mobile-nav-actions" style="flex-direction:column; gap:0.5rem;">
                 <a href="../../index.html#contacto" class="nav-cta"
-                    style="border-color:var(--navy-800);color:var(--navy-800); text-align:center;">Tasar mi propiedad</a>
-                <a href="../../index.html#propiedades" class="btn-nav-primary" style="text-align:center;">Ver propiedades</a>
-                <a href="../admin/panelAdmin.html" class="btn-nav-primary" style="background:var(--navy-900); color:var(--white); text-align:center; display:flex; align-items:center; justify-content:center; gap:0.5rem;">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
-                  Ingresar
+                    style="border-color:var(--navy-800);color:var(--navy-800); text-align:center;">Tasar mi
+                    propiedad</a>
+                <a href="../../index.html#propiedades" class="btn-nav-primary" style="text-align:center;">Ver
+                    propiedades</a>
+                <a href="misFavoritos.html" class="btn-nav-primary"
+                    style="background:var(--navy-900); color:var(--white); text-align:center; display:flex; align-items:center; justify-content:center; gap:0.5rem;"
+                    aria-label="Mi Cuenta">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"
+                        aria-hidden="true">
+                        <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" />
+                        <circle cx="12" cy="7" r="4" />
+                    </svg>
+                    Mi Cuenta
                 </a>
             </div>
         </nav>
@@ -90,7 +106,8 @@
                         <div class="account-sidebar-title">Mi Cuenta</div>
 
                         <nav class="account-nav" aria-label="Secciones de la cuenta">
-                            <a href="#" class="account-nav-item" id="nav-perfil" aria-label="Información de contacto">
+                            <button class="account-nav-item" id="nav-perfil" data-view="perfil"
+                                aria-label="Información de contacto">
                                 <span class="nav-item-icon" aria-hidden="true">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"
                                         fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
@@ -100,15 +117,23 @@
                                     </svg>
                                 </span>
                                 Información de contacto
-                            </a>
+                            </button>
 
-                            <a href="misFavoritos.html" class="account-nav-item active" aria-label="Mis favoritos"
-                                aria-current="page">
-                                <span class="nav-item-icon" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg></span>
+                            <button class="account-nav-item active" id="nav-favoritos" data-view="favoritos"
+                                aria-label="Mis favoritos" aria-current="page">
+                                <span class="nav-item-icon" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg"
+                                        width="16" height="16" viewBox="0 0 24 24" fill="currentColor"
+                                        stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                        stroke-linejoin="round">
+                                        <path
+                                            d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z">
+                                        </path>
+                                    </svg></span>
                                 Mis Favoritos
-                            </a>
+                            </button>
 
-                            <a href="#" class="account-nav-item" id="nav-alertas" aria-label="Alertas de precio">
+                            <button class="account-nav-item" id="nav-alertas" data-view="alertas"
+                                aria-label="Alertas de precio">
                                 <span class="nav-item-icon" aria-hidden="true">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"
                                         fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
@@ -118,11 +143,12 @@
                                     </svg>
                                 </span>
                                 Alertas de precio
-                            </a>
+                            </button>
 
                             <div class="account-sidebar-divider" aria-hidden="true"></div>
 
-                            <a href="#" class="account-nav-item" id="nav-seguridad" aria-label="Seguridad y contraseña">
+                            <button class="account-nav-item" id="nav-seguridad" data-view="seguridad"
+                                aria-label="Seguridad y contraseña">
                                 <span class="nav-item-icon" aria-hidden="true">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"
                                         fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
@@ -132,7 +158,7 @@
                                     </svg>
                                 </span>
                                 Seguridad
-                            </a>
+                            </button>
 
                             <button class="account-nav-item danger" id="nav-salir" aria-label="Cerrar sesión">
                                 <span class="nav-item-icon" aria-hidden="true">
@@ -152,105 +178,294 @@
                     <!-- ── MAIN PANEL ───────────────────── -->
                     <section class="account-main" aria-labelledby="page-title">
 
-                        <!-- Header -->
-                        <div class="account-main-header">
-                            <div>
+                        <!-- ══════════════════════════════════════
+                             VIEW 1: MIS FAVORITOS
+                             ══════════════════════════════════════ -->
+                        <div class="account-view" id="view-favoritos">
+                            <!-- Header -->
+                            <div class="account-main-header">
                                 <h1 class="account-main-title" id="page-title">Mis Favoritos</h1>
                                 <p class="account-main-subtitle" id="favsCount">Cargando…</p>
                             </div>
-                            <div style="display:flex;align-items:center;gap:1rem;flex-wrap:wrap;">
-                                <!-- Sort -->
-                                <div class="favs-sort">
-                                    <label for="favsSortSelect" style="white-space:nowrap;">Ordenar:</label>
-                                    <select id="favsSortSelect" aria-label="Ordenar favoritos">
-                                        <option value="newest">Más recientes</option>
-                                        <option value="oldest">Más antiguos</option>
-                                        <option value="price-asc">Menor precio</option>
-                                        <option value="price-desc">Mayor precio</option>
-                                    </select>
+
+                            <!-- Body -->
+                            <div class="account-main-body">
+
+                                <!-- Conteo & Controls Toolbar -->
+                                <div class="favs-toolbar"
+                                    style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:1rem; margin-bottom:1.5rem;">
+                                    <div style="display:flex; align-items:center; gap:1rem;">
+                                        <span class="favs-count-badge" id="countBadge" aria-live="polite">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12"
+                                                viewBox="0 0 24 24" fill="currentColor" stroke="none"
+                                                aria-hidden="true">
+                                                <path
+                                                    d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" />
+                                            </svg>
+                                            4 favoritos
+                                        </span>
+                                        <p style="font-size:0.78rem;color:var(--gray-500); margin:0;">
+                                            Clic en <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14"
+                                                viewBox="0 0 24 24" fill="#ef4444" stroke="#ef4444" stroke-width="2"
+                                                stroke-linecap="round" stroke-linejoin="round"
+                                                style="display:inline-block; vertical-align:middle;">
+                                                <path
+                                                    d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z">
+                                                </path>
+                                            </svg> para quitar
+                                        </p>
+                                    </div>
+                                    <div style="display:flex;align-items:center;gap:1rem;flex-wrap:wrap;">
+                                        <!-- Sort -->
+                                        <div class="favs-sort">
+                                            <label for="favsSortSelect" style="white-space:nowrap;">Ordenar:</label>
+                                            <select id="favsSortSelect" aria-label="Ordenar favoritos">
+                                                <option value="newest">Más recientes</option>
+                                                <option value="oldest">Más antiguos</option>
+                                                <option value="price-asc">Menor precio</option>
+                                                <option value="price-desc">Mayor precio</option>
+                                            </select>
+                                        </div>
+                                        <!-- View toggle -->
+                                        <div class="view-toggle" role="group" aria-label="Cambiar vista">
+                                            <button class="view-toggle-btn" id="btnList" title="Vista lista"
+                                                aria-label="Vista lista" aria-pressed="false">
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                                    viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                                    stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"
+                                                    aria-hidden="true">
+                                                    <line x1="8" x2="21" y1="6" y2="6" />
+                                                    <line x1="8" x2="21" y1="12" y2="12" />
+                                                    <line x1="8" x2="21" y1="18" y2="18" />
+                                                    <line x1="3" x2="3.01" y1="6" y2="6" />
+                                                    <line x1="3" x2="3.01" y1="12" y2="12" />
+                                                    <line x1="3" x2="3.01" y1="18" y2="18" />
+                                                </svg>
+                                            </button>
+                                            <button class="view-toggle-btn active" id="btnGrid" title="Vista cuadrícula"
+                                                aria-label="Vista cuadrícula" aria-pressed="true">
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                                    viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                                    stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"
+                                                    aria-hidden="true">
+                                                    <rect width="7" height="7" x="3" y="3" rx="1" />
+                                                    <rect width="7" height="7" x="14" y="3" rx="1" />
+                                                    <rect width="7" height="7" x="14" y="14" rx="1" />
+                                                    <rect width="7" height="7" x="3" y="14" rx="1" />
+                                                </svg>
+                                            </button>
+                                        </div>
+                                    </div>
                                 </div>
-                                <!-- View toggle -->
-                                <div class="view-toggle" role="group" aria-label="Cambiar vista">
-                                    <button class="view-toggle-btn" id="btnList" title="Vista lista"
-                                        aria-label="Vista lista" aria-pressed="false">
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+
+                                <!-- Grid view (default) -->
+                                <div class="properties-grid" id="favsGrid" role="list"
+                                    aria-label="Propiedades favoritas en cuadrícula"
+                                    style="grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));">
+                                    <!-- JS renderiza aquí -->
+                                </div>
+
+                                <!-- List view -->
+                                <div class="favs-list-view" id="favsList" role="list"
+                                    aria-label="Propiedades favoritas en lista" style="display:none;">
+                                    <!-- JS renderiza aquí -->
+                                </div>
+
+                                <!-- Empty state -->
+                                <div class="empty-state" id="emptyState" style="display:none;" aria-live="polite">
+                                    <span class="empty-icon" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg"
+                                            width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                            <path
+                                                d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z">
+                                            </path>
+                                        </svg></span>
+                                    <h2 class="empty-title">No tenés favoritos guardados</h2>
+                                    <p class="empty-desc">
+                                        Explorá nuestras propiedades y hacé clic en el corazón para guardar las que más
+                                        te
+                                        gusten.
+                                    </p>
+                                    <a href="../../index.html#propiedades" class="btn-primary"
+                                        style="margin-top:0.5rem;display:inline-flex;align-items:center;gap:0.5rem;">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15"
                                             viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
                                             stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                                            <line x1="8" x2="21" y1="6" y2="6" />
-                                            <line x1="8" x2="21" y1="12" y2="12" />
-                                            <line x1="8" x2="21" y1="18" y2="18" />
-                                            <line x1="3" x2="3.01" y1="6" y2="6" />
-                                            <line x1="3" x2="3.01" y1="12" y2="12" />
-                                            <line x1="3" x2="3.01" y1="18" y2="18" />
+                                            <path d="M5 12h14" />
+                                            <path d="m12 5 7 7-7 7" />
                                         </svg>
-                                    </button>
-                                    <button class="view-toggle-btn active" id="btnGrid" title="Vista cuadrícula"
-                                        aria-label="Vista cuadrícula" aria-pressed="true">
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
-                                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
-                                            stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                                            <rect width="7" height="7" x="3" y="3" rx="1" />
-                                            <rect width="7" height="7" x="14" y="3" rx="1" />
-                                            <rect width="7" height="7" x="14" y="14" rx="1" />
-                                            <rect width="7" height="7" x="3" y="14" rx="1" />
-                                        </svg>
-                                    </button>
+                                        Explorar propiedades
+                                    </a>
+                                </div>
+
+                            </div>
+                        </div>
+
+                        <!-- ══════════════════════════════════════
+                             VIEW 2: INFORMACIÓN DE CONTACTO & PERFIL
+                             ══════════════════════════════════════ -->
+                        <div class="account-view hidden" id="view-perfil">
+                            <div class="account-main-header">
+                                <h1 class="account-main-title">Información de Contacto</h1>
+                                <p class="account-main-subtitle">Gestioná tus datos de contacto, foto de perfil y
+                                    seguridad</p>
+                            </div>
+                            <div class="account-main-body">
+                                <form id="formPerfil" novalidate>
+                                    <!-- Foto de perfil -->
+                                    <div class="profile-section">
+                                        <h2 class="profile-section-title">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18"
+                                                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                                stroke-linecap="round" stroke-linejoin="round">
+                                                <path
+                                                    d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z" />
+                                                <circle cx="12" cy="13" r="4" />
+                                            </svg>
+                                            Foto de perfil
+                                        </h2>
+                                        <div class="avatar-edit-container">
+                                            <div class="avatar-preview-box" id="avatarPreviewBox">
+                                                <span id="avatarInitials">JP</span>
+                                                <img src="" alt="Avatar" id="avatarImg" style="display:none;" />
+                                            </div>
+                                            <div class="avatar-actions">
+                                                <div class="avatar-btn-group">
+                                                    <button type="button" class="btn-upload-photo" id="btnUploadPhoto">
+                                                        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14"
+                                                            viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                                            stroke-width="2" stroke-linecap="round"
+                                                            stroke-linejoin="round">
+                                                            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
+                                                            <polyline points="17 8 12 3 7 8" />
+                                                            <line x1="12" y1="3" x2="12" y2="15" />
+                                                        </svg>
+                                                        Cambiar foto
+                                                    </button>
+                                                    <button type="button" class="btn-remove-photo" id="btnRemovePhoto">
+                                                        Quitar foto
+                                                    </button>
+                                                    <input type="file" id="userPhotoInput" accept="image/*"
+                                                        style="display:none;" />
+                                                </div>
+                                                <span class="avatar-hint">Formatos soportados: JPG, PNG o WEBP (máx.
+                                                    2MB).</span>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- Datos de contacto -->
+                                    <div class="profile-section">
+                                        <h2 class="profile-section-title">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18"
+                                                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                                stroke-linecap="round" stroke-linejoin="round">
+                                                <circle cx="12" cy="8" r="4" />
+                                                <path d="M4 20c0-4 3.6-7 8-7s8 3 8 7" />
+                                            </svg>
+                                            Datos personales y de contacto
+                                        </h2>
+                                        <div class="profile-grid-form">
+                                            <div class="profile-input-group">
+                                                <label for="userNombre">Nombre completo</label>
+                                                <input type="text" id="userNombre" value="Juan Manuel Pérez" required />
+                                            </div>
+                                            <div class="profile-input-group">
+                                                <label for="userEmail">Correo electrónico</label>
+                                                <input type="email" id="userEmail" value="ejemplo@gmail.com" required />
+                                            </div>
+                                            <div class="profile-input-group">
+                                                <label for="userTel">Teléfono / Celular</label>
+                                                <input type="tel" id="userTel" value="+54 11 4444-5555" required />
+                                            </div>
+                                            <div class="profile-input-group">
+                                                <label for="userPref">Preferencia de contacto</label>
+                                                <select id="userPref">
+                                                    <option value="whatsapp">WhatsApp</option>
+                                                    <option value="email">Correo electrónico</option>
+                                                    <option value="llamada">Llamada telefónica</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- Seguridad / Contraseña -->
+                                    <div class="profile-section" id="section-seguridad">
+                                        <h2 class="profile-section-title">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18"
+                                                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                                stroke-linecap="round" stroke-linejoin="round">
+                                                <rect width="18" height="11" x="3" y="11" rx="2" ry="2" />
+                                                <path d="M7 11V7a5 5 0 0 1 10 0v4" />
+                                            </svg>
+                                            Seguridad y Contraseña
+                                        </h2>
+                                        <div class="profile-grid-form">
+                                            <div class="profile-input-group full-col">
+                                                <label for="userOldPass">Contraseña actual</label>
+                                                <input type="password" id="userOldPass" placeholder="••••••••" />
+                                            </div>
+                                            <div class="profile-input-group">
+                                                <label for="userNewPass">Nueva contraseña</label>
+                                                <input type="password" id="userNewPass"
+                                                    placeholder="Mínimo 6 caracteres" />
+                                            </div>
+                                            <div class="profile-input-group">
+                                                <label for="userConfirmPass">Confirmar nueva contraseña</label>
+                                                <input type="password" id="userConfirmPass"
+                                                    placeholder="Repetir nueva contraseña" />
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div>
+                                        <button type="submit" class="btn-primary" id="btnSavePerfil"
+                                            style="display:inline-flex;align-items:center;gap:0.5rem;padding:0.75rem 1.75rem;">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15"
+                                                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+                                                stroke-linecap="round" stroke-linejoin="round">
+                                                <path
+                                                    d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11l5 5v11a2 2 0 0 1-2 2z" />
+                                                <polyline points="17 21 17 13 7 13 7 21" />
+                                                <polyline points="7 3 7 8 15 8" />
+                                            </svg>
+                                            Guardar cambios
+                                        </button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+
+                        <!-- ══════════════════════════════════════
+                             VIEW 3: ALERTAS DE PRECIO (Las 6 más económicas)
+                             ══════════════════════════════════════ -->
+                        <div class="account-view hidden" id="view-alertas">
+                            <div class="account-main-header">
+                                <h1 class="account-main-title">Alertas de Precio</h1>
+                                <p class="account-main-subtitle">Las 6 propiedades más económicas del mercado
+                                    disponibles hoy</p>
+                            </div>
+                            <div class="account-main-body">
+                                <!-- Filter Pills -->
+                                <div class="filter-pills" role="tablist" aria-label="Filtro de alertas de precio">
+                                    <span
+                                        style="font-size:0.8rem;font-weight:600;color:var(--navy-900);margin-right:0.25rem;">Filtrar:</span>
+                                    <button class="filter-pill-btn active" data-filter="all"
+                                        type="button">Todos</button>
+                                    <button class="filter-pill-btn" data-filter="alquiler"
+                                        type="button">Alquiler</button>
+                                    <button class="filter-pill-btn" data-filter="venta" type="button">Venta</button>
+                                </div>
+
+                                <!-- Grid de las 6 más económicas -->
+                                <div class="properties-grid" id="alertasGrid" role="list"
+                                    aria-label="Propiedades económicas en alerta de precio"
+                                    style="grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));">
+                                    <!-- JS renderiza dinámicamente aquí -->
                                 </div>
                             </div>
                         </div>
 
-                        <!-- Body -->
-                        <div class="account-main-body">
-
-                            <!-- Conteo badge -->
-                            <div class="favs-toolbar">
-                                <span class="favs-count-badge" id="countBadge" aria-live="polite">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24"
-                                        fill="currentColor" stroke="none" aria-hidden="true">
-                                        <path
-                                            d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" />
-                                    </svg>
-                                    4 favoritos
-                                </span>
-                                <p style="font-size:0.78rem;color:var(--gray-500);">
-                                    Clic en <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="#ef4444" stroke="#ef4444" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block; vertical-align:middle;"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg> para quitar una propiedad
-                                </p>
-                            </div>
-
-                            <!-- Grid view (default) -->
-                            <div class="properties-grid" id="favsGrid" role="list"
-                                aria-label="Propiedades favoritas en cuadrícula"
-                                style="grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));">
-                                <!-- JS renderiza aquí -->
-                            </div>
-
-                            <!-- List view -->
-                            <div class="favs-list-view" id="favsList" role="list"
-                                aria-label="Propiedades favoritas en lista" style="display:none;">
-                                <!-- JS renderiza aquí -->
-                            </div>
-
-                            <!-- Empty state -->
-                            <div class="empty-state" id="emptyState" style="display:none;" aria-live="polite">
-                                <span class="empty-icon" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg></span>
-                                <h2 class="empty-title">No tenés favoritos guardados</h2>
-                                <p class="empty-desc">
-                                    Explorá nuestras propiedades y hacé clic en el corazón para guardar las que más te
-                                    gusten.
-                                </p>
-                                <a href="../../index.html#propiedades" class="btn-primary"
-                                    style="margin-top:0.5rem;display:inline-flex;align-items:center;gap:0.5rem;">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24"
-                                        fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"
-                                        stroke-linejoin="round" aria-hidden="true">
-                                        <path d="M5 12h14" />
-                                        <path d="m12 5 7 7-7 7" />
-                                    </svg>
-                                    Explorar propiedades
-                                </a>
-                            </div>
-
-                        </div>
                     </section>
 
                 </div>
@@ -264,75 +479,99 @@
        ============================================= -->
     <footer class="footer" role="contentinfo">
         <div class="container">
-            <div class="footer-grid">
 
-                <!-- Brand -->
-                <div class="footer-brand">
-                    <a href="../../index.html" class="nav-logo" aria-label="Negocios Inmobiliarios">
-                        <img src="../../assets/media/logoLight.png" alt="Negocios Inmobiliarios" style="height: 45px; width: auto;" />
+            <!-- Fila principal: 3 columnas -->
+            <div class="footer-main">
+
+                <!-- Columna 1: Brand -->
+                <div class="footer-col footer-col--brand">
+                    <a href="../../index.html" class="nav-logo footer-logo" aria-label="Negocios Inmobiliarios">
+                        <img src="../../assets/media/logoLight.png" alt="Negocios Inmobiliarios"
+                            style="height: 52px; width: auto;" />
                         <span class="logo-text">Negocios Inmobiliarios</span>
                     </a>
-                    <p class="footer-desc">
-                        Inmobiliaria especializada en compra, venta y alquiler de propiedades residenciales en
-                        Argentina. Tu hogar es nuestra prioridad.
-                    </p>
                 </div>
 
-                <!-- Secciones del Header -->
-                <nav aria-labelledby="footer-sections-title">
-                    <div class="footer-col-title" id="footer-sections-title">Secciones</div>
-                    <ul class="footer-links">
-                        <li><a href="../../index.html#propiedades">Comprar</a></li>
-                        <li><a href="../../index.html#propiedades">Alquilar</a></li>
-                        <li><a href="../../index.html#nosotros">Nosotros</a></li>
-                        <li><a href="../../index.html#contacto">Contacto</a></li>
-                        <li><a href="../../index.html#contacto">Tasar mi propiedad</a></li>
-                    </ul>
-                </nav>
+                <!-- Divisor vertical -->
+                <div class="footer-vdivider" aria-hidden="true"></div>
 
-                <!-- Contacto y Redes Sociales -->
-                <div>
+                <!-- Columna 2: Secciones -->
+                <div class="footer-col footer-col--center">
+                    <nav aria-labelledby="footer-nav-title">
+                        <div class="footer-col-title" id="footer-nav-title">Secciones</div>
+                        <!-- Fila 1: Nosotros · Contacto -->
+                        <div class="footer-links-row">
+                            <a href="../nosotros.html">Nosotros</a>
+                            <a href="../../index.html#contacto">Contacto</a>
+                        </div>
+                        <!-- Fila 2: Comprar · Alquilar -->
+                        <div class="footer-links-row">
+                            <a href="../../index.html#propiedades">Comprar</a>
+                            <a href="../../index.html#propiedades">Alquilar</a>
+                        </div>
+                    </nav>
+                </div>
+
+                <!-- Divisor vertical -->
+                <div class="footer-vdivider" aria-hidden="true"></div>
+
+                <!-- Columna 3: Contacto -->
+                <div class="footer-col footer-col--center">
                     <div class="footer-col-title">Contacto</div>
                     <address class="footer-contact" style="font-style:normal;">
                         <div class="footer-contact-item">
-                            <span class="footer-contact-icon" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg></span>
-                            <span>Av. Corrientes 1234, Piso 5<br>CABA, Argentina</span>
+                            <span class="footer-contact-icon" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg"
+                                    width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                                    <circle cx="12" cy="10" r="3"></circle>
+                                </svg></span>
+                            <span>Av. Corrientes 1234, Piso 5 — CABA</span>
                         </div>
                         <div class="footer-contact-item">
-                            <span class="footer-contact-icon" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg></span>
+                            <span class="footer-contact-icon" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg"
+                                    width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path
+                                        d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z">
+                                    </path>
+                                </svg></span>
                             <a href="tel:+541100000000" style="color:inherit;">+54 11 0000-0000</a>
                         </div>
                         <div class="footer-contact-item">
-                            <span class="footer-contact-icon" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg></span>
+                            <span class="footer-contact-icon" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg"
+                                    width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path
+                                        d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z">
+                                    </path>
+                                    <polyline points="22,6 12,13 2,6"></polyline>
+                                </svg></span>
                             <a href="mailto:info@negociosinmobiliarios.com.ar"
                                 style="color:inherit;">info@negociosinmobiliarios.com.ar</a>
                         </div>
-                        <div class="footer-contact-item">
-                            <span class="footer-contact-icon" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg></span>
-                            <span>Lun – Vie: 9:00 – 18:00 hs</span>
-                        </div>
                     </address>
 
-                    <!-- Redes Sociales movidas aquí -->
-                    <div class="footer-socials" aria-label="Redes sociales" style="margin-top: 1.5rem;">
-                        <a href="#" class="social-btn" aria-label="Instagram">
+                    <!-- Redes sociales debajo del mail -->
+                    <div class="footer-socials" aria-label="Redes sociales">
+                        <a href="#" class="social-btn" aria-label="Instagram" title="Instagram">
                             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"
                                 fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
                                 stroke-linejoin="round">
-                                <rect width="20" height="20" x="2" y="2" rx="5" />
+                                <rect width="20" height="20" x="2" y="2" rx="5" ry="5" />
                                 <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
                                 <line x1="17.5" x2="17.51" y1="6.5" y2="6.5" />
                             </svg>
                         </a>
-                        <a href="#" class="social-btn" aria-label="Facebook">
+                        <a href="#" class="social-btn" aria-label="Facebook" title="Facebook">
                             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"
                                 fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
                                 stroke-linejoin="round">
                                 <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" />
                             </svg>
                         </a>
-                        <a href="https://wa.me/541100000000" class="social-btn" aria-label="WhatsApp" target="_blank"
-                            rel="noopener noreferrer">
+                        <a href="https://wa.me/541100000000" class="social-btn" aria-label="WhatsApp" title="WhatsApp"
+                            target="_blank" rel="noopener noreferrer">
                             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"
                                 fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
                                 stroke-linejoin="round">
@@ -345,16 +584,16 @@
 
             </div>
 
-            <div class="footer-bottom">
-                <span>© 2025 Negocios Inmobiliarios. Todos los derechos reservados.</span>
-                <nav class="footer-bottom-links" aria-label="Links legales">
-                    <a href="#">Privacidad</a>
-                    <a href="#">Términos de uso</a>
-                    <a href="#">Cookies</a>
-                </nav>
+            <!-- Barra inferior: copyright -->
+            <div class="footer-bottom-new">
+                <div class="footer-copyright">
+                    <span>© 2025 Negocios Inmobiliarios. Todos los derechos reservados.</span>
+                </div>
             </div>
+
         </div>
     </footer>
+
 
     <!-- Confirm dialog — quitar favorito -->
     <div id="removeConfirm" class="remove-confirm" role="dialog" aria-modal="true" aria-labelledby="confirmTitle"
@@ -376,10 +615,13 @@
     <script src="../../assets/js/misFavoritos.js" defer></script>
 
     <!-- WhatsApp Flotante -->
-    <a href="https://wa.me/541100000000" class="whatsapp-float" target="_blank" rel="noopener noreferrer" aria-label="Contactar por WhatsApp">
-      <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="currentColor">
-        <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a12.8 12.8 0 0 0-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/>
-      </svg>
+    <a href="https://wa.me/541100000000" class="whatsapp-float" target="_blank" rel="noopener noreferrer"
+        aria-label="Contactar por WhatsApp">
+        <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="currentColor">
+            <path
+                d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a12.8 12.8 0 0 0-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z" />
+        </svg>
     </a>
 </body>
+
 </html>

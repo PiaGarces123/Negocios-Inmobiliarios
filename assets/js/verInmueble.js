@@ -59,7 +59,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if (e.key === 'ArrowRight') { currentIdx = (currentIdx + 1) % galleryImages.length; updateModal(); }
   });
 
-  // ── Favorite button ─────────────────────────
+  // ── Favorite button (Main) ─────────────────
   const favBtn = document.getElementById('propFavBtn');
   if (favBtn) {
     favBtn.addEventListener('click', () => {
@@ -68,8 +68,24 @@ document.addEventListener('DOMContentLoaded', () => {
       const svgFavWhite = `<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg>`;
       favBtn.querySelector('.fav-icon').innerHTML = active ? svgFavRed : svgFavWhite;
       favBtn.querySelector('.fav-text').textContent = active ? 'Guardado' : 'Guardar';
+      showToast(active ? '✓ Propiedad guardada en favoritos' : '✓ Propiedad eliminada de favoritos');
     });
   }
+
+  // ── Favorite buttons in Similar Cards ──────
+  document.querySelectorAll('.similar-grid .card-favorite').forEach(btn => {
+    btn.addEventListener('click', e => {
+      e.preventDefault();
+      e.stopPropagation();
+      const active = btn.classList.toggle('active');
+      const svgFavRed = `<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg>`;
+      const svgFavWhite = `<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg>`;
+      btn.innerHTML = active ? svgFavRed : svgFavWhite;
+      btn.setAttribute('aria-pressed', active ? 'true' : 'false');
+      showToast(active ? '✓ Propiedad guardada en favoritos' : '✓ Propiedad eliminada de favoritos');
+    });
+  });
+
 
   // ── Read more ───────────────────────────────
   const readMoreBtn  = document.getElementById('readMoreBtn');
@@ -137,7 +153,7 @@ document.addEventListener('DOMContentLoaded', () => {
           await navigator.share(shareData);
         } else {
           await navigator.clipboard.writeText(window.location.href);
-          showToast('🔗 Enlace copiado al portapapeles');
+          showToast('✓ Enlace copiado al portapapeles');
         }
       } catch (_) {}
     });

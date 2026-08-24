@@ -48,7 +48,7 @@
 
                 <div class="admin-nav-section-label">Principal</div>
 
-                <button class="admin-nav-item" data-view="dashboard" aria-label="Dashboard">
+                <button class="admin-nav-item active" data-view="dashboard" aria-label="Dashboard">
                     <span class="admin-nav-icon" aria-hidden="true">
                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
                             stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -61,7 +61,7 @@
                     Dashboard
                 </button>
 
-                <button class="admin-nav-item active" data-view="propiedades" aria-label="Listado de propiedades">
+                <button class="admin-nav-item" data-view="propiedades" aria-label="Listado de propiedades">
                     <span class="admin-nav-icon" aria-hidden="true">
                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
                             stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -144,15 +144,15 @@
                     <button class="admin-hamburger" id="adminHamburger" aria-label="Abrir menú" aria-expanded="false" aria-controls="adminSidebar">
                         <span></span><span></span><span></span>
                     </button>
-                    <h1 class="admin-topbar-title" id="adminTopbarTitle">Listado de Propiedades</h1>
+                    <h1 class="admin-topbar-title" id="adminTopbarTitle">Dashboard</h1>
                 </div>
                 <div class="admin-topbar-right">
                     <button class="btn-create" id="btnCreate" aria-label="Crear nueva propiedad">
                         <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none"
                             stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"
                             aria-hidden="true">
-                            <path d="M5 12h14" />
-                            <path d="m12 5 7 7-7 7" />
+                            <line x1="12" y1="5" x2="12" y2="19" />
+                            <line x1="5" y1="12" x2="19" y2="12" />
                         </svg>
                         Nueva Propiedad
                     </button>
@@ -165,7 +165,7 @@
                 <!-- ══════════════════════════════════════
            VIEW: DASHBOARD
            ══════════════════════════════════════ -->
-                <div class="admin-view" id="viewDashboard">
+                <div class="admin-view active" id="viewDashboard">
 
                     <!-- Stats grid -->
                     <div class="stats-grid" aria-label="Estadísticas del portal">
@@ -229,14 +229,28 @@
                         </div>
                     </div>
 
-                    <div
-                        style="margin-top:2rem;background:var(--white);border:1px solid var(--gray-100);border-radius:var(--radius-lg);padding:2rem;text-align:center;box-shadow:var(--shadow-sm)">
-                        <div style="font-size:2rem;margin-bottom:0.5rem;color:var(--navy-900);" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="20" x2="18" y2="10"></line><line x1="12" y1="20" x2="12" y2="4"></line><line x1="6" y1="20" x2="6" y2="14"></line></svg></div>
-                        <div
-                            style="font-family:var(--font-heading);font-size:1.1rem;color:var(--navy-900);font-weight:600;">
-                            Próximamente: Gráficos de actividad</div>
-                        <div style="font-size:0.82rem;color:var(--gray-500);margin-top:0.4rem;">Consultas por mes,
-                            propiedades más vistas y conversión de leads.</div>
+                    <div class="table-card" style="margin-top: 2rem;">
+                        <div style="padding: 1.25rem 1.5rem; border-bottom: 1px solid var(--gray-100); display: flex; align-items: center; justify-content: space-between;">
+                            <h2 style="font-family:var(--font-heading); font-size:1.1rem; color:var(--navy-900); font-weight:600; margin: 0;">Propiedades Recientes</h2>
+                            <button class="tbl-btn" style="border: none; background: none; color: var(--gold-500); font-weight: 600; font-size: 0.82rem; cursor: pointer; padding: 0;" onclick="document.querySelector('.admin-nav-item[data-view=propiedades]').click();">Ver todas →</button>
+                        </div>
+                        <div style="overflow-x:auto;">
+                            <table class="admin-table" aria-label="Propiedades recientes">
+                                <caption class="sr-only" style="position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0;">Listado de propiedades recientes</caption>
+                                <thead>
+                                    <tr>
+                                        <th scope="col">Imagen</th>
+                                        <th scope="col">Propiedad</th>
+                                        <th scope="col">Tipo</th>
+                                        <th scope="col">Precio</th>
+                                        <th scope="col">Estado</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="dashboardPropTableBody">
+                                    <!-- JS renderiza aquí -->
+                                </tbody>
+                            </table>
+                        </div>
                     </div>
 
                 </div>
@@ -244,7 +258,7 @@
                 <!-- ══════════════════════════════════════
            VIEW: PROPIEDADES
            ══════════════════════════════════════ -->
-                <div class="admin-view active" id="viewPropiedades">
+                <div class="admin-view" id="viewPropiedades">
 
                     <div class="table-card">
 
@@ -276,10 +290,12 @@
                         <!-- Table -->
                         <div style="overflow-x:auto;">
                             <table class="admin-table" aria-label="Listado de propiedades">
+                                <caption class="sr-only" style="position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0;">Listado general de propiedades</caption>
                                 <thead>
                                     <tr>
                                         <th scope="col">Imagen</th>
                                         <th scope="col">Propiedad</th>
+                                        <th scope="col">Tipo</th>
                                         <th scope="col">Precio</th>
                                         <th scope="col">Estado</th>
                                         <th scope="col">Acciones</th>
@@ -319,6 +335,7 @@
                         </div>
                         <div style="overflow-x:auto;">
                             <table class="admin-table" aria-label="Listado de clientes">
+                                <caption class="sr-only" style="position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0;">Listado de clientes y consultas</caption>
                                 <thead>
                                     <tr>
                                         <th scope="col">Cliente</th>
@@ -344,10 +361,11 @@
            VIEW: SETTINGS
            ══════════════════════════════════════ -->
                 <div class="admin-view" id="viewSettings">
-                    <div class="table-card" style="padding:2rem;max-width:640px;">
+                    <div class="table-card" style="padding:2rem;max-width:800px;">
                         <h2
                             style="font-family:var(--font-heading);font-size:1.4rem;color:var(--navy-900);margin-bottom:1.5rem;">
                             Configuración del sitio</h2>
+                        <div class="settings-grid-form">
 
                         <div class="form-group" style="margin-bottom:1rem;">
                             <label for="cfgNombre">Nombre del negocio</label>
@@ -369,13 +387,14 @@
                             <label for="cfgWhatsapp">Número WhatsApp (sin +)</label>
                             <input type="text" id="cfgWhatsapp" value="541100000000" placeholder="541100000000" />
                         </div>
-                        <div class="form-group" style="margin-bottom:1.5rem;">
+                        <div class="form-group full-width">
                             <label for="cfgDesc">Descripción del negocio</label>
                             <textarea id="cfgDesc"
                                 style="min-height:80px;">Inmobiliaria especializada en compra, venta y alquiler de propiedades residenciales en Argentina.</textarea>
                         </div>
+                        </div>
                         <button class="btn-create" style="width:auto;"
-                            onclick="document.querySelector('.admin-toast')?.remove();const t=document.createElement('div');t.className='admin-toast show';t.textContent='✅ Configuración guardada';document.body.appendChild(t);setTimeout(()=>t.remove(),3000);">
+                            onclick="document.querySelector('.admin-toast')?.remove();const t=document.createElement('div');t.className='admin-toast show';t.textContent='✓ Configuración guardada';document.body.appendChild(t);setTimeout(()=>t.remove(),3000);">
                             Guardar cambios
                         </button>
                     </div>

@@ -113,6 +113,23 @@ document.addEventListener('DOMContentLoaded', () => {
     setEl('statReserv', reservados);
     setEl('statVend',  vendidos);
     setEl('statClients', clients.length);
+
+    const dashboardPropTableBody = document.getElementById('dashboardPropTableBody');
+    if (dashboardPropTableBody) {
+      const recent = properties.slice(0, 4);
+      dashboardPropTableBody.innerHTML = recent.map(p => `
+        <tr style="cursor: pointer;" onclick="switchView('propiedades')">
+          <td><img class="prop-thumb" src="${p.img}" alt="${p.title}" loading="lazy" /></td>
+          <td>
+            <div class="prop-table-title">${p.title}</div>
+            <div class="prop-table-addr">${p.addr}</div>
+          </td>
+          <td><span class="badge-sm ${p.tipo === 'alquiler' ? 'badge-alquiler-sm' : 'badge-venta-sm'}">${p.tipo === 'alquiler' ? 'Alquiler' : 'Venta'}</span></td>
+          <td>${formatPrice(p.price, p.unit, p.tipo)}</td>
+          <td>${statusBadge(p.status)}</td>
+        </tr>
+      `).join('') || `<tr><td colspan="5" style="text-align:center;padding:2rem;color:var(--gray-500)">No hay propiedades registradas</td></tr>`;
+    }
   }
   function setEl(id, val) { const el = document.getElementById(id); if (el) el.textContent = val; }
 
@@ -159,8 +176,9 @@ document.addEventListener('DOMContentLoaded', () => {
           <div class="prop-table-title">${p.title}</div>
           <div class="prop-table-addr">${p.addr}</div>
         </td>
+        <td><span class="badge-sm ${p.tipo === 'alquiler' ? 'badge-alquiler-sm' : 'badge-venta-sm'}">${p.tipo === 'alquiler' ? 'Alquiler' : 'Venta'}</span></td>
         <td>${formatPrice(p.price, p.unit, p.tipo)}</td>
-        <td>${statusBadge(p.status)} ${p.tipo === 'alquiler' ? `<span class="badge-sm badge-alquiler-sm" style="margin-left:4px">Alquiler</span>` : ''}</td>
+        <td>${statusBadge(p.status)}</td>
         <td>
           <div class="table-actions">
             <button class="tbl-btn edit" data-action="edit" data-id="${p.id}" title="Editar propiedad" aria-label="Editar ${p.title}">
@@ -286,11 +304,11 @@ document.addEventListener('DOMContentLoaded', () => {
     if (editPropId) {
       const idx = properties.findIndex(x => x.id === editPropId);
       if (idx !== -1) { properties[idx] = { ...properties[idx], ...data }; }
-      showToast('✅ Propiedad actualizada correctamente');
+      showToast('✓ Propiedad actualizada correctamente');
     } else {
       const newImg = uploadPreview.querySelector('img')?.src || '../../assets/media/prop1.jpg';
       properties.unshift({ id: nextId++, img: newImg, ...data });
-      showToast('✅ Propiedad creada correctamente');
+      showToast('✓ Propiedad creada correctamente');
     }
     closePanel();
     renderTable();
@@ -300,19 +318,28 @@ document.addEventListener('DOMContentLoaded', () => {
   // ── Delete ────────────────────────────────────
   function openDelete(id) {
     deletePropId = id;
+    deleteClientId = null;
     const p = properties.find(x => x.id === id);
+    document.getElementById('deleteModalTitle').textContent = '¿Eliminar propiedad?';
     document.getElementById('deleteModalName').textContent = p?.title || 'esta propiedad';
     deleteModal.classList.add('open');
   }
-  btnDelCancel?.addEventListener('click',  () => { deleteModal.classList.remove('open'); deletePropId = null; });
+  btnDelCancel?.addEventListener('click',  () => { deleteModal.classList.remove('open'); deletePropId = null; deleteClientId = null; });
   btnDelConfirm?.addEventListener('click', () => {
-    if (!deletePropId) return;
-    properties = properties.filter(x => x.id !== deletePropId);
+    if (deletePropId) {
+      properties = properties.filter(x => x.id !== deletePropId);
+      deletePropId = null;
+      renderTable();
+      renderDashboard();
+      showToast('✓ Propiedad eliminada');
+    } else if (deleteClientId) {
+      clients = clients.filter(x => x.id !== deleteClientId);
+      deleteClientId = null;
+      renderClients();
+      renderDashboard();
+      showToast('✓ Cliente eliminado');
+    }
     deleteModal.classList.remove('open');
-    deletePropId = null;
-    renderTable();
-    renderDashboard();
-    showToast('🗑️ Propiedad eliminada');
   });
   deleteModal?.addEventListener('click', e => { if (e.target === deleteModal) { deleteModal.classList.remove('open'); deletePropId = null; } });
 
@@ -338,6 +365,25 @@ document.addEventListener('DOMContentLoaded', () => {
   ['dragleave','drop'].forEach(ev => uploadZone?.addEventListener(ev, e => { e.preventDefault(); uploadZone.classList.remove('drag-over'); }));
 
   // ── Clients ───────────────────────────────────
+  let deleteClientId = null;
+  function attachClientTableEvents() {
+    clientTableBody.querySelectorAll('[data-action]').forEach(btn => {
+      btn.addEventListener('click', e => {
+        e.stopPropagation();
+        const id = parseInt(btn.dataset.id);
+        if (btn.dataset.action === 'delete-client') openDeleteClient(id);
+      });
+    });
+  }
+
+  function openDeleteClient(id) {
+    deleteClientId = id;
+    const c = clients.find(x => x.id === id);
+    document.getElementById('deleteModalTitle').textContent = '¿Eliminar cliente?';
+    document.getElementById('deleteModalName').textContent = c?.nombre || 'este cliente';
+    deleteModal.classList.add('open');
+  }
+
   function renderClients() {
     if (!clientTableBody) return;
     clientTableBody.innerHTML = clients.map(c => `
@@ -363,10 +409,14 @@ document.addEventListener('DOMContentLoaded', () => {
             <button class="tbl-btn edit" title="Enviar mensaje" aria-label="Enviar mensaje a ${c.nombre}">
               <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
             </button>
+            <button class="tbl-btn del" data-action="delete-client" data-id="${c.id}" title="Eliminar cliente" aria-label="Eliminar ${c.nombre}">
+              <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="3 6 5 6 21 6"/><path d="m19 6-.867 12.142A2 2 0 0 1 16.138 20H7.862a2 2 0 0 1-1.995-1.858L5 6m5 0V4a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v2"/></svg>
+            </button>
           </div>
         </td>
       </tr>
     `).join('');
+    attachClientTableEvents();
   }
 
   // ── Toast ─────────────────────────────────────
@@ -390,11 +440,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // ── Logout ────────────────────────────────────
   document.getElementById('btnLogout')?.addEventListener('click', () => {
-    showToast('👋 Sesión cerrada');
-    setTimeout(() => window.location.href = '../../index.html', 1800);
+    showToast('✓ Sesión cerrada');
+    setTimeout(() => window.location.href = '../../index.html', 1000);
   });
 
   // ── Init ─────────────────────────────────────
-  switchView('propiedades');
+  switchView('dashboard');
 
 });

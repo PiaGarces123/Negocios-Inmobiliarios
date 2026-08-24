@@ -57,12 +57,14 @@ document.addEventListener('DOMContentLoaded', () => {
   // ── Favorite toggle ───────────────────────
   document.querySelectorAll('.card-favorite').forEach(btn => {
     btn.addEventListener('click', (e) => {
+      e.preventDefault();
       e.stopPropagation();
-      btn.classList.toggle('active');
+      const active = btn.classList.toggle('active');
       const svgFavRed = `<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg>`;
       const svgFavWhite = `<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg>`;
-      btn.innerHTML = btn.classList.contains('active') ? svgFavRed : svgFavWhite;
-      btn.setAttribute('aria-pressed', btn.classList.contains('active'));
+      btn.innerHTML = active ? svgFavRed : svgFavWhite;
+      btn.setAttribute('aria-pressed', active ? 'true' : 'false');
+      showToast(active ? '✓ Propiedad guardada en favoritos' : '✓ Propiedad eliminada de favoritos');
     });
   });
 
@@ -70,10 +72,9 @@ document.addEventListener('DOMContentLoaded', () => {
   document.querySelectorAll('.property-card').forEach(card => {
     card.style.cursor = 'pointer';
     card.addEventListener('click', (e) => {
-      if (!e.target.closest('.card-favorite')) {
-        // Redirigir a la vista de detalle
-        // Para index.html la ruta es pages/verInmueble.html
-        window.location.href = 'pages/verInmueble.html';
+      if (!e.target.closest('.card-favorite') && !e.target.closest('a')) {
+        const isInsidePages = window.location.pathname.includes('/pages/');
+        window.location.href = isInsidePages ? 'verInmueble.html' : 'pages/verInmueble.html';
       }
     });
   });
@@ -272,7 +273,7 @@ document.addEventListener('DOMContentLoaded', () => {
       }
 
       if (!valid) {
-        showToast('⚠️ Por favor completa los campos requeridos.');
+        showToast('✗ Por favor completa los campos requeridos.');
         return;
       }
 
@@ -282,7 +283,7 @@ document.addEventListener('DOMContentLoaded', () => {
       submitBtn.style.background = 'linear-gradient(135deg,#10b981,#059669)';
       submitBtn.disabled = true;
 
-      showToast('✅ Consulta recibida. Un asesor te contactará a la brevedad.');
+      showToast('✓ Consulta recibida. Un asesor te contactará a la brevedad.');
 
       setTimeout(() => {
         submitBtn.innerHTML = originalText;
