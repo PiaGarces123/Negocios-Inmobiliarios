@@ -8,59 +8,72 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // ── Data ────────────────────────────────────
   let properties = [
-    { id: 1, title: 'Casa Moderna con Vista Panorámica',    addr: 'Av. Del Libertador 8500, Palermo',     price: 280000, unit: '',     tipo: 'venta',    status: 'disponible', amb: 4, banos: 3, m2: 320, img: '../../assets/media/prop1.jpg', desc: 'Casa moderna de autor con vistas panorámicas al río en Nordelta.' },
-    { id: 2, title: 'Departamento con Terraza y Vista',     addr: 'Armenia 1234, Palermo, CABA',          price: 1800,   unit: '/mes', tipo: 'alquiler', status: 'disponible', amb: 3, banos: 2, m2: 120, img: '../../assets/media/prop2.jpg', desc: 'Departamento luminoso con terraza privada y vistas al parque.' },
-    { id: 3, title: 'Casa Familiar con Jardín y Pileta',   addr: 'Calle Las Palmas 456, Tigre',          price: 195000, unit: '',     tipo: 'venta',    status: 'reservado',  amb: 5, banos: 3, m2: 480, img: '../../assets/media/prop3.jpg', desc: 'Casa familiar con jardín paisajístico y pileta climatizada en country.' },
-    { id: 4, title: 'PH Premium con Vista a Buenos Aires', addr: 'Alicia Moreau de Justo 740, Pto Madero', price: 520000, unit: '',   tipo: 'venta',    status: 'disponible', amb: 5, banos: 4, m2: 290, img: '../../assets/media/prop4.jpg', desc: 'PH exclusivo con terraza privada y vista 360° al skyline porteño.' },
-    { id: 5, title: 'Casa Moderna con Piscina Infinita',   addr: 'Av. Del Libertador 8900, Belgrano',    price: 520000, unit: '',     tipo: 'venta',    status: 'disponible', amb: 5, banos: 4, m2: 480, img: '../../assets/media/detail_hero.jpg', desc: 'Residencia premium con piscina infinita y jardín paisajístico.' },
-    { id: 6, title: 'Living Moderno Palermo Hollywood',    addr: 'Humboldt 2356, Palermo, CABA',         price: 2200,   unit: '/mes', tipo: 'alquiler', status: 'vendido',    amb: 2, banos: 1, m2: 65,  img: '../../assets/media/detail_t1.jpg', desc: 'Living moderno reformado en planta baja con patio exclusivo.' },
-    { id: 7, title: 'Cocina Premium Recoleta',             addr: 'Av. Alvear 1801, Recoleta, CABA',      price: 380000, unit: '',     tipo: 'venta',    status: 'reservado',  amb: 4, banos: 3, m2: 210, img: '../../assets/media/detail_t2.jpg', desc: 'Apartamento de lujo en edificio de categoría con amenities completos.' },
-    { id: 8, title: 'Suite Maestro en Nordelta',           addr: 'Av. del Golf 1200, Nordelta',          price: 145000, unit: '',     tipo: 'venta',    status: 'disponible', amb: 3, banos: 2, m2: 180, img: '../../assets/media/detail_t3.jpg', desc: 'Casa en barrio cerrado con acceso directo al lago y bote propio.' },
+    { id: 1, title: 'Casa Moderna con Vista Panorámica', addr: 'Av. Del Libertador 8500, Palermo', price: 280000, unit: '', tipo: 'venta', status: 'disponible', amb: 4, banos: 3, m2: 320, img: '../../assets/media/prop1.jpg', desc: 'Casa moderna de autor con vistas panorámicas al río en Nordelta.', asesorId: 1 },
+    { id: 2, title: 'Departamento con Terraza y Vista', addr: 'Armenia 1234, Palermo, CABA', price: 1800, unit: '/mes', tipo: 'alquiler', status: 'disponible', amb: 3, banos: 2, m2: 120, img: '../../assets/media/prop2.jpg', desc: 'Departamento luminoso con terraza privada y vistas al parque.', asesorId: 2 },
+    { id: 3, title: 'Casa Familiar con Jardín y Pileta', addr: 'Calle Las Palmas 456, Tigre', price: 195000, unit: '', tipo: 'venta', status: 'reservado', amb: 5, banos: 3, m2: 480, img: '../../assets/media/prop3.jpg', desc: 'Casa familiar con jardín paisajístico y pileta climatizada en country.', asesorId: 3 },
+    { id: 4, title: 'PH Premium con Vista a Buenos Aires', addr: 'Alicia Moreau de Justo 740, Pto Madero', price: 520000, unit: '', tipo: 'venta', status: 'disponible', amb: 5, banos: 4, m2: 290, img: '../../assets/media/prop4.jpg', desc: 'PH exclusivo con terraza privada y vista 360° al skyline porteño.', asesorId: 1 },
+    { id: 5, title: 'Casa Moderna con Piscina Infinita', addr: 'Av. Del Libertador 8900, Belgrano', price: 520000, unit: '', tipo: 'venta', status: 'disponible', amb: 5, banos: 4, m2: 480, img: '../../assets/media/detail_hero.jpg', desc: 'Residencia premium con piscina infinita y jardín paisajístico.', asesorId: 1 },
+    { id: 6, title: 'Living Moderno Palermo Hollywood', addr: 'Humboldt 2356, Palermo, CABA', price: 2200, unit: '/mes', tipo: 'alquiler', status: 'vendido', amb: 2, banos: 1, m2: 65, img: '../../assets/media/detail_t1.jpg', desc: 'Living moderno reformado en planta baja con patio exclusivo.', asesorId: 2 },
+    { id: 7, title: 'Cocina Premium Recoleta', addr: 'Av. Alvear 1801, Recoleta, CABA', price: 380000, unit: '', tipo: 'venta', status: 'reservado', amb: 4, banos: 3, m2: 210, img: '../../assets/media/detail_t2.jpg', desc: 'Apartamento de lujo en edificio de categoría con amenities completos.', asesorId: 3 },
+    { id: 8, title: 'Suite Maestro en Nordelta', addr: 'Av. del Golf 1200, Nordelta', price: 145000, unit: '', tipo: 'venta', status: 'disponible', amb: 3, banos: 2, m2: 180, img: '../../assets/media/detail_t3.jpg', desc: 'Casa en barrio cerrado con acceso directo al lago y bote propio.', asesorId: 4 },
   ];
 
   let clients = [
-    { id: 1, nombre: 'Carolina Pérez',   email: 'carolina@email.com',  tel: '+54 11 4444-1111', favs: 3, consultas: 7,  fecha: '2025-07-12' },
-    { id: 2, nombre: 'Roberto Martínez', email: 'roberto@gmail.com',    tel: '+54 11 4444-2222', favs: 1, consultas: 2,  fecha: '2025-08-01' },
-    { id: 3, nombre: 'Luciana Torres',   email: 'luciana@hotmail.com',  tel: '+54 11 4444-3333', favs: 5, consultas: 12, fecha: '2025-06-20' },
-    { id: 4, nombre: 'Martín Gómez',     email: 'martin@outlook.com',   tel: '+54 11 4444-4444', favs: 2, consultas: 4,  fecha: '2025-08-10' },
-    { id: 5, nombre: 'Valentina Ruiz',   email: 'valen@email.com',      tel: '+54 11 4444-5555', favs: 0, consultas: 1,  fecha: '2025-08-15' },
+    { id: 1, nombre: 'María Gómez', email: 'maria@negocios.com.ar', tel: '+54 11 5555-1234', cargo: 'Asesor', fecha: '2024-01-15' },
+    { id: 2, nombre: 'Alejandro Rodríguez', email: 'alejandro@negocios.com.ar', tel: '+54 11 5555-5678', cargo: 'Cliente', fecha: '2024-03-22' },
+    { id: 3, nombre: 'Sofía Bianchi', email: 'sofia@negocios.com.ar', tel: '+54 11 5555-9012', cargo: 'Asesor', fecha: '2024-05-10' },
+    { id: 4, nombre: 'Carlos Plaza', email: 'carlos@negocios.com.ar', tel: '+54 11 5555-3456', cargo: 'Asesor', fecha: '2024-06-18' },
+    { id: 5, nombre: 'Laura Medina', email: 'laura@negocios.com.ar', tel: '+54 11 5555-7890', cargo: 'Asesor', fecha: '2025-02-05' }
   ];
 
   let nextId = 9;
-  let currentView   = 'propiedades';
-  let editPropId    = null;    // null = nuevo
-  let deletePropId  = null;
-  let searchQuery   = '';
-  let filterStatus  = 'all';
-  let filterTipo    = 'all';
-  let currentPage   = 1;
-  const PER_PAGE    = 6;
+  let nextClientId = 6;
+  let currentView = 'propiedades';
+  let editPropId = null;    // null = nuevo
+  let editClientId = null;    // null = nuevo asesor
+  let deletePropId = null;
+  let searchQuery = '';
+  let clientSearchQuery = '';
+  let filterStatus = 'all';
+  let filterTipo = 'all';
+  let currentPage = 1;
+  const PER_PAGE = 6;
 
   // ── DOM refs ─────────────────────────────────
-  const views        = { propiedades: document.getElementById('viewPropiedades'), clientes: document.getElementById('viewClientes'), settings: document.getElementById('viewSettings'), dashboard: document.getElementById('viewDashboard') };
-  const navItems     = document.querySelectorAll('.admin-nav-item[data-view]');
-  const topbarTitle  = document.getElementById('adminTopbarTitle');
-  const btnCreate    = document.getElementById('btnCreate');
-  const editOverlay  = document.getElementById('editOverlay');
-  const editPanel    = document.getElementById('editPanel');
+  const views = { propiedades: document.getElementById('viewPropiedades'), clientes: document.getElementById('viewClientes'), settings: document.getElementById('viewSettings'), dashboard: document.getElementById('viewDashboard'), perfil: document.getElementById('viewPerfil') };
+  const navItems = document.querySelectorAll('.admin-nav-item[data-view]');
+  const topbarTitle = document.getElementById('adminTopbarTitle');
+  const btnCreate = document.getElementById('btnCreate');
+  const btnCreateClient = document.getElementById('btnCreateClient');
+  const editOverlay = document.getElementById('editOverlay');
+  const editPanel = document.getElementById('editPanel');
   const editPanelTitle = document.getElementById('editPanelTitle');
-  const editClose    = document.getElementById('editPanelClose');
-  const editForm     = document.getElementById('editForm');
-  const tableBody    = document.getElementById('propTableBody');
-  const searchInput  = document.getElementById('tableSearch');
-  const filterSel    = document.getElementById('filterStatus');
+  const editClose = document.getElementById('editPanelClose');
+  const editForm = document.getElementById('editForm');
+
+  const editClientPanel = document.getElementById('editClientPanel');
+  const editClientPanelTitle = document.getElementById('editClientPanelTitle');
+  const editClientClose = document.getElementById('editClientPanelClose');
+  const editClientForm = document.getElementById('editClientForm');
+  const btnCancelClientEdit = document.getElementById('btnCancelClientEdit');
+  const btnSaveClientPanel = document.getElementById('btnSaveClientPanel');
+
+  const tableBody = document.getElementById('propTableBody');
+  const searchInput = document.getElementById('tableSearch');
+  const clientSearchInput = document.getElementById('clientSearch');
+  const filterSel = document.getElementById('filterStatus');
   const filterTipoSel = document.getElementById('filterTipo');
-  
+
   const adminHamburger = document.getElementById('adminHamburger');
-  const adminSidebar   = document.getElementById('adminSidebar');
-  const adminOverlay   = document.getElementById('adminOverlay');
-  const tableInfo    = document.getElementById('tableInfo');
-  const pagination   = document.getElementById('tablePagination');
-  const deleteModal  = document.getElementById('deleteModal');
-  const btnDelCancel  = document.getElementById('btnDelCancel');
+  const adminSidebar = document.getElementById('adminSidebar');
+  const adminOverlay = document.getElementById('adminOverlay');
+  const tableInfo = document.getElementById('tableInfo');
+  const pagination = document.getElementById('tablePagination');
+  const deleteModal = document.getElementById('deleteModal');
+  const btnDelCancel = document.getElementById('btnDelCancel');
   const btnDelConfirm = document.getElementById('btnDelConfirm');
-  const uploadZone    = document.getElementById('uploadZone');
-  const uploadInput   = document.getElementById('uploadInput');
+  const uploadZone = document.getElementById('uploadZone');
+  const uploadInput = document.getElementById('uploadInput');
   const uploadPreview = document.getElementById('uploadPreview');
   const clientTableBody = document.getElementById('clientTableBody');
 
@@ -92,26 +105,26 @@ document.addEventListener('DOMContentLoaded', () => {
     Object.values(views).forEach(v => v?.classList.remove('active'));
     views[viewName]?.classList.add('active');
     navItems.forEach(n => { n.classList.toggle('active', n.dataset.view === viewName); });
-    const titles = { dashboard:'Dashboard', propiedades:'Listado de Propiedades', clientes:'Clientes', settings:'Configuración' };
+    const titles = { dashboard: 'Dashboard', propiedades: 'Listado de Propiedades', clientes: 'Usuarios (Asesores)', settings: 'Configuración', perfil: 'Información de contacto' };
     topbarTitle.textContent = titles[viewName] || 'Admin';
     btnCreate.style.display = viewName === 'propiedades' ? 'flex' : 'none';
     if (viewName === 'propiedades') renderTable();
-    if (viewName === 'clientes')    renderClients();
-    if (viewName === 'dashboard')   renderDashboard();
+    if (viewName === 'clientes') renderClients();
+    if (viewName === 'dashboard') renderDashboard();
   }
 
   navItems.forEach(n => n.addEventListener('click', () => switchView(n.dataset.view)));
 
   // ── Dashboard ─────────────────────────────────
   function renderDashboard() {
-    const total       = properties.length;
+    const total = properties.length;
     const disponibles = properties.filter(p => p.status === 'disponible').length;
-    const reservados  = properties.filter(p => p.status === 'reservado').length;
-    const vendidos    = properties.filter(p => p.status === 'vendido').length;
+    const reservados = properties.filter(p => p.status === 'reservado').length;
+    const vendidos = properties.filter(p => p.status === 'vendido').length;
     setEl('statTotal', total);
-    setEl('statDisp',  disponibles);
+    setEl('statDisp', disponibles);
     setEl('statReserv', reservados);
-    setEl('statVend',  vendidos);
+    setEl('statVend', vendidos);
     setEl('statClients', clients.length);
 
     const dashboardPropTableBody = document.getElementById('dashboardPropTableBody');
@@ -139,7 +152,7 @@ document.addEventListener('DOMContentLoaded', () => {
       const q = searchQuery.toLowerCase();
       const matchQ = !q || p.title.toLowerCase().includes(q) || p.addr.toLowerCase().includes(q);
       const matchS = filterStatus === 'all' || p.status === filterStatus;
-      const matchT = filterTipo   === 'all' || p.tipo   === filterTipo;
+      const matchT = filterTipo === 'all' || p.tipo === filterTipo;
       return matchQ && matchS && matchT;
     });
   }
@@ -147,9 +160,9 @@ document.addEventListener('DOMContentLoaded', () => {
   function statusBadge(s) {
     const map = {
       disponible: `<span class="badge-sm badge-disponible-sm">Disponible</span>`,
-      reservado:  `<span class="badge-sm badge-reservado-sm">Reservado</span>`,
-      vendido:    `<span class="badge-sm badge-vendido-sm">Vendido</span>`,
-      alquiler:   `<span class="badge-sm badge-alquiler-sm">Alquiler</span>`,
+      reservado: `<span class="badge-sm badge-reservado-sm">Reservado</span>`,
+      vendido: `<span class="badge-sm badge-vendido-sm">Vendido</span>`,
+      alquiler: `<span class="badge-sm badge-alquiler-sm">Alquiler</span>`,
     };
     return map[s] || `<span class="badge-sm">${s}</span>`;
   }
@@ -161,7 +174,7 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   function renderTable() {
-    const data  = getFiltered();
+    const data = getFiltered();
     const total = data.length;
     const pages = Math.max(1, Math.ceil(total / PER_PAGE));
     if (currentPage > pages) currentPage = pages;
@@ -175,6 +188,9 @@ document.addEventListener('DOMContentLoaded', () => {
         <td>
           <div class="prop-table-title">${p.title}</div>
           <div class="prop-table-addr">${p.addr}</div>
+          <div style="font-size:0.75rem; color:var(--navy-500); margin-top:2px;">
+            Asesor: <strong>${clients.find(c => c.id === p.asesorId)?.nombre || 'Sin asignar'}</strong>
+          </div>
         </td>
         <td><span class="badge-sm ${p.tipo === 'alquiler' ? 'badge-alquiler-sm' : 'badge-venta-sm'}">${p.tipo === 'alquiler' ? 'Alquiler' : 'Venta'}</span></td>
         <td>${formatPrice(p.price, p.unit, p.tipo)}</td>
@@ -215,7 +231,7 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   function getPageRange(current, total) {
-    if (total <= 5) return Array.from({length: total}, (_, i) => i + 1);
+    if (total <= 5) return Array.from({ length: total }, (_, i) => i + 1);
     if (current <= 3) return [1, 2, 3, '...', total];
     if (current >= total - 2) return [1, '...', total - 2, total - 1, total];
     return [1, '...', current - 1, current, current + 1, '...', total];
@@ -226,7 +242,7 @@ document.addEventListener('DOMContentLoaded', () => {
       btn.addEventListener('click', e => {
         e.stopPropagation();
         const id = parseInt(btn.dataset.id);
-        if (btn.dataset.action === 'edit')   openEdit(id);
+        if (btn.dataset.action === 'edit') openEdit(id);
         if (btn.dataset.action === 'delete') openDelete(id);
       });
     });
@@ -236,14 +252,24 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   searchInput?.addEventListener('input', () => { searchQuery = searchInput.value; currentPage = 1; renderTable(); });
-  filterSel?.addEventListener('change',    () => { filterStatus = filterSel.value; currentPage = 1; renderTable(); });
-  filterTipoSel?.addEventListener('change',() => { filterTipo = filterTipoSel.value; currentPage = 1; renderTable(); });
+  filterSel?.addEventListener('change', () => { filterStatus = filterSel.value; currentPage = 1; renderTable(); });
+  filterTipoSel?.addEventListener('change', () => { filterTipo = filterTipoSel.value; currentPage = 1; renderTable(); });
 
   // ── Edit Panel ────────────────────────────────
+  function populateAsesorDropdown() {
+    const fAsesor = document.getElementById('fAsesor');
+    if (fAsesor) {
+      fAsesor.innerHTML = clients.map(c => `
+        <option value="${c.id}">${c.nombre} (${c.cargo})</option>
+      `).join('');
+    }
+  }
+
   function openEdit(id) {
     editPropId = id;
     const p = properties.find(x => x.id === id);
     if (!p) return;
+    populateAsesorDropdown();
     editPanelTitle.textContent = 'Editar Propiedad';
     fillForm(p);
     openPanel();
@@ -251,6 +277,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   function openCreate() {
     editPropId = null;
+    populateAsesorDropdown();
     editPanelTitle.textContent = 'Nueva Propiedad';
     editForm.reset();
     uploadPreview.innerHTML = '';
@@ -269,15 +296,16 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   function fillForm(p) {
-    document.getElementById('fTitle').value    = p.title;
-    document.getElementById('fAddr').value     = p.addr;
-    document.getElementById('fPrice').value    = p.price;
-    document.getElementById('fTipo').value     = p.tipo;
-    document.getElementById('fStatus').value   = p.status;
-    document.getElementById('fAmb').value      = p.amb;
-    document.getElementById('fBanos').value    = p.banos;
-    document.getElementById('fM2').value       = p.m2;
-    document.getElementById('fDesc').value     = p.desc || '';
+    document.getElementById('fTitle').value = p.title;
+    document.getElementById('fAddr').value = p.addr;
+    document.getElementById('fPrice').value = p.price;
+    document.getElementById('fTipo').value = p.tipo;
+    document.getElementById('fStatus').value = p.status;
+    document.getElementById('fAmb').value = p.amb;
+    document.getElementById('fBanos').value = p.banos;
+    document.getElementById('fM2').value = p.m2;
+    document.getElementById('fAsesor').value = p.asesorId || (clients[0]?.id || '');
+    document.getElementById('fDesc').value = p.desc || '';
     uploadPreview.innerHTML = p.img
       ? `<div class="upload-thumb"><img src="${p.img}" alt="preview" /><span class="upload-thumb-remove" title="Quitar">✕</span></div>`
       : '';
@@ -285,21 +313,32 @@ document.addEventListener('DOMContentLoaded', () => {
 
   btnCreate?.addEventListener('click', openCreate);
   editClose?.addEventListener('click', closePanel);
-  editOverlay?.addEventListener('click', e => { if (e.target === editOverlay) closePanel(); });
+
+  editClientClose?.addEventListener('click', closeClientPanel);
+  btnCancelClientEdit?.addEventListener('click', closeClientPanel);
+  btnSaveClientPanel?.addEventListener('click', () => { editClientForm.dispatchEvent(new Event('submit')); });
+
+  editOverlay?.addEventListener('click', e => {
+    if (e.target === editOverlay) {
+      closePanel();
+      closeClientPanel();
+    }
+  });
 
   editForm?.addEventListener('submit', e => {
     e.preventDefault();
     const data = {
-      title:  document.getElementById('fTitle').value.trim(),
-      addr:   document.getElementById('fAddr').value.trim(),
-      price:  parseFloat(document.getElementById('fPrice').value) || 0,
-      tipo:   document.getElementById('fTipo').value,
+      title: document.getElementById('fTitle').value.trim(),
+      addr: document.getElementById('fAddr').value.trim(),
+      price: parseFloat(document.getElementById('fPrice').value) || 0,
+      tipo: document.getElementById('fTipo').value,
       status: document.getElementById('fStatus').value,
-      amb:    parseInt(document.getElementById('fAmb').value) || 0,
-      banos:  parseInt(document.getElementById('fBanos').value) || 0,
-      m2:     parseInt(document.getElementById('fM2').value) || 0,
-      unit:   document.getElementById('fTipo').value === 'alquiler' ? '/mes' : '',
-      desc:   document.getElementById('fDesc').value.trim(),
+      amb: parseInt(document.getElementById('fAmb').value) || 0,
+      banos: parseInt(document.getElementById('fBanos').value) || 0,
+      m2: parseInt(document.getElementById('fM2').value) || 0,
+      asesorId: parseInt(document.getElementById('fAsesor').value) || null,
+      unit: document.getElementById('fTipo').value === 'alquiler' ? '/mes' : '',
+      desc: document.getElementById('fDesc').value.trim(),
     };
     if (editPropId) {
       const idx = properties.findIndex(x => x.id === editPropId);
@@ -324,7 +363,7 @@ document.addEventListener('DOMContentLoaded', () => {
     document.getElementById('deleteModalName').textContent = p?.title || 'esta propiedad';
     deleteModal.classList.add('open');
   }
-  btnDelCancel?.addEventListener('click',  () => { deleteModal.classList.remove('open'); deletePropId = null; deleteClientId = null; });
+  btnDelCancel?.addEventListener('click', () => { deleteModal.classList.remove('open'); deletePropId = null; deleteClientId = null; });
   btnDelConfirm?.addEventListener('click', () => {
     if (deletePropId) {
       properties = properties.filter(x => x.id !== deletePropId);
@@ -333,11 +372,15 @@ document.addEventListener('DOMContentLoaded', () => {
       renderDashboard();
       showToast('✓ Propiedad eliminada');
     } else if (deleteClientId) {
+      properties.forEach(p => {
+        if (p.asesorId === deleteClientId) p.asesorId = null;
+      });
       clients = clients.filter(x => x.id !== deleteClientId);
       deleteClientId = null;
       renderClients();
+      renderTable();
       renderDashboard();
-      showToast('✓ Cliente eliminado');
+      showToast('✓ Asesor eliminado correctamente');
     }
     deleteModal.classList.remove('open');
   });
@@ -361,10 +404,10 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  ['dragover','dragenter'].forEach(ev => uploadZone?.addEventListener(ev, e => { e.preventDefault(); uploadZone.classList.add('drag-over'); }));
-  ['dragleave','drop'].forEach(ev => uploadZone?.addEventListener(ev, e => { e.preventDefault(); uploadZone.classList.remove('drag-over'); }));
+  ['dragover', 'dragenter'].forEach(ev => uploadZone?.addEventListener(ev, e => { e.preventDefault(); uploadZone.classList.add('drag-over'); }));
+  ['dragleave', 'drop'].forEach(ev => uploadZone?.addEventListener(ev, e => { e.preventDefault(); uploadZone.classList.remove('drag-over'); }));
 
-  // ── Clients ───────────────────────────────────
+  // ── Asesores (Usuarios) ────────────────────────
   let deleteClientId = null;
   function attachClientTableEvents() {
     clientTableBody.querySelectorAll('[data-action]').forEach(btn => {
@@ -372,6 +415,7 @@ document.addEventListener('DOMContentLoaded', () => {
         e.stopPropagation();
         const id = parseInt(btn.dataset.id);
         if (btn.dataset.action === 'delete-client') openDeleteClient(id);
+        if (btn.dataset.action === 'edit-client') openEditClient(id);
       });
     });
   }
@@ -379,43 +423,159 @@ document.addEventListener('DOMContentLoaded', () => {
   function openDeleteClient(id) {
     deleteClientId = id;
     const c = clients.find(x => x.id === id);
-    document.getElementById('deleteModalTitle').textContent = '¿Eliminar cliente?';
-    document.getElementById('deleteModalName').textContent = c?.nombre || 'este cliente';
+    document.getElementById('deleteModalTitle').textContent = '¿Eliminar asesor?';
+    document.getElementById('deleteModalName').textContent = c?.nombre || 'este asesor';
     deleteModal.classList.add('open');
   }
 
+  function openEditClient(id) {
+    editClientId = id;
+    const c = clients.find(x => x.id === id);
+    if (!c) return;
+    editClientPanelTitle.textContent = 'Editar Usuario';
+
+    // Al editar, la contraseña es opcional
+    document.getElementById('uPassword').required = false;
+    document.getElementById('uConfirmPassword').required = false;
+    document.getElementById('uPassword').value = '';
+    document.getElementById('uConfirmPassword').value = '';
+
+    fillClientForm(c);
+    openClientPanel();
+  }
+
+  function openCreateClient() {
+    editClientId = null;
+    editClientPanelTitle.textContent = 'Nuevo Usuario';
+    editClientForm.reset();
+
+    // Al crear, la contraseña es obligatoria
+    document.getElementById('uPassword').required = true;
+    document.getElementById('uConfirmPassword').required = true;
+
+    openClientPanel();
+  }
+
+  function openClientPanel() {
+    editOverlay.classList.add('open');
+    setTimeout(() => editClientPanel.classList.add('open'), 10);
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeClientPanel() {
+    editClientPanel.classList.remove('open');
+    setTimeout(() => { editOverlay.classList.remove('open'); document.body.style.overflow = ''; }, 350);
+  }
+
+  function fillClientForm(c) {
+    document.getElementById('uNombre').value = c.nombre;
+    document.getElementById('uEmail').value = c.email;
+    document.getElementById('uTel').value = c.tel;
+    document.getElementById('uCargo').value = c.cargo;
+  }
+
+  btnCreateClient?.addEventListener('click', openCreateClient);
+  clientSearchInput?.addEventListener('input', () => {
+    clientSearchQuery = clientSearchInput.value.toLowerCase();
+    renderClients();
+  });
+
+  editClientForm?.addEventListener('submit', e => {
+    e.preventDefault();
+    const nombre = document.getElementById('uNombre').value.trim();
+    const email = document.getElementById('uEmail').value.trim();
+    const tel = document.getElementById('uTel').value.trim();
+    const cargo = document.getElementById('uCargo').value;
+    const pass = document.getElementById('uPassword').value;
+    const conf = document.getElementById('uConfirmPassword').value;
+
+    if (!nombre || !email || !tel) {
+      showToast('⚠️ Completá los campos obligatorios');
+      return;
+    }
+
+    // Validación de contraseñas
+    const passRequired = !editClientId; // requerido solo si es creación
+    if (passRequired || pass) {
+      if (pass.length < 6) {
+        showToast('⚠️ La contraseña debe tener al menos 6 caracteres');
+        return;
+      }
+      if (pass !== conf) {
+        showToast('⚠️ Las contraseñas no coinciden');
+        return;
+      }
+    }
+
+    if (editClientId) {
+      const c = clients.find(x => x.id === editClientId);
+      if (c) {
+        c.nombre = nombre;
+        c.email = email;
+        c.tel = tel;
+        c.cargo = cargo;
+      }
+      showToast('✓ Usuario actualizado correctamente');
+    } else {
+      clients.push({
+        id: nextClientId++,
+        nombre: nombre,
+        email: email,
+        tel: tel,
+        cargo: cargo,
+        fecha: new Date().toISOString().split('T')[0]
+      });
+      showToast('✓ Nuevo usuario registrado');
+    }
+
+    closeClientPanel();
+    renderClients();
+    renderTable(); // por si se modificó el nombre del asesor y aparece en la tabla
+  });
+
   function renderClients() {
     if (!clientTableBody) return;
-    clientTableBody.innerHTML = clients.map(c => `
-      <tr>
-        <td>
-          <div style="display:flex;align-items:center;gap:0.75rem;">
-            <div class="client-avatar">${c.nombre.charAt(0)}</div>
-            <div>
-              <div style="font-weight:600;color:var(--navy-900);font-size:0.875rem;">${c.nombre}</div>
-              <div style="font-size:0.72rem;color:var(--gray-500);">${c.email}</div>
+    const filteredClients = clients.filter(c =>
+      c.nombre.toLowerCase().includes(clientSearchQuery) ||
+      c.email.toLowerCase().includes(clientSearchQuery) ||
+      c.cargo.toLowerCase().includes(clientSearchQuery)
+    );
+    clientTableBody.innerHTML = filteredClients.map(c => {
+      const propCount = properties.filter(p => p.asesorId === c.id).length;
+      return `
+        <tr>
+          <td>
+            <div style="display:flex;align-items:center;gap:0.75rem;">
+              <div class="client-avatar" style="background: var(--navy-100); color: var(--navy-900); font-weight: 700; width: 32px; height: 32px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 0.875rem;">${c.nombre.charAt(0)}</div>
+              <div>
+                <div style="font-weight:600;color:var(--navy-900);font-size:0.875rem;">${c.nombre}</div>
+                <div style="font-size:0.72rem;color:var(--gray-500);">${c.email}</div>
+              </div>
             </div>
-          </div>
-        </td>
-        <td style="font-size:0.82rem;">${c.tel}</td>
-        <td><span class="badge-sm badge-disponible-sm">${c.favs} guardados</span></td>
-        <td style="font-size:0.82rem;">${c.consultas} consultas</td>
-        <td style="font-size:0.75rem;color:var(--gray-500);">${new Date(c.fecha).toLocaleDateString('es-AR')}</td>
-        <td>
-          <div class="table-actions">
-            <button class="tbl-btn" title="Ver perfil" aria-label="Ver perfil de ${c.nombre}">
-              <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
-            </button>
-            <button class="tbl-btn edit" title="Enviar mensaje" aria-label="Enviar mensaje a ${c.nombre}">
-              <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
-            </button>
-            <button class="tbl-btn del" data-action="delete-client" data-id="${c.id}" title="Eliminar cliente" aria-label="Eliminar ${c.nombre}">
-              <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="3 6 5 6 21 6"/><path d="m19 6-.867 12.142A2 2 0 0 1 16.138 20H7.862a2 2 0 0 1-1.995-1.858L5 6m5 0V4a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v2"/></svg>
-            </button>
-          </div>
-        </td>
-      </tr>
-    `).join('');
+          </td>
+          <td style="font-size:0.82rem;">${c.tel}</td>
+          <td><span class="badge-sm" style="background:var(--gold-100); color:var(--gold-700); font-weight:600; border-radius: 4px; padding: 0.25rem 0.5rem; font-size: 0.72rem;">${c.cargo}</span></td>
+          <td style="font-size:0.82rem; font-weight:600; color:var(--navy-700);">${propCount} asignadas</td>
+          <td style="font-size:0.75rem;color:var(--gray-500);">${new Date(c.fecha).toLocaleDateString('es-AR')}</td>
+          <td>
+            <div class="table-actions">
+              <button class="tbl-btn edit" data-action="edit-client" data-id="${c.id}" title="Editar asesor" aria-label="Editar ${c.nombre}">
+                <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 1 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/></svg>
+              </button>
+              <button class="tbl-btn del" data-action="delete-client" data-id="${c.id}" title="Eliminar asesor" aria-label="Eliminar ${c.nombre}">
+                <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="3 6 5 6 21 6"/><path d="m19 6-.867 12.142A2 2 0 0 1 16.138 20H7.862a2 2 0 0 1-1.995-1.858L5 6m5 0V4a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v2"/></svg>
+              </button>
+            </div>
+          </td>
+        </tr>
+      `;
+    }).join('') || `<tr><td colspan="6" style="text-align:center;padding:3rem;color:var(--gray-500)">No se encontraron asesores</td></tr>`;
+
+    // Footer info
+    const footerCount = document.querySelector('#viewClientes .table-footer .table-info');
+    if (footerCount) {
+      footerCount.textContent = `${filteredClients.length} asesores registrados`;
+    }
     attachClientTableEvents();
   }
 
@@ -433,9 +593,79 @@ document.addEventListener('DOMContentLoaded', () => {
   document.addEventListener('keydown', e => {
     if (e.key === 'Escape') {
       closePanel();
+      closeClientPanel();
       deleteModal?.classList.remove('open');
     }
     if ((e.ctrlKey || e.metaKey) && e.key === 'k') { e.preventDefault(); searchInput?.focus(); }
+  });
+
+  // ── Admin Avatar Photo Upload ─────────────────
+  const btnUploadAdmPhoto = document.getElementById('btnUploadAdmPhoto');
+  const btnRemoveAdmPhoto = document.getElementById('btnRemoveAdmPhoto');
+  const admPhotoInput = document.getElementById('admPhotoInput');
+  const admAvatarPreviewBox = document.getElementById('admAvatarPreviewBox');
+  const admAvatarInitials = document.getElementById('admAvatarInitials');
+  const admAvatarImg = document.getElementById('admAvatarImg');
+
+  btnUploadAdmPhoto?.addEventListener('click', () => admPhotoInput?.click());
+
+  admPhotoInput?.addEventListener('change', () => {
+    const file = admPhotoInput.files[0];
+    if (!file) return;
+
+    if (file.size > 2 * 1024 * 1024) {
+      showToast('⚠️ La imagen supera el tamaño máximo de 2MB');
+      return;
+    }
+
+    const reader = new FileReader();
+    reader.onload = e => {
+      if (admAvatarImg && admAvatarInitials) {
+        admAvatarImg.src = e.target.result;
+        admAvatarImg.style.display = 'block';
+        admAvatarInitials.style.display = 'none';
+      }
+    };
+    reader.readAsDataURL(file);
+  });
+
+  btnRemoveAdmPhoto?.addEventListener('click', () => {
+    if (admPhotoInput) admPhotoInput.value = '';
+    if (admAvatarImg && admAvatarInitials) {
+      admAvatarImg.src = '';
+      admAvatarImg.style.display = 'none';
+      admAvatarInitials.style.display = 'block';
+    }
+  });
+
+  // ── Admin Profile Submit ─────────────────────
+  const formAdminPerfil = document.getElementById('formAdminPerfil');
+  formAdminPerfil?.addEventListener('submit', e => {
+    e.preventDefault();
+    const nombre = document.getElementById('admNombre').value.trim();
+    const email = document.getElementById('admEmail').value.trim();
+    const tel = document.getElementById('admTel').value.trim();
+    const oldPass = document.getElementById('admOldPass').value;
+    const newPass = document.getElementById('admNewPass').value;
+    const confirmPass = document.getElementById('admConfirmPass').value;
+
+    if (!nombre || !email || !tel) {
+      showToast('⚠️ Nombre, correo y teléfono son obligatorios');
+      return;
+    }
+
+    if (newPass || confirmPass) {
+      if (newPass.length < 6) {
+        showToast('⚠️ La nueva contraseña debe tener al menos 6 caracteres');
+        return;
+      }
+      if (newPass !== confirmPass) {
+        showToast('⚠️ Las contraseñas nuevas no coinciden');
+        return;
+      }
+    }
+
+    showToast('✓ Perfil guardado correctamente');
   });
 
   // ── Logout ────────────────────────────────────

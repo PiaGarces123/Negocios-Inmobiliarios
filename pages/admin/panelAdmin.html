@@ -5,21 +5,21 @@
     <!-- =============================================
        SEO — Panel Admin (noindex)
        ============================================= -->
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Panel Admin | Negocios Inmobiliarios</title>
-    <meta name="robots" content="noindex, nofollow" />
+    <meta name="robots" content="noindex, nofollow">
 
     <!-- Favicon -->
-    <link rel="icon" href="../../assets/media/logo.ico" />
+    <link rel="icon" href="../../assets/media/logo.ico">
 
     <!-- Fonts (reutiliza las mismas que el sitio) -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
     <!-- Base (variables + reset) + Admin específico -->
-    <link rel="stylesheet" href="../../assets/styles/style.css" />
-    <link rel="stylesheet" href="../../assets/styles/paneladmin.css" />
+    <link rel="stylesheet" href="../../assets/styles/style.css">
+    <link rel="stylesheet" href="../../assets/styles/paneladmin.css">
 </head>
 
 <body>
@@ -31,13 +31,17 @@
        ============================================= -->
         <aside class="admin-sidebar" id="adminSidebar" aria-label="Navegación del panel de administración">
 
-            <!-- Brand -->
+            <!-- MARCA -->
             <div class="admin-brand"
                 style="flex-direction: column; gap: 0.5rem; align-items: center; text-align: center; padding: 1.5rem 1rem;">
+
+                <!-- Logo -->
                 <a href="../../index.html" style="display:block;">
                     <img src="../../assets/media/logoLight.png" alt="Negocios Inmobiliarios"
-                        style="height: 38px; width: auto; display: block;" />
+                        style="height: 38px; width: auto; display: block;">
                 </a>
+
+                <!-- Nombre -->
                 <div
                     style="color: var(--white); font-family: var(--font-heading); font-size: 0.9rem; font-weight: 600; letter-spacing: 0.02em; margin-top: 0.25rem;">
                     Negocios Inmobiliarios</div>
@@ -48,6 +52,7 @@
 
                 <div class="admin-nav-section-label">Principal</div>
 
+                <!-- Dashboard -->
                 <button class="admin-nav-item active" data-view="dashboard" aria-label="Dashboard">
                     <span class="admin-nav-icon" aria-hidden="true">
                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
@@ -61,6 +66,7 @@
                     Dashboard
                 </button>
 
+                <!-- Admin Propiedades -->
                 <button class="admin-nav-item" data-view="propiedades" aria-label="Listado de propiedades">
                     <span class="admin-nav-icon" aria-hidden="true">
                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
@@ -73,6 +79,7 @@
                     <span class="nav-badge" id="navPropCount">8</span>
                 </button>
 
+                <!-- Admin Usuarios -->
                 <button class="admin-nav-item" data-view="clientes" aria-label="Gestión de clientes">
                     <span class="admin-nav-icon" aria-hidden="true">
                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
@@ -83,10 +90,11 @@
                             <path d="M16 3.13a4 4 0 0 1 0 7.75" />
                         </svg>
                     </span>
-                    Clientes
+                    Usuarios
                     <span class="nav-badge">5</span>
                 </button>
 
+                <!-- Admin Configuración -->
                 <div class="admin-nav-divider" aria-hidden="true"></div>
                 <div class="admin-nav-section-label">Sistema</div>
 
@@ -100,6 +108,18 @@
                         </svg>
                     </span>
                     Configuración
+                </button>
+
+                <!-- Información de contacto del Administrador -->
+                <button class="admin-nav-item" data-view="perfil" aria-label="Información de contacto">
+                    <span class="admin-nav-icon" aria-hidden="true">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                            <circle cx="12" cy="8" r="4" />
+                            <path d="M4 20c0-4 3.6-7 8-7s8 3 8 7" />
+                        </svg>
+                    </span>
+                    Información de contacto
                 </button>
 
             </nav>
@@ -141,7 +161,8 @@
             <!-- Top bar -->
             <div class="admin-topbar">
                 <div class="admin-topbar-left" style="display:flex; align-items:center; gap:1rem;">
-                    <button class="admin-hamburger" id="adminHamburger" aria-label="Abrir menú" aria-expanded="false" aria-controls="adminSidebar">
+                    <button class="admin-hamburger" id="adminHamburger" aria-label="Abrir menú" aria-expanded="false"
+                        aria-controls="adminSidebar">
                         <span></span><span></span><span></span>
                     </button>
                     <h1 class="admin-topbar-title" id="adminTopbarTitle">Dashboard</h1>
@@ -168,9 +189,14 @@
                 <div class="admin-view active" id="viewDashboard">
 
                     <!-- Stats grid -->
-                    <div class="stats-grid" aria-label="Estadísticas del portal">
+                    <div class="stats-grid">
                         <div class="stat-card">
-                            <div class="stat-card-icon navy" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg></div>
+                            <div class="stat-card-icon navy" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg"
+                                    width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+                                    <polyline points="9 22 9 12 15 12 15 22"></polyline>
+                                </svg></div>
                             <div>
                                 <div class="stat-card-value" id="statTotal">—</div>
                                 <div class="stat-card-label">Total propiedades</div>
@@ -178,7 +204,12 @@
                             </div>
                         </div>
                         <div class="stat-card">
-                            <div class="stat-card-icon green" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg></div>
+                            <div class="stat-card-icon green" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg"
+                                    width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                                    <polyline points="22 4 12 14.01 9 11.01"></polyline>
+                                </svg></div>
                             <div>
                                 <div class="stat-card-value" id="statDisp">—</div>
                                 <div class="stat-card-label">Disponibles</div>
@@ -186,7 +217,12 @@
                             </div>
                         </div>
                         <div class="stat-card">
-                            <div class="stat-card-icon gold" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg></div>
+                            <div class="stat-card-icon gold" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg"
+                                    width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <circle cx="12" cy="12" r="10"></circle>
+                                    <polyline points="12 6 12 12 16 14"></polyline>
+                                </svg></div>
                             <div>
                                 <div class="stat-card-value" id="statReserv">—</div>
                                 <div class="stat-card-label">Reservadas</div>
@@ -194,7 +230,13 @@
                             </div>
                         </div>
                         <div class="stat-card">
-                            <div class="stat-card-icon red" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"></path><rect x="8" y="2" width="8" height="4" rx="1" ry="1"></rect></svg></div>
+                            <div class="stat-card-icon red" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg"
+                                    width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2">
+                                    </path>
+                                    <rect x="8" y="2" width="8" height="4" rx="1" ry="1"></rect>
+                                </svg></div>
                             <div>
                                 <div class="stat-card-value" id="statVend">—</div>
                                 <div class="stat-card-label">Vendidas / Alquiladas</div>
@@ -203,17 +245,27 @@
                         </div>
                     </div>
 
-                    <div class="stats-grid" style="grid-template-columns:1fr 1fr 1fr; margin-bottom:0;"
-                        aria-label="Estadísticas de clientes y consultas">
+                    <div class="stats-grid stats-grid-3" style="margin-bottom:0;">
                         <div class="stat-card">
-                            <div class="stat-card-icon navy" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg></div>
+                            <div class="stat-card-icon navy" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg"
+                                    width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                                    <circle cx="9" cy="7" r="4"></circle>
+                                    <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                                    <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                                </svg></div>
                             <div>
                                 <div class="stat-card-value" id="statClients">—</div>
-                                <div class="stat-card-label">Clientes registrados</div>
+                                <div class="stat-card-label">Asesores registrados</div>
                             </div>
                         </div>
                         <div class="stat-card">
-                            <div class="stat-card-icon green" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg></div>
+                            <div class="stat-card-icon green" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg"
+                                    width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+                                </svg></div>
                             <div>
                                 <div class="stat-card-value">26</div>
                                 <div class="stat-card-label">Consultas este mes</div>
@@ -221,7 +273,13 @@
                             </div>
                         </div>
                         <div class="stat-card">
-                            <div class="stat-card-icon gold" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg></div>
+                            <div class="stat-card-icon gold" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg"
+                                    width="24" height="24" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor"
+                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path
+                                        d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z">
+                                    </path>
+                                </svg></div>
                             <div>
                                 <div class="stat-card-value">11</div>
                                 <div class="stat-card-label">Favoritos guardados</div>
@@ -230,13 +288,21 @@
                     </div>
 
                     <div class="table-card" style="margin-top: 2rem;">
-                        <div style="padding: 1.25rem 1.5rem; border-bottom: 1px solid var(--gray-100); display: flex; align-items: center; justify-content: space-between;">
-                            <h2 style="font-family:var(--font-heading); font-size:1.1rem; color:var(--navy-900); font-weight:600; margin: 0;">Propiedades Recientes</h2>
-                            <button class="tbl-btn" style="border: none; background: none; color: var(--gold-500); font-weight: 600; font-size: 0.82rem; cursor: pointer; padding: 0;" onclick="document.querySelector('.admin-nav-item[data-view=propiedades]').click();">Ver todas →</button>
+                        <div
+                            style="padding: 1.25rem 1.5rem; border-bottom: 1px solid var(--gray-100); display: flex; align-items: center; justify-content: space-between;">
+                            <h2
+                                style="font-family:var(--font-heading); font-size:1.1rem; color:var(--navy-900); font-weight:600; margin: 0;">
+                                Propiedades Recientes</h2>
+                            <button class="tbl-btn"
+                                style="border: none; background: none; color: var(--gold-500); font-weight: 600; font-size: 0.82rem; cursor: pointer; padding: 0;"
+                                onclick="document.querySelector('.admin-nav-item[data-view=propiedades]').click();">Ver
+                                todas →</button>
                         </div>
                         <div style="overflow-x:auto;">
                             <table class="admin-table" aria-label="Propiedades recientes">
-                                <caption class="sr-only" style="position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0;">Listado de propiedades recientes</caption>
+                                <caption class="sr-only"
+                                    style="position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0;">
+                                    Listado de propiedades recientes</caption>
                                 <thead>
                                     <tr>
                                         <th scope="col">Imagen</th>
@@ -272,7 +338,7 @@
                                     <path d="m21 21-4.35-4.35" />
                                 </svg>
                                 <input type="search" class="table-search" id="tableSearch"
-                                    placeholder="Buscar por título o dirección…" aria-label="Buscar propiedades" />
+                                    placeholder="Buscar por título o dirección…" aria-label="Buscar propiedades">
                             </div>
                             <select class="table-filter-select" id="filterStatus" aria-label="Filtrar por estado">
                                 <option value="all">Todos los estados</option>
@@ -290,7 +356,9 @@
                         <!-- Table -->
                         <div style="overflow-x:auto;">
                             <table class="admin-table" aria-label="Listado de propiedades">
-                                <caption class="sr-only" style="position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0;">Listado general de propiedades</caption>
+                                <caption class="sr-only"
+                                    style="position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0;">
+                                    Listado general de propiedades</caption>
                                 <thead>
                                     <tr>
                                         <th scope="col">Imagen</th>
@@ -310,7 +378,7 @@
                         <!-- Footer / Pagination -->
                         <div class="table-footer">
                             <span class="table-info" id="tableInfo" aria-live="polite">Cargando…</span>
-                            <div class="pagination" id="tablePagination" aria-label="Paginación"></div>
+                            <div class="pagination" id="tablePagination"></div>
                         </div>
 
                     </div>
@@ -321,7 +389,8 @@
            ══════════════════════════════════════ -->
                 <div class="admin-view" id="viewClientes">
                     <div class="table-card">
-                        <div class="table-toolbar">
+                        <div class="table-toolbar"
+                            style="display:flex; justify-content:space-between; align-items:center; gap:1rem; flex-wrap:wrap;">
                             <div class="table-search-wrap">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24"
                                     fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"
@@ -329,20 +398,32 @@
                                     <circle cx="11" cy="11" r="8" />
                                     <path d="m21 21-4.35-4.35" />
                                 </svg>
-                                <input type="search" class="table-search" placeholder="Buscar cliente…"
-                                    aria-label="Buscar cliente" />
+                                <input type="search" class="table-search" id="clientSearch"
+                                    placeholder="Buscar usuario / asesor…" aria-label="Buscar usuario o asesor">
                             </div>
+                            <button class="btn-create" id="btnCreateClient" aria-label="Crear nuevo asesor"
+                                style="margin-left:auto;">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24"
+                                    fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"
+                                    stroke-linejoin="round" aria-hidden="true">
+                                    <line x1="12" y1="5" x2="12" y2="19" />
+                                    <line x1="5" y1="12" x2="19" y2="12" />
+                                </svg>
+                                Nuevo Usuario
+                            </button>
                         </div>
                         <div style="overflow-x:auto;">
-                            <table class="admin-table" aria-label="Listado de clientes">
-                                <caption class="sr-only" style="position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0;">Listado de clientes y consultas</caption>
+                            <table class="admin-table" aria-label="Listado de Usuarios">
+                                <caption class="sr-only"
+                                    style="position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0;">
+                                    Listado de asesores y usuarios</caption>
                                 <thead>
                                     <tr>
-                                        <th scope="col">Cliente</th>
+                                        <th scope="col">Nombre</th>
                                         <th scope="col">Teléfono</th>
-                                        <th scope="col">Favoritos</th>
-                                        <th scope="col">Actividad</th>
-                                        <th scope="col">Registro</th>
+                                        <th scope="col">Tipo</th>
+                                        <th scope="col">Propiedades Asignadas</th>
+                                        <th scope="col">Fecha de Alta</th>
                                         <th scope="col">Acciones</th>
                                     </tr>
                                 </thead>
@@ -352,7 +433,7 @@
                             </table>
                         </div>
                         <div class="table-footer">
-                            <span class="table-info">5 clientes registrados</span>
+                            <span class="table-info">5 usuarios registrados</span>
                         </div>
                     </div>
                 </div>
@@ -367,36 +448,157 @@
                             Configuración del sitio</h2>
                         <div class="settings-grid-form">
 
-                        <div class="form-group" style="margin-bottom:1rem;">
-                            <label for="cfgNombre">Nombre del negocio</label>
-                            <input type="text" id="cfgNombre" value="Negocios Inmobiliarios" />
-                        </div>
-                        <div class="form-group" style="margin-bottom:1rem;">
-                            <label for="cfgEmail">Email de contacto</label>
-                            <input type="email" id="cfgEmail" value="info@negociosinmobiliarios.com.ar" />
-                        </div>
-                        <div class="form-group" style="margin-bottom:1rem;">
-                            <label for="cfgTel">Teléfono principal</label>
-                            <input type="tel" id="cfgTel" value="+54 11 0000-0000" />
-                        </div>
-                        <div class="form-group" style="margin-bottom:1rem;">
-                            <label for="cfgDir">Dirección</label>
-                            <input type="text" id="cfgDir" value="Av. Corrientes 1234, Piso 5, CABA" />
-                        </div>
-                        <div class="form-group" style="margin-bottom:1rem;">
-                            <label for="cfgWhatsapp">Número WhatsApp (sin +)</label>
-                            <input type="text" id="cfgWhatsapp" value="541100000000" placeholder="541100000000" />
-                        </div>
-                        <div class="form-group full-width">
-                            <label for="cfgDesc">Descripción del negocio</label>
-                            <textarea id="cfgDesc"
-                                style="min-height:80px;">Inmobiliaria especializada en compra, venta y alquiler de propiedades residenciales en Argentina.</textarea>
-                        </div>
+                            <div class="form-group" style="margin-bottom:1rem;">
+                                <label for="cfgNombre">Nombre del negocio</label>
+                                <input type="text" id="cfgNombre" value="Negocios Inmobiliarios">
+                            </div>
+                            <div class="form-group" style="margin-bottom:1rem;">
+                                <label for="cfgEmail">Email de contacto</label>
+                                <input type="email" id="cfgEmail" value="info@negociosinmobiliarios.com.ar">
+                            </div>
+                            <div class="form-group" style="margin-bottom:1rem;">
+                                <label for="cfgTel">Teléfono principal</label>
+                                <input type="tel" id="cfgTel" value="+54 11 0000-0000">
+                            </div>
+                            <div class="form-group" style="margin-bottom:1rem;">
+                                <label for="cfgDir">Dirección</label>
+                                <input type="text" id="cfgDir" value="Av. Corrientes 1234, Piso 5, CABA">
+                            </div>
+                            <div class="form-group" style="margin-bottom:1rem;">
+                                <label for="cfgWhatsapp">Número WhatsApp (sin +)</label>
+                                <input type="text" id="cfgWhatsapp" value="541100000000" placeholder="541100000000">
+                            </div>
+                            <div class="form-group full-width">
+                                <label for="cfgDesc">Descripción del negocio</label>
+                                <textarea id="cfgDesc"
+                                    style="min-height:80px;">Inmobiliaria especializada en compra, venta y alquiler de propiedades residenciales en Argentina.</textarea>
+                            </div>
                         </div>
                         <button class="btn-create" style="width:auto;"
                             onclick="document.querySelector('.admin-toast')?.remove();const t=document.createElement('div');t.className='admin-toast show';t.textContent='✓ Configuración guardada';document.body.appendChild(t);setTimeout(()=>t.remove(),3000);">
                             Guardar cambios
                         </button>
+                    </div>
+                </div>
+
+                <!-- ══════════════════════════════════════
+           VIEW: PERFIL (INFORMACIÓN DE CONTACTO)
+           ══════════════════════════════════════ -->
+                <div class="admin-view" id="viewPerfil">
+                    <div class="table-card" style="padding:2rem;max-width:800px;">
+                        <h2
+                            style="font-family:var(--font-heading);font-size:1.4rem;color:var(--navy-900);margin-bottom:1.5rem;">
+                            Información de contacto</h2>
+
+                        <form id="formAdminPerfil" novalidate>
+                            <!-- Foto de perfil del Administrador -->
+                            <div class="profile-section">
+                                <h2 class="profile-section-title">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18"
+                                        viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                        stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                                        <path
+                                            d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z" />
+                                        <circle cx="12" cy="13" r="4" />
+                                    </svg>
+                                    Foto de perfil
+                                </h2>
+                                <div class="avatar-edit-container">
+                                    <div class="avatar-preview-box" id="admAvatarPreviewBox">
+                                        <span id="admAvatarInitials">AP</span>
+                                        <img src="" alt="Avatar Admin" id="admAvatarImg" style="display:none;">
+                                    </div>
+                                    <div class="avatar-actions">
+                                        <div class="avatar-btn-group">
+                                            <button type="button" class="btn-upload-photo" id="btnUploadAdmPhoto">
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14"
+                                                    viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                                    stroke-width="2" stroke-linecap="round"
+                                                    stroke-linejoin="round" aria-hidden="true">
+                                                    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
+                                                    <polyline points="17 8 12 3 7 8" />
+                                                    <line x1="12" y1="3" x2="12" y2="15" />
+                                                </svg>
+                                                Cambiar foto
+                                            </button>
+                                            <button type="button" class="btn-remove-photo" id="btnRemoveAdmPhoto">
+                                                Quitar foto
+                                            </button>
+                                            <input type="file" id="admPhotoInput" accept="image/*"
+                                                style="display:none;">
+                                        </div>
+                                        <span class="avatar-hint">Formatos soportados: JPG, PNG o WEBP (máx. 2MB).</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Datos de contacto -->
+                            <div class="profile-section">
+                                <h2 class="profile-section-title">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18"
+                                        viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                        stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                                        <circle cx="12" cy="8" r="4" />
+                                        <path d="M4 20c0-4 3.6-7 8-7s8 3 8 7" />
+                                    </svg>
+                                    Datos personales y de contacto
+                                </h2>
+                                <div class="profile-grid-form">
+                                    <div class="profile-input-group">
+                                        <label for="admNombre">Nombre completo</label>
+                                        <input type="text" id="admNombre" value="Administrador Principal" required>
+                                    </div>
+                                    <div class="profile-input-group">
+                                        <label for="admEmail">Correo electrónico</label>
+                                        <input type="email" id="admEmail" value="admin@negociosinmobiliarios.com.ar" required>
+                                    </div>
+                                    <div class="profile-input-group">
+                                        <label for="admTel">Teléfono de contacto</label>
+                                        <input type="tel" id="admTel" value="+54 11 5555-0100" required>
+                                    </div>
+                                    <div class="profile-input-group">
+                                        <label for="admCargo">Rol / Cargo</label>
+                                        <input type="text" id="admCargo" value="Director de Operaciones" readonly style="background: var(--gray-50); cursor: not-allowed;">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Seguridad / Contraseña -->
+                            <div class="profile-section">
+                                <h2 class="profile-section-title">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18"
+                                        viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                        stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                                        <rect width="18" height="11" x="3" y="11" rx="2" ry="2" />
+                                        <path d="M7 11V7a5 5 0 0 1 10 0v4" />
+                                    </svg>
+                                    Seguridad y Contraseña
+                                </h2>
+                                <div class="profile-grid-form">
+                                    <div class="profile-input-group full-col">
+                                        <label for="admOldPass">Contraseña actual</label>
+                                        <input type="password" id="admOldPass" placeholder="••••••••">
+                                    </div>
+                                    <div class="profile-input-group">
+                                        <label for="admNewPass">Nueva contraseña</label>
+                                        <input type="password" id="admNewPass" placeholder="Mínimo 6 caracteres">
+                                    </div>
+                                    <div class="profile-input-group">
+                                        <label for="admConfirmPass">Confirmar nueva contraseña</label>
+                                        <input type="password" id="admConfirmPass" placeholder="Repetir nueva contraseña">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <button type="submit" class="btn-create" style="width:auto; margin-top:0.5rem; display:inline-flex; align-items:center; gap:0.5rem; padding:0.75rem 1.75rem;">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                                    <path d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11l5 5v11a2 2 0 0 1-2 2z" />
+                                    <polyline points="17 21 17 13 7 13 7 21" />
+                                    <polyline points="7 3 7 8 15 8" />
+                                </svg>
+                                Guardar cambios
+                            </button>
+                        </form>
                     </div>
                 </div>
 
@@ -426,8 +628,7 @@
         <div class="edit-panel-body">
             <!-- Upload zone -->
             <div>
-                <div class="upload-zone" id="uploadZone" role="button" tabindex="0"
-                    aria-label="Subir fotos de la propiedad">
+                <div class="upload-zone" id="uploadZone" role="button" tabindex="0">
                     <div class="upload-zone-icon" aria-hidden="true">
                         <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none"
                             stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
@@ -439,25 +640,25 @@
                     <div class="upload-zone-text">Arrastrá fotos aquí</div>
                     <div class="upload-zone-sub">o hacé clic para seleccionar archivos</div>
                     <input type="file" id="uploadInput" accept="image/*" multiple style="display:none;"
-                        aria-label="Seleccionar imágenes" />
+                        aria-label="Seleccionar imágenes">
                 </div>
-                <div class="upload-preview" id="uploadPreview" aria-label="Vista previa de imágenes"></div>
+                <div class="upload-preview" id="uploadPreview"></div>
             </div>
 
             <!-- Form -->
             <form id="editForm" novalidate>
                 <div class="form-group" style="margin-bottom:0.875rem;">
                     <label for="fTitle">Título de la propiedad</label>
-                    <input type="text" id="fTitle" name="title" placeholder="Casa Moderna Premium" required />
+                    <input type="text" id="fTitle" name="title" placeholder="Casa Moderna Premium" required>
                 </div>
                 <div class="form-group" style="margin-bottom:0.875rem;">
                     <label for="fAddr">Dirección</label>
-                    <input type="text" id="fAddr" name="addr" placeholder="Av. Del Libertador 8500, Palermo" required />
+                    <input type="text" id="fAddr" name="addr" placeholder="Av. Del Libertador 8500, Palermo" required>
                 </div>
                 <div class="form-row" style="margin-bottom:0.875rem;">
                     <div class="form-group">
                         <label for="fPrice">Precio (USD)</label>
-                        <input type="number" id="fPrice" name="price" placeholder="280000" required min="0" />
+                        <input type="number" id="fPrice" name="price" placeholder="280000" required min="0">
                     </div>
                     <div class="form-group">
                         <label for="fTipo">Tipo</label>
@@ -478,16 +679,22 @@
                 <div class="form-row" style="margin-bottom:0.875rem;">
                     <div class="form-group">
                         <label for="fAmb">Ambientes</label>
-                        <input type="number" id="fAmb" name="amb" placeholder="4" min="1" max="20" />
+                        <input type="number" id="fAmb" name="amb" placeholder="4" min="1" max="20">
                     </div>
                     <div class="form-group">
                         <label for="fBanos">Baños</label>
-                        <input type="number" id="fBanos" name="banos" placeholder="3" min="1" max="15" />
+                        <input type="number" id="fBanos" name="banos" placeholder="3" min="1" max="15">
                     </div>
                 </div>
                 <div class="form-group" style="margin-bottom:0.875rem;">
                     <label for="fM2">Superficie cubierta (m²)</label>
-                    <input type="number" id="fM2" name="m2" placeholder="320" min="1" />
+                    <input type="number" id="fM2" name="m2" placeholder="320" min="1">
+                </div>
+                <div class="form-group" style="margin-bottom:0.875rem;">
+                    <label for="fAsesor">Asesor asignado</label>
+                    <select id="fAsesor" name="asesor">
+                        <!-- Las opciones se inyectarán dinámicamente mediante JS -->
+                    </select>
                 </div>
                 <div class="form-group">
                     <label for="fDesc">Descripción</label>
@@ -501,6 +708,68 @@
         <div class="edit-panel-footer">
             <button class="btn-cancel-panel" id="btnCancelEdit" type="button">Cancelar</button>
             <button class="btn-save-panel" type="button" id="btnSavePanel">
+                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"
+                    aria-hidden="true">
+                    <path d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11l5 5v11a2 2 0 0 1-2 2z" />
+                    <polyline points="17 21 17 13 7 13 7 21" />
+                    <polyline points="7 3 7 8 15 8" />
+                </svg>
+                Guardar cambios
+            </button>
+        </div>
+    </aside>
+
+    <!-- =============================================
+     EDIT USER PANEL (SIDEBAR)
+     ============================================= -->
+    <aside id="editClientPanel" class="edit-panel" role="dialog" aria-modal="true"
+        aria-labelledby="editClientPanelTitle" aria-hidden="true">
+        <div class="edit-panel-header">
+            <h2 class="edit-panel-title" id="editClientPanelTitle">Editar Usuario</h2>
+            <button class="edit-panel-close" id="editClientPanelClose" aria-label="Cerrar panel">✕</button>
+        </div>
+
+        <div class="edit-panel-body">
+            <!-- Formulario de Usuario -->
+            <form id="editClientForm" novalidate>
+                <div class="form-group" style="margin-bottom:0.875rem;">
+                    <label for="uNombre">Nombre completo</label>
+                    <input type="text" id="uNombre" name="nombre" placeholder="Juan Pérez" required>
+                </div>
+                <div class="form-group" style="margin-bottom:0.875rem;">
+                    <label for="uEmail">Correo electrónico</label>
+                    <input type="email" id="uEmail" name="email" placeholder="juan@email.com" required>
+                </div>
+                <div class="form-group" style="margin-bottom:0.875rem;">
+                    <label for="uTel">Teléfono</label>
+                    <input type="tel" id="uTel" name="tel" placeholder="+54 11 5555-9999" required>
+                </div>
+                <div class="form-group" style="margin-bottom:0.875rem;">
+                    <label for="uCargo">Tipo de Usuario</label>
+                    <select id="uCargo" name="cargo">
+                        <option value="Asesor">Asesor</option>
+                        <option value="Cliente">Cliente</option>
+                    </select>
+                </div>
+
+                <div class="form-group" style="margin-bottom:0.875rem;" id="uPassGroup">
+                    <label for="uPassword">Contraseña</label>
+                    <input type="password" id="uPassword" name="password" placeholder="Mínimo 6 caracteres" required>
+                </div>
+                <div class="form-group" style="margin-bottom:0.875rem;" id="uConfirmPassGroup">
+                    <label for="uConfirmPassword">Confirmar contraseña</label>
+                    <input type="password" id="uConfirmPassword" name="confirmPassword" placeholder="Repetir contraseña"
+                        required>
+                </div>
+
+                <button type="submit" id="btnSaveClientHidden" style="display:none;">Guardar</button>
+            </form>
+        </div>
+
+        <div class="edit-panel-footer">
+            <button class="btn-cancel-panel" id="btnCancelClientEdit" type="button">Cancelar</button>
+            <button class="btn-save-panel" type="button" id="btnSaveClientPanel">
                 <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none"
                     stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"
                     aria-hidden="true">

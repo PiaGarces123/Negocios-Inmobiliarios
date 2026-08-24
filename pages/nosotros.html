@@ -2,23 +2,75 @@
 <html lang="es-AR">
 
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- Codificación de caracteres estándar (soporta acentos y caracteres latinos) -->
+  <meta charset="UTF-8">
+  <!-- Hace que la página sea responsive y se adapte a celulares y tablets -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+  <!-- Título de la pestaña del navegador y resultado de búsqueda en Google -->
   <title>Nosotros | Negocios Inmobiliarios</title>
+
+  <!-- Descripción optimizada para motores de búsqueda -->
   <meta name="description"
-    content="Conoce la historia, visión y valores de Negocios Inmobiliarios. Especialistas en propiedades premium." />
-  <meta name="robots" content="index, follow" />
+    content="Conocé la historia, visión y valores de Negocios Inmobiliarios. Más de 15 años siendo especialistas en propiedades premium en Argentina con atención personalizada.">
+  <!-- Keywords: palabras clave con las que los buscadores pueden encontrar esta página -->
+  <meta name="keywords"
+    content="inmobiliaria argentina, sobre nosotros, historia inmobiliaria, equipo inmobiliario, valores empresa, propiedades premium Argentina">
+  <!-- Autor del sitio -->
+  <meta name="author" content="Negocios Inmobiliarios">
+  <!-- Robots: indica a Google y otros motores que indexen esta página y sigan sus enlaces -->
+  <meta name="robots" content="index, follow">
+  <!-- Canonical URL: URL oficial de esta página para evitar contenido duplicado -->
+  <link rel="canonical" href="https://www.negociosinmobiliarios.com.ar/pages/nosotros.html">
 
-  <!-- Favicon -->
-  <link rel="icon" href="../assets/media/logo.ico" />
+  <!-- ======================================================================================= -->
+  <!-- Open Graph: información que se muestra cuando se comparte el enlace en redes sociales -->
+  <meta property="og:type" content="website">
+  <!-- URL de la página -->
+  <meta property="og:url" content="https://www.negociosinmobiliarios.com.ar/pages/nosotros.html">
+  <!-- Título que se muestra en las redes sociales al compartir -->
+  <meta property="og:title" content="Nosotros — Quiénes Somos | Negocios Inmobiliarios">
+  <!-- Descripción que se muestra en las redes sociales -->
+  <meta property="og:description"
+    content="Más de 15 años acompañando a familias e inversores en la compra, venta y alquiler de propiedades en Argentina con profesionalismo y transparencia.">
+  <!-- Imagen de portada al compartir en redes (debe ser al menos 1200x630px) -->
+  <meta property="og:image" content="../assets/media/detail_hero.jpg">
+  <!-- Localización: Argentina, español -->
+  <meta property="og:locale" content="es_AR">
+  <!-- Nombre del sitio -->
+  <meta property="og:site_name" content="Negocios Inmobiliarios">
 
-  <!-- Google Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <!-- ======================================================================================= -->
+  <!-- Twitter Card: estructura que proporciona Twitter para mostrar contenido enriquecido en tweets -->
+  <meta name="twitter:card" content="summary_large_image">
+  <!-- URL de la página -->
+  <meta name="twitter:url" content="https://www.negociosinmobiliarios.com.ar/pages/nosotros.html">
+  <!-- Título que se muestra en Twitter al compartir -->
+  <meta name="twitter:title" content="Nosotros — Quiénes Somos | Negocios Inmobiliarios">
+  <!-- Descripción que se muestra en Twitter -->
+  <meta name="twitter:description"
+    content="Conocé nuestra historia y valores. Más de 15 años de trayectoria en el mercado inmobiliario argentino.">
+  <!-- Imagen que se muestra en el tweet -->
+  <meta name="twitter:image" content="../assets/media/detail_hero.jpg">
 
-  <!-- Stylesheets -->
-  <link rel="stylesheet" href="../assets/styles/style.css" />
+  <!-- ======================================================================================= -->
+  <!-- Geo SEO: indica a los buscadores la ubicación geográfica del negocio -->
+  <!-- Región geográfica (AR = Argentina) -->
+  <meta name="geo.region" content="AR">
+  <!-- País del negocio -->
+  <meta name="geo.country" content="Argentina">
+  <!-- Idioma del contenido -->
+  <meta name="language" content="Spanish">
+
+  <!-- Favicon: ícono que aparece en la pestaña del navegador -->
+  <link rel="icon" href="../assets/media/logo.ico">
+
+  <!-- Google Fonts preconnect: pre-conecta con Google para cargar la tipografía más rápido -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <!-- Hoja de estilos CSS externa vinculada a esta página -->
+  <link rel="stylesheet" href="../assets/styles/style.css">
 </head>
 
 <body class="inner-page">
@@ -27,25 +79,39 @@
        NAVBAR
        ============================================= -->
   <header>
-    <nav id="navbar" class="navbar scrolled" role="navigation" aria-label="Navegación principal">
+
+    <!--Navbar -->
+    <nav id="navbar" class="navbar scrolled" aria-label="Navegación principal">
+
+      <!-- Logo -->
       <a href="../index.html" class="nav-logo" aria-label="Negocios Inmobiliarios - Inicio">
-        <img src="../assets/media/logoLight.png" alt="Negocios Inmobiliarios" class="logo-light" />
-        <img src="../assets/media/logoDark.png" alt="Negocios Inmobiliarios" class="logo-dark" />
+        <img src="../assets/media/logoLight.png" alt="Negocios Inmobiliarios" class="logo-light">
+        <img src="../assets/media/logoDark.png" alt="Negocios Inmobiliarios" class="logo-dark">
         <span class="logo-text">Negocios Inmobiliarios</span>
       </a>
 
-      <ul class="nav-menu" role="list">
+      <!-- Menu -->
+      <ul class="nav-menu">
         <li><a href="../index.html#propiedades" class="nav-link" id="nav-comprar">Comprar</a></li>
         <li><a href="../index.html#propiedades" class="nav-link" id="nav-alquilar">Alquilar</a></li>
         <li><a href="nosotros.html" class="nav-link active" id="nav-nosotros">Nosotros</a></li>
         <li><a href="../index.html#contacto" class="nav-link" id="nav-contacto">Contacto</a></li>
       </ul>
 
+      <!-- Acciones -->
       <div class="nav-actions">
+
+        <!-- Tasar mi propiedad -->
         <a href="../index.html#contacto" class="nav-cta" id="nav-cta-tasar">Tasar mi propiedad</a>
+
+        <!-- Ver propiedades -->
         <a href="../index.html#propiedades" class="btn-nav-primary" id="nav-cta-ver">Ver propiedades</a>
+
+        <!-- Iniciar Sesión -->
         <a href="admin/panelAdmin.html" class="nav-login-btn" aria-label="Iniciar Sesión"
           title="Panel de Administración">
+
+          <!-- Icono de usuario -->
           <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
             stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
             <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" />
@@ -54,6 +120,7 @@
         </a>
       </div>
 
+      <!-- Hamburguer -->
       <button class="hamburger" id="hamburger" aria-label="Abrir menú" aria-expanded="false" aria-controls="mobileNav">
         <span></span><span></span><span></span>
       </button>
@@ -61,16 +128,28 @@
 
     <!-- Mobile nav -->
     <nav id="mobileNav" class="mobile-nav" aria-label="Menú móvil">
+
+      <!-- Menu -->
       <a href="../index.html#propiedades" class="nav-link">Comprar</a>
       <a href="../index.html#propiedades" class="nav-link">Alquilar</a>
       <a href="nosotros.html" class="nav-link active">Nosotros</a>
       <a href="../index.html#contacto" class="nav-link">Contacto</a>
+
+      <!-- Acciones -->
       <div class="mobile-nav-actions" style="flex-direction:column; gap:0.5rem;">
+
+        <!-- Tasar mi propiedad -->
         <a href="../index.html#contacto" class="nav-cta"
           style="border-color:var(--navy-800);color:var(--navy-800); text-align:center;">Tasar mi propiedad</a>
+
+        <!-- Ver propiedades -->
         <a href="../index.html#propiedades" class="btn-nav-primary" style="text-align:center;">Ver propiedades</a>
+
+        <!-- Iniciar Sesión -->
         <a href="admin/panelAdmin.html" class="btn-nav-primary"
           style="background:var(--navy-900); color:var(--white); text-align:center; display:flex; align-items:center; justify-content:center; gap:0.5rem;">
+
+          <!-- Icono de usuario -->
           <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
             stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
             <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" />
@@ -95,19 +174,42 @@
     <section class="nosotros-content container">
       <!-- Info a la izquierda, Imagen a la derecha (2 columnas) -->
       <div class="nosotros-story-grid reveal">
+
+        <!-- Info -->
         <div class="nosotros-story-info">
           <span class="section-tag" style="align-self: flex-start;">Nuestra Trayectoria</span>
-          <h2 class="nosotros-section-title">Compromiso, experiencia y <span class="gold-gradient-text">visión inmobiliaria</span></h2>
-          <p><strong>Negocios Inmobiliarios</strong> nació en 2011 con el objetivo de ofrecer una nueva forma de acompañar a las personas en la compra, venta y alquiler de propiedades. Lo que comenzó como un emprendimiento familiar fue creciendo gracias a la confianza de nuestros clientes y al compromiso de brindar una atención cercana y de máxima calidad.</p>
-          <p>Con el paso de los años, incorporamos tecnología de vanguardia y ampliamos nuestra cartera inmobiliaria, manteniendo siempre intactos nuestros valores fundacionales: <strong>transparencia, responsabilidad y profesionalismo</strong>.</p>
-          <p>Hoy contamos con un equipo altamente capacitado y una exclusiva selección de propiedades residenciales y comerciales, transformando la búsqueda del hogar soñado o la inversión perfecta en una experiencia simple, ágil y gratificante.</p>
+          <h2 class="nosotros-section-title">Compromiso, experiencia y <span class="gold-gradient-text">visión
+              inmobiliaria</span></h2>
+          <p><strong>Negocios Inmobiliarios</strong> nació en 2011 con el objetivo de ofrecer una nueva forma de
+            acompañar a las personas en la compra, venta y alquiler de propiedades. Lo que comenzó como un
+            emprendimiento familiar fue creciendo gracias a la confianza de nuestros clientes y al compromiso de brindar
+            una atención cercana y de máxima calidad.</p>
+          <p>Con el paso de los años, incorporamos tecnología de vanguardia y ampliamos nuestra cartera inmobiliaria,
+            manteniendo siempre intactos nuestros valores fundacionales: <strong>transparencia, responsabilidad y
+              profesionalismo</strong>.</p>
+          <p>Hoy contamos con un equipo altamente capacitado y una exclusiva selección de propiedades residenciales y
+            comerciales, transformando la búsqueda del hogar soñado o la inversión perfecta en una experiencia simple,
+            ágil y gratificante.</p>
+
+          <!-- Info resaltada -->
           <div class="nosotros-highlight-box">
-            <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-            <span>Nuestro compromiso es seguir construyendo relaciones duraderas basadas en la confianza y superando siempre las expectativas de cada cliente.</span>
+
+            <!-- Icono -->
+            <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none"
+              stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+            </svg>
+
+            <!-- Texto -->
+            <span>Nuestro compromiso es seguir construyendo relaciones duraderas basadas en la confianza y superando
+              siempre las expectativas de cada cliente.</span>
           </div>
         </div>
+
+        <!-- Imagen -->
         <div class="nosotros-story-image-wrap">
-          <img src="../assets/media/detail_hero.jpg" alt="Negocios Inmobiliarios — Trayectoria y Calidad" class="nosotros-story-img" loading="lazy" />
+          <img src="../assets/media/detail_hero.jpg" alt="Negocios Inmobiliarios — Trayectoria y Calidad"
+            class="nosotros-story-img" loading="lazy">
           <div class="story-experience-badge">
             <span class="badge-num">+15</span>
             <span class="badge-lbl">Años de<br>trayectoria</span>
@@ -117,19 +219,29 @@
 
       <!-- Valores -->
       <div class="nosotros-values reveal reveal-delay-1">
+
+        <!-- Valor 1: CONFIANZA -->
         <div class="value-card">
+
+          <!-- Icono -->
           <div class="value-icon">
             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
               stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
               <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
             </svg>
           </div>
+
+          <!-- Título -->
           <h3 class="value-title">Confianza</h3>
+          <!-- Descripción -->
           <p class="value-desc">Operamos con total transparencia en cada transacción, protegiendo siempre tus intereses.
           </p>
         </div>
 
+        <!-- Valor 2: ATENCIÓN PERSONALIZADA -->
         <div class="value-card">
+
+          <!-- Icono -->
           <div class="value-icon">
             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
               stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -138,11 +250,17 @@
               <line x1="12" y1="8" x2="12.01" y2="8" />
             </svg>
           </div>
+
+          <!-- Título -->
           <h3 class="value-title">Atención Personalizada</h3>
+          <!-- Descripción -->
           <p class="value-desc">Nos enfocamos en tus necesidades específicas para ofrecerte soluciones a medida.</p>
         </div>
 
+        <!-- Valor 3: EXCELENCIA -->
         <div class="value-card">
+
+          <!-- Icono -->
           <div class="value-icon">
             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
               stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -150,43 +268,66 @@
                 points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
             </svg>
           </div>
+
+          <!-- Título -->
           <h3 class="value-title">Excelencia</h3>
+          <!-- Descripción -->
           <p class="value-desc">Seleccionamos cuidadosamente las mejores propiedades del mercado para superar tus
             expectativas.</p>
         </div>
       </div>
 
-      <!-- Location -->
+      <!-- Cartelito UBICACIÓN -->
       <div class="nosotros-location reveal reveal-delay-2">
+
         <div class="nosotros-address">
           <h3>Nuestra Ubicación</h3>
+
+          <!-- DIRECCIÓN -->
           <p>
+            <!-- Icono de ubicación -->
             <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
               stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
               <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
               <circle cx="12" cy="10" r="3" />
             </svg>
-            Av. Corrientes 1234, Piso 5<br />CABA, Argentina
+
+            <!-- Dirección -->
+            Av. Corrientes 1234, Piso 5<br>CABA, Argentina
           </p>
+
+
+          <!-- TELÉFONO -->
           <p>
+            <!-- Icono de teléfono -->
             <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
               stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
               <path
                 d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
             </svg>
+
+            <!-- Teléfono -->
             +54 11 0000-0000
           </p>
+
+
+          <!-- HORARIO DE ATENCIÓN -->
           <p>
+            <!-- Icono de horario -->
             <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
               stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
               <circle cx="12" cy="12" r="10" />
               <polyline points="12 6 12 12 16 14" />
             </svg>
+
+            <!-- Horario -->
             Lun – Vie: 9:00 – 18:00 hs
           </p>
         </div>
+
+
+        <!-- GOOGLE MAPS -->
         <div class="nosotros-map">
-          <!-- Placeholder map using an iframe to an empty src or generic map view -->
           <iframe
             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3284.0168878894506!2d-58.38414538477038!3d-34.6037388804594!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bccacf73b06eeb%3A0xc6a8274d472bf624!2sAv.%20Corrientes%201234%2C%20C1043%20CABA!5e0!3m2!1sen!2sar!4v1680000000000!5m2!1sen!2sar"
             allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
@@ -198,16 +339,20 @@
   <!-- =============================================
        FOOTER
        ============================================= -->
-  <footer class="footer" role="contentinfo">
+  <footer class="footer">
     <div class="container">
 
       <!-- Fila principal: 3 columnas -->
       <div class="footer-main">
 
-        <!-- Columna 1: Brand -->
+        <!-- Columna 1: MARCA -->
         <div class="footer-col footer-col--brand">
+
+          <!-- LOGO -->
           <a href="../index.html" class="nav-logo footer-logo" aria-label="Negocios Inmobiliarios">
-            <img src="../assets/media/logoLight.png" alt="Negocios Inmobiliarios" style="height: 52px; width: auto;" />
+            <img src="../assets/media/logoLight.png" alt="Negocios Inmobiliarios" style="height: 52px; width: auto;">
+
+            <!-- Nombre -->
             <span class="logo-text">Negocios Inmobiliarios</span>
           </a>
         </div>
@@ -215,7 +360,7 @@
         <!-- Divisor vertical -->
         <div class="footer-vdivider" aria-hidden="true"></div>
 
-        <!-- Columna 2: Secciones -->
+        <!-- Columna 2: SECCIONES -->
         <div class="footer-col footer-col--center">
           <nav aria-labelledby="footer-nav-title">
             <div class="footer-col-title" id="footer-nav-title">Secciones</div>
@@ -235,43 +380,69 @@
         <!-- Divisor vertical -->
         <div class="footer-vdivider" aria-hidden="true"></div>
 
-        <!-- Columna 3: Contacto -->
+        <!-- Columna 3: CONTACTO -->
         <div class="footer-col footer-col--center">
+
+          <!-- TÍTULO -->
           <div class="footer-col-title">Contacto</div>
+
           <address class="footer-contact" style="font-style:normal;">
+
+            <!-- Dirección -->
             <div class="footer-contact-item">
-              <span class="footer-contact-icon" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" width="15"
-                  height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                  stroke-linecap="round" stroke-linejoin="round">
+              <span class="footer-contact-icon" aria-hidden="true">
+
+                <!-- Icono de ubicación -->
+                <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none"
+                  stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                   <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
                   <circle cx="12" cy="10" r="3"></circle>
-                </svg></span>
+                </svg>
+              </span>
+
+              <!-- Dirección -->
               <span>Av. Corrientes 1234, Piso 5 — CABA</span>
             </div>
+
+            <!-- Teléfono -->
             <div class="footer-contact-item">
-              <span class="footer-contact-icon" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" width="15"
-                  height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                  stroke-linecap="round" stroke-linejoin="round">
+              <span class="footer-contact-icon" aria-hidden="true">
+
+                <!-- Icono de teléfono -->
+                <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none"
+                  stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                   <path
                     d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z">
                   </path>
-                </svg></span>
+                </svg>
+              </span>
+
+              <!-- Teléfono -->
               <a href="tel:+541100000000" style="color:inherit;">+54 11 0000-0000</a>
             </div>
+
+            <!-- Email -->
             <div class="footer-contact-item">
-              <span class="footer-contact-icon" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" width="15"
-                  height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                  stroke-linecap="round" stroke-linejoin="round">
+              <span class="footer-contact-icon" aria-hidden="true">
+
+                <!-- Icono de email -->
+                <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none"
+                  stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                   <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
                   <polyline points="22,6 12,13 2,6"></polyline>
-                </svg></span>
+                </svg>
+              </span>
+
+              <!-- Email -->
               <a href="mailto:info@negociosinmobiliarios.com.ar"
                 style="color:inherit;">info@negociosinmobiliarios.com.ar</a>
             </div>
           </address>
 
-          <!-- Redes sociales debajo del mail -->
-          <div class="footer-socials" aria-label="Redes sociales">
+          <!-- REDES SOCIALES debajo del mail -->
+          <div class="footer-socials">
+
+            <!-- Instagram -->
             <a href="#" class="social-btn" aria-label="Instagram" title="Instagram">
               <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
                 stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -280,12 +451,16 @@
                 <line x1="17.5" x2="17.51" y1="6.5" y2="6.5" />
               </svg>
             </a>
+
+            <!-- Facebook -->
             <a href="#" class="social-btn" aria-label="Facebook" title="Facebook">
               <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
                 stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                 <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" />
               </svg>
             </a>
+
+            <!-- WhatsApp -->
             <a href="https://wa.me/541100000000" class="social-btn" aria-label="WhatsApp" title="WhatsApp"
               target="_blank" rel="noopener noreferrer">
               <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
@@ -308,6 +483,9 @@
 
     </div>
   </footer>
+  <!-- fin del Footer -->
+
+
   <!-- WhatsApp Flotante -->
   <a href="https://wa.me/541100000000" class="whatsapp-float" target="_blank" rel="noopener noreferrer"
     aria-label="Contactar por WhatsApp">

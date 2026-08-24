@@ -87,17 +87,7 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
 
-  // ── Read more ───────────────────────────────
-  const readMoreBtn  = document.getElementById('readMoreBtn');
-  const descExtra    = document.getElementById('descExtra');
-  if (readMoreBtn && descExtra) {
-    readMoreBtn.addEventListener('click', () => {
-      const expanded = descExtra.classList.toggle('visible');
-      readMoreBtn.innerHTML = expanded
-        ? 'Ver menos <span>↑</span>'
-        : 'Leer descripción completa <span>↓</span>';
-    });
-  }
+
 
   // ── Carousel ──────────────────────────────────
   const track = document.getElementById('carouselTrack');

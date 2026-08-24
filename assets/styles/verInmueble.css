@@ -230,16 +230,28 @@
 .prop-desc { font-size: 0.9rem; line-height: 1.85; color: var(--gray-700); }
 .prop-desc + .prop-desc { margin-top: 0.875rem; }
 
-.read-more-btn {
-  display: inline-flex; align-items: center; gap: 0.35rem;
-  font-size: 0.85rem; font-weight: 600; color: var(--navy-700);
-  margin-top: 0.875rem; transition: all var(--transition);
-  border-bottom: 1px solid transparent;
+.prop-desc-container {
+  max-height: 16.5rem; /* Altura correspondiente a aproximadamente 10 renglones */
+  overflow-y: auto;
+  padding-right: 0.75rem; /* Espacio para que el scrollbar no tape el texto */
 }
-.read-more-btn:hover { color: var(--gold-500); border-color: var(--gold-400); }
 
-.prop-desc-extra { display: none; }
-.prop-desc-extra.visible { display: block; margin-top: 0.875rem; }
+/* Personalización del scrollbar para un aspecto premium */
+.prop-desc-container::-webkit-scrollbar {
+  width: 5px;
+}
+.prop-desc-container::-webkit-scrollbar-track {
+  background: var(--gray-50);
+  border-radius: 4px;
+}
+.prop-desc-container::-webkit-scrollbar-thumb {
+  background: var(--navy-300);
+  border-radius: 4px;
+  transition: background var(--transition);
+}
+.prop-desc-container::-webkit-scrollbar-thumb:hover {
+  background: var(--gold-500);
+}
 
 /* ── Key Features ────────────────────────────── */
 .features-grid {
@@ -416,9 +428,36 @@
   .prop-stat { flex: 0 0 33%; border-right: none; border-bottom: 1px solid var(--gray-100); padding-bottom: 0.75rem; margin-bottom: 0.75rem; }
   .topbar-actions { flex-wrap: wrap; }
 }
+@media (max-width: 768px) {
+  /* Carrusel de propiedades similares en tablet y móvil */
+  .similar-grid {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
+    gap: 1.5rem;
+    padding: 0.5rem 0.25rem 1.5rem;
+  }
+  .similar-grid::-webkit-scrollbar {
+    height: 5px;
+  }
+  .similar-grid::-webkit-scrollbar-track {
+    background: var(--gray-100);
+    border-radius: 10px;
+  }
+  .similar-grid::-webkit-scrollbar-thumb {
+    background: var(--gold-300);
+    border-radius: 10px;
+  }
+  .similar-grid .property-card {
+    flex: 0 0 100%;
+    scroll-snap-align: start;
+  }
+}
 @media (max-width: 480px) {
-  .features-grid { grid-template-columns: 1fr; }
-  .similar-grid { grid-template-columns: 1fr; }
+  /* Características destacadas en 2 columnas en móviles chicos */
+  .features-grid { grid-template-columns: repeat(2, 1fr); }
   .modal-prev { left: -1.5rem; }
   .modal-next { right: -1.5rem; }
 }

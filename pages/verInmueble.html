@@ -1,25 +1,76 @@
 <!DOCTYPE html>
 <html lang="es-AR">
+
 <head>
-  <!-- =============================================
-       SEO — verInmueble
-       ============================================= -->
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- ======================================================
+       SEO — verInmueble.html
+       Página de detalle de un inmueble específico
+       ====================================================== -->
 
+  <!-- Codificación de caracteres estándar (soporta acentos y caracteres latinos) -->
+  <meta charset="UTF-8">
+  <!-- Hace que la página sea responsive y se adapte a celulares y tablets -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Título de la pestaña del navegador y resultado de búsqueda en Google -->
   <title>Casa Moderna Premium con Piscina Infinita | Negocios Inmobiliarios</title>
-  <meta name="description" content="Casa moderna de lujo en venta en Buenos Aires. 5 ambientes, 4 baños, 480 m², piscina infinita y vistas panorámicas. USD 520.000. Consultar sin cargo." />
-  <meta name="robots" content="index, follow" />
-  <link rel="canonical" href="https://www.negociosinmobiliarios.com.ar/pages/verInmueble.html" />
 
-  <!-- Open Graph -->
-  <meta property="og:type" content="website" />
-  <meta property="og:title" content="Casa Moderna Premium — USD 520.000 | Negocios Inmobiliarios" />
-  <meta property="og:description" content="Casa de lujo en venta en Buenos Aires. 5 ambientes, piscina infinita, vistas panorámicas. 480 m² de construcción en 900 m² de terreno." />
-  <meta property="og:image" content="../assets/media/detail_hero.jpg" />
-  <meta property="og:url" content="https://www.negociosinmobiliarios.com.ar/pages/verInmueble.html" />
+  <!-- Descripción optimizada para motores de búsqueda -->
+  <meta name="description"
+    content="Casa moderna de lujo en venta en Buenos Aires. 5 ambientes, 4 baños, 480 m², piscina infinita y vistas panorámicas. USD 520.000. Consultar sin cargo.">
+  <!-- Keywords: palabras clave relacionadas a esta propiedad específica -->
+  <meta name="keywords"
+    content="casa en venta Buenos Aires, casa de lujo Palermo, piscina infinita, propiedad premium argentina, 5 ambientes en venta, USD 520000, Negocios Inmobiliarios">
+  <!-- Autor del sitio -->
+  <meta name="author" content="Negocios Inmobiliarios">
+  <!-- Robots: indica a Google y otros motores que indexen esta página y sigan sus enlaces -->
+  <meta name="robots" content="index, follow">
+  <!-- Canonical URL: URL oficial de esta página para evitar contenido duplicado -->
+  <link rel="canonical" href="https://www.negociosinmobiliarios.com.ar/pages/verInmueble.html">
 
-  <!-- Schema.org — SingleFamilyResidence -->
+  <!-- ======================================================================================= -->
+  <!-- Open Graph: información que se muestra cuando se comparte el enlace en redes sociales -->
+  <meta property="og:type" content="website">
+  <!-- URL de la página -->
+  <meta property="og:url" content="https://www.negociosinmobiliarios.com.ar/pages/verInmueble.html">
+  <!-- Título que se muestra en las redes sociales al compartir -->
+  <meta property="og:title" content="Casa Moderna Premium — USD 520.000 | Negocios Inmobiliarios">
+  <!-- Descripción que se muestra en las redes sociales -->
+  <meta property="og:description"
+    content="Casa de lujo en venta en Buenos Aires. 5 ambientes, piscina infinita, vistas panorámicas. 480 m² de construcción en 900 m² de terreno.">
+  <!-- Imagen de portada al compartir en redes (debe ser al menos 1200x630px) -->
+  <meta property="og:image" content="../assets/media/detail_hero.jpg">
+  <!-- Localización: Argentina, español -->
+  <meta property="og:locale" content="es_AR">
+  <!-- Nombre del sitio -->
+  <meta property="og:site_name" content="Negocios Inmobiliarios">
+
+  <!-- ======================================================================================= -->
+  <!-- Twitter Card: estructura que proporciona Twitter para mostrar contenido enriquecido en tweets -->
+  <meta name="twitter:card" content="summary_large_image">
+  <!-- URL de la página -->
+  <meta name="twitter:url" content="https://www.negociosinmobiliarios.com.ar/pages/verInmueble.html">
+  <!-- Título que se muestra en Twitter al compartir -->
+  <meta name="twitter:title" content="Casa Moderna Premium — USD 520.000 | Negocios Inmobiliarios">
+  <!-- Descripción que se muestra en Twitter -->
+  <meta name="twitter:description"
+    content="Casa de lujo en venta en Buenos Aires. 5 ambientes, piscina infinita, vistas panorámicas. Consultá sin cargo.">
+  <!-- Imagen que se muestra en el tweet -->
+  <meta name="twitter:image" content="../assets/media/detail_hero.jpg">
+
+  <!-- ======================================================================================= -->
+  <!-- Geo SEO: indica a los buscadores la ubicación geográfica del negocio -->
+  <!-- Región geográfica (AR = Argentina) -->
+  <meta name="geo.region" content="AR">
+  <!-- País del negocio -->
+  <meta name="geo.country" content="Argentina">
+  <!-- Idioma del contenido -->
+  <meta name="language" content="Spanish">
+
+  <!-- ======================================================================================= -->
+  <!-- Schema.org — SingleFamilyResidence
+       Datos estructurados que le indican a Google exactamente qué tipo de contenido es esta página.
+       Permite que aparezca en resultados enriquecidos (Rich Results) en Google. -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -54,61 +105,96 @@
   }
   </script>
 
-  <!-- Favicon -->
-  <link rel="icon" href="../assets/media/logo.ico" />
+  <!-- Favicon: ícono que aparece en la pestaña del navegador -->
+  <link rel="icon" href="../assets/media/logo.ico">
 
-  <!-- Google Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <!-- Google Fonts preconnect: pre-conecta con Google para cargar la tipografía más rápido -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-  <!-- Stylesheets: base + página -->
-  <link rel="stylesheet" href="../assets/styles/style.css" />
-  <link rel="stylesheet" href="../assets/styles/verInmueble.css" />
+  <!-- Hojas de estilos CSS externas vinculadas a esta página -->
+  <!-- style.css: estilos globales del sitio (compartidos entre todas las páginas) -->
+  <link rel="stylesheet" href="../assets/styles/style.css">
+  <!-- verInmueble.css: estilos específicos de la página de detalle del inmueble -->
+  <link rel="stylesheet" href="../assets/styles/verInmueble.css">
 </head>
 
 <body class="inner-page page-top">
 
   <!-- =============================================
-       NAVBAR — idéntico al index.html
+                          NAVBAR
        ============================================= -->
   <header>
-    <nav id="navbar" class="navbar scrolled" role="navigation" aria-label="Navegación principal">
+    <nav id="navbar" class="navbar scrolled" aria-label="Navegación principal">
+
+      <!-- Logo -->
       <a href="../index.html" class="nav-logo" aria-label="Negocios Inmobiliarios - Inicio">
-        <img src="../assets/media/logoLight.png" alt="Negocios Inmobiliarios" class="logo-light" />
-        <img src="../assets/media/logoDark.png" alt="Negocios Inmobiliarios" class="logo-dark" />
+        <img src="../assets/media/logoLight.png" alt="Negocios Inmobiliarios" class="logo-light">
+        <img src="../assets/media/logoDark.png" alt="Negocios Inmobiliarios" class="logo-dark">
         <span class="logo-text">Negocios Inmobiliarios</span>
       </a>
 
-      <ul class="nav-menu" role="list">
+      <!-- Menú -->
+      <ul class="nav-menu">
         <li><a href="../index.html#propiedades" class="nav-link" id="nav-comprar">Comprar</a></li>
         <li><a href="../index.html#propiedades" class="nav-link" id="nav-alquilar">Alquilar</a></li>
         <li><a href="nosotros.html" class="nav-link" id="nav-nosotros">Nosotros</a></li>
         <li><a href="../index.html#contacto" class="nav-link" id="nav-contacto">Contacto</a></li>
       </ul>
 
+      <!-- Botones de acción -->
       <div class="nav-actions">
-        <a href="../index.html#contacto" class="nav-cta"        id="nav-cta-tasar">Tasar mi propiedad</a>
+
+        <!-- Tasar mi propiedad -->
+        <a href="../index.html#contacto" class="nav-cta" id="nav-cta-tasar">Tasar mi propiedad</a>
+
+        <!-- Ver propiedades -->
         <a href="../index.html#propiedades" class="btn-nav-primary" id="nav-cta-ver">Ver propiedades</a>
-        <a href="admin/panelAdmin.html" class="nav-login-btn" aria-label="Iniciar Sesión" title="Panel de Administración">
-          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+
+        <!-- Panel de Administración -->
+        <a href="admin/panelAdmin.html" class="nav-login-btn" aria-label="Iniciar Sesión"
+          title="Panel de Administración">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
+            stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" />
+            <circle cx="12" cy="7" r="4" />
+          </svg>
         </a>
       </div>
 
+      <!-- Hamburguesa para mobile -->
       <button class="hamburger" id="hamburger" aria-label="Abrir menú" aria-expanded="false" aria-controls="mobileNav">
         <span></span><span></span><span></span>
       </button>
     </nav>
 
+    <!-- Menú móvil -->
     <nav id="mobileNav" class="mobile-nav" aria-label="Menú móvil">
+
+      <!-- Enlaces del menú -->
       <a href="../index.html#propiedades" class="nav-link">Comprar</a>
       <a href="../index.html#propiedades" class="nav-link">Alquilar</a>
       <a href="nosotros.html" class="nav-link">Nosotros</a>
       <a href="../index.html#contacto" class="nav-link">Contacto</a>
+
+      <!-- Botones de acción -->
       <div class="mobile-nav-actions" style="flex-direction:column; gap:0.5rem;">
-        <a href="../index.html#contacto" class="nav-cta" style="border-color:var(--navy-800);color:var(--navy-800); text-align:center;">Tasar mi propiedad</a>
+
+        <!-- Tasar mi propiedad -->
+        <a href="../index.html#contacto" class="nav-cta"
+          style="border-color:var(--navy-800);color:var(--navy-800); text-align:center;">Tasar mi propiedad</a>
+
+        <!-- Ver propiedades -->
         <a href="../index.html#propiedades" class="btn-nav-primary" style="text-align:center;">Ver propiedades</a>
-        <a href="admin/panelAdmin.html" class="btn-nav-primary" style="background:var(--navy-900); color:var(--white); text-align:center; display:flex; align-items:center; justify-content:center; gap:0.5rem;">
-          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+
+        <!-- Panel de Administración -->
+        <a href="admin/panelAdmin.html" class="btn-nav-primary"
+          style="background:var(--navy-900); color:var(--white); text-align:center; display:flex; align-items:center; justify-content:center; gap:0.5rem;">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
+            stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" />
+            <circle cx="12" cy="7" r="4" />
+          </svg>
           Ingresar
         </a>
       </div>
@@ -119,31 +205,74 @@
 
 
 
-    <!-- ── TOP BAR ────────────────────────────── -->
+    <!-- ========== BARRA SUPERIOR DEL INMUEBLE ========== -->
     <div class="property-topbar">
       <div class="container">
+
+        <!-- Barra superior del inmueble -->
         <div class="property-topbar-inner">
+
+          <!-- Izquierda -->
           <div class="topbar-left">
+
+            <!-- Cartel Venta/Alquiler -->
             <span class="topbar-badge venta">
-              <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="vertical-align: -1px; margin-right: 4px;"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path><line x1="7" y1="7" x2="7.01" y2="7"></line></svg>Venta
+              <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"
+                aria-hidden="true" style="vertical-align: -1px; margin-right: 4px;">
+                <path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path>
+                <line x1="7" y1="7" x2="7.01" y2="7"></line>
+              </svg>Venta
             </span>
+
+            <!-- Cartel Disponible -->
             <span class="topbar-badge disponible">
-              <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="vertical-align: -1px; margin-right: 4px;"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>Disponible
+              <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"
+                aria-hidden="true" style="vertical-align: -1px; margin-right: 4px;">
+                <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                <polyline points="22 4 12 14.01 9 11.01"></polyline>
+              </svg>Disponible
             </span>
           </div>
+
+          <!-- Derecha -->
           <div class="topbar-actions">
-            <button class="topbar-btn prop-fav-btn" id="propFavBtn" aria-pressed="false" aria-label="Guardar en favoritos">
-              <span class="fav-icon"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg></span>
+
+            <!-- Botón Guardar en favoritos -->
+            <button class="topbar-btn prop-fav-btn" id="propFavBtn" aria-pressed="false"
+              aria-label="Guardar en favoritos">
+              <span class="fav-icon"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24"
+                  fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                  <path
+                    d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z">
+                  </path>
+                </svg></span>
               Guardar
             </button>
 
+            <!-- Botón Compartir -->
             <button class="topbar-btn" id="shareBtn" aria-label="Compartir propiedad">
-              <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" x2="15.42" y1="13.51" y2="17.49"/><line x1="15.41" x2="8.59" y1="6.51" y2="10.49"/></svg>
+              <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"
+                aria-hidden="true">
+                <circle cx="18" cy="5" r="3" />
+                <circle cx="6" cy="12" r="3" />
+                <circle cx="18" cy="19" r="3" />
+                <line x1="8.59" x2="15.42" y1="13.51" y2="17.49" />
+                <line x1="15.41" x2="8.59" y1="6.51" y2="10.49" />
+              </svg>
               Compartir
             </button>
 
+            <!-- Botón Consultar -->
             <button class="topbar-btn primary-action" id="topbar-contactar">
-              <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
+              <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"
+                aria-hidden="true">
+                <path
+                  d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z" />
+              </svg>
               Consultar
             </button>
           </div>
@@ -151,177 +280,313 @@
       </div>
     </div>
 
-    <!-- ── GALERÍA ────────────────────────────── -->
+    <!-- ========== CARRUSEL DE FOTOS ========== -->
     <section class="gallery-section" aria-label="Galería de fotos">
       <div class="container">
         <div class="property-carousel">
+
+          <!-- Boton anterior -->
           <button class="carousel-btn prev-btn" aria-label="Anterior">‹</button>
+
+          <!-- Carrusel -->
           <div class="carousel-track" id="carouselTrack">
-            <img src="../assets/media/detail_hero.jpg" alt="Exterior de la Casa Moderna Premium con piscina infinita al atardecer" loading="eager" />
-            <img src="../assets/media/detail_t1.jpg" alt="Living comedor amplio con ventanales panorámicos" loading="lazy" />
-            <img src="../assets/media/detail_t2.jpg" alt="Cocina premium con isla de mármol" loading="lazy" />
-            <img src="../assets/media/detail_t3.jpg" alt="Dormitorio principal con vistas" loading="lazy" />
-            <img src="../assets/media/detail_t4.jpg" alt="Piscina infinita con vista al skyline de Buenos Aires" loading="lazy" />
+            <img src="../assets/media/detail_hero.jpg"
+              alt="Exterior de la Casa Moderna Premium con piscina infinita al atardecer" loading="eager">
+            <img src="../assets/media/detail_t1.jpg" alt="Living comedor amplio con ventanales panorámicos"
+              loading="lazy">
+            <img src="../assets/media/detail_t2.jpg" alt="Cocina premium con isla de mármol" loading="lazy">
+            <img src="../assets/media/detail_t3.jpg" alt="Dormitorio principal con vistas" loading="lazy">
+            <img src="../assets/media/detail_t4.jpg" alt="Piscina infinita con vista al skyline de Buenos Aires"
+              loading="lazy">
           </div>
+
+          <!-- Boton siguiente -->
           <button class="carousel-btn next-btn" aria-label="Siguiente">›</button>
         </div>
       </div>
     </section>
 
-    <!-- ── DETAIL LAYOUT ──────────────────────── -->
+    <!-- ========== LAYOUT DETALLE ========== -->
     <section aria-label="Detalle de la propiedad">
       <div class="container">
         <div class="detail-layout">
 
-          <!-- ── COLUMNA PRINCIPAL ─────────────── -->
+          <!-- ========== COLUMNA PRINCIPAL ========== -->
           <div class="detail-main">
 
             <!-- Header precio + título -->
             <div class="prop-header reveal">
+
+              <!-- Precio -->
               <div class="prop-price-row">
                 <div>
-                  <div class="prop-price" aria-label="Precio: USD 520.000">USD 520.000</div>
+                  <div class="prop-price">USD 520.000</div>
                   <div class="prop-price-sub">Expensas: $85.000/mes aprox.</div>
                 </div>
               </div>
+
+              <!-- Título -->
               <h1 class="prop-title">Casa Moderna Premium<br>con Piscina Infinita</h1>
+
+              <!-- Dirección -->
               <p class="prop-address">
-                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none"
+                  stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"
+                  aria-hidden="true">
+                  <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z" />
+                  <circle cx="12" cy="10" r="3" />
+                </svg>
                 Av. Del Libertador 8500, Palermo, CABA
               </p>
+
             </div>
 
-            <!-- Stats -->
-            <div class="prop-stats reveal" role="list" aria-label="Características principales">
-              <div class="prop-stat" role="listitem">
+            <!-- INFORMACIÓN -->
+            <div class="prop-stats reveal">
+
+              <!-- Ambientes -->
+              <div class="prop-stat">
                 <div class="prop-stat-value">5</div>
                 <div class="prop-stat-label">Ambientes</div>
               </div>
-              <div class="prop-stat" role="listitem">
+
+              <!-- Baños -->
+              <div class="prop-stat">
                 <div class="prop-stat-value">4</div>
                 <div class="prop-stat-label">Baños</div>
               </div>
-              <div class="prop-stat" role="listitem">
+
+              <!-- Superficie cubierta -->
+              <div class="prop-stat">
                 <div class="prop-stat-value">480</div>
                 <div class="prop-stat-label">m² cubiertos</div>
               </div>
-              <div class="prop-stat" role="listitem">
+
+              <!-- Superficie del terreno -->
+              <div class="prop-stat">
                 <div class="prop-stat-value">900</div>
                 <div class="prop-stat-label">m² terreno</div>
               </div>
-              <div class="prop-stat" role="listitem">
+
+              <!-- Cocheras -->
+              <div class="prop-stat">
                 <div class="prop-stat-value">3</div>
                 <div class="prop-stat-label">Cocheras</div>
               </div>
+
             </div>
 
             <!-- Descripción -->
             <div class="prop-section reveal">
               <h2 class="prop-section-title">Sobre esta propiedad</h2>
-              <p class="prop-desc">
-                Descubrí una obra maestra de la arquitectura contemporánea ubicada en uno de los corredores más exclusivos de Buenos Aires. Esta residencia de autor combina a la perfección el lujo, la funcionalidad y el diseño de vanguardia en una sola propiedad única.
-              </p>
-              <p class="prop-desc">
-                El living-comedor de planta abierta con doble altura y ventanales floor-to-ceiling baña cada rincón de luz natural, mientras que la cocina equipada con isla de mármol Calacatta y electrodomésticos de alta gama satisface los estándares más exigentes.
-              </p>
-              <div class="prop-desc-extra" id="descExtra">
+              <div class="prop-desc-container">
                 <p class="prop-desc">
-                  La suite principal cuenta con vestidor walk-in y baño en suite con bañera exenta y ducha a ras de piso. Las tres suites adicionales poseen baño en suite propio y acceso a terrazas individuales con vistas al jardín y la piscina.
+                  Descubrí una obra maestra de la arquitectura contemporánea ubicada en uno de los corredores más
+                  exclusivos de Buenos Aires. Esta residencia de autor combina a la perfección el lujo, la funcionalidad y
+                  el diseño de vanguardia en una sola propiedad única.
                 </p>
                 <p class="prop-desc" style="margin-top: 0.875rem;">
-                  El nivel inferior alberga un home theater, gimnasio, sauna finlandesa y área de servicio independiente. El parque diseñado por paisajista incluye piscina infinita climatizada, deck de madera de teca, fogón y quincho con parrilla de doble cuerpo.
+                  El living-comedor de planta abierta con doble altura y ventanales floor-to-ceiling baña cada rincón de
+                  luz natural, mientras que la cocina equipada con isla de mármol Calacatta y electrodomésticos de alta
+                  gama satisface los estándares más exigentes.
                 </p>
                 <p class="prop-desc" style="margin-top: 0.875rem;">
-                  La propiedad cuenta con domótica completa (iluminación, climatización y seguridad), generador automático, sistema de paneles solares y acceso por calle privada con guardia 24hs.
+                  La suite principal cuenta con vestidor walk-in y baño en suite con bañera exenta y ducha a ras de
+                  piso. Las tres suites adicionales poseen baño en suite propio y acceso a terrazas individuales con
+                  vistas al jardín y la piscina.
+                </p>
+                <p class="prop-desc" style="margin-top: 0.875rem;">
+                  El nivel inferior alberga un home theater, gimnasio, sauna finlandesa y área de servicio
+                  independiente. El parque diseñado por paisajista incluye piscina infinita climatizada, deck de madera
+                  de teca, fogón y quincho con parrilla de doble cuerpo.
+                </p>
+                <p class="prop-desc" style="margin-top: 0.875rem;">
+                  La propiedad cuenta con domótica completa (iluminación, climatización y seguridad), generador
+                  automático, sistema de paneles solares y acceso por calle privada con guardia 24hs.
                 </p>
               </div>
-              <button class="read-more-btn" id="readMoreBtn" aria-expanded="false">
-                Leer descripción completa <span>↓</span>
-              </button>
             </div>
 
-            <!-- Características clave -->
+            <!-- Características DESTACADAS -->
             <div class="prop-section reveal">
               <h2 class="prop-section-title">Características Destacadas</h2>
-              <ul class="features-grid" role="list" aria-label="Características de la propiedad">
-                <li class="feature-item" role="listitem">
-                  <span class="feature-icon" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12h20M2 18h20M7 8c2.6 0 3-3 5-3s2.4 3 5 3"/></svg></span> Piscina Infinita
+
+              <ul class="features-grid" aria-label="Características de la propiedad">
+
+                <!-- Piscina -->
+                <li class="feature-item">
+                  <span class="feature-icon" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" width="16"
+                      height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                      stroke-linecap="round" stroke-linejoin="round">
+                      <path d="M2 12h20M2 18h20M7 8c2.6 0 3-3 5-3s2.4 3 5 3" />
+                    </svg></span> Piscina Infinita
                 </li>
-                <li class="feature-item" role="listitem">
-                  <span class="feature-icon" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 16l4-12h8l4 12"/><circle cx="7.5" cy="16.5" r="2.5"/><circle cx="16.5" cy="16.5" r="2.5"/></svg></span> 3 Cocheras Cubiertas
+
+                <!-- Aislamiento Acústico  -->
+                <li class="feature-item">
+                  <span class="feature-icon" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" width="16"
+                      height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                      stroke-linecap="round" stroke-linejoin="round">
+                      <path d="M4 16l4-12h8l4 12" />
+                      <circle cx="7.5" cy="16.5" r="2.5" />
+                      <circle cx="16.5" cy="16.5" r="2.5" />
+                    </svg></span> Aislamiento Acústico
                 </li>
-                <li class="feature-item" role="listitem">
-                  <span class="feature-icon" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9.59 4.59A2 2 0 1 1 11 8H2m10.59 11.41A2 2 0 1 0 14 16H2m15.73-8.27A2.5 2.5 0 1 1 19.5 12H2"/></svg></span> A/C Central
+
+                <!-- Aire acondicionado centralizado -->
+                <li class="feature-item">
+                  <span class="feature-icon" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" width="16"
+                      height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                      stroke-linecap="round" stroke-linejoin="round">
+                      <path
+                        d="M9.59 4.59A2 2 0 1 1 11 8H2m10.59 11.41A2 2 0 1 0 14 16H2m15.73-8.27A2.5 2.5 0 1 1 19.5 12H2" />
+                    </svg></span> A/C Central
                 </li>
-                <li class="feature-item" role="listitem">
-                  <span class="feature-icon" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg></span> Jardín Paisajístico
+
+                <!-- Expensas Bajas -->
+                <li class="feature-item">
+                  <span class="feature-icon" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" width="16"
+                      height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                      stroke-linecap="round" stroke-linejoin="round">
+                      <path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6" />
+                    </svg></span> Expensas Bajas
                 </li>
-                <li class="feature-item" role="listitem">
-                  <span class="feature-icon" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg></span> Smart Home
+
+                <!-- Smart Home -->
+                <li class="feature-item">
+                  <span class="feature-icon" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" width="16"
+                      height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                      stroke-linecap="round" stroke-linejoin="round">
+                      <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+                      <polyline points="9 22 9 12 15 12 15 22"></polyline>
+                    </svg></span> Smart Home
                 </li>
-                <li class="feature-item" role="listitem">
-                  <span class="feature-icon" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8.5 14.5A2.5 2.5 0 0011 12c0-1.38-.5-2-1-3-1.072-2.143-.224-4.054 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 11-14 0c0-1.153.433-2.294 1-3a2.5 2.5 0 002.5 2.5z"/></svg></span> Quincho y Parrilla
+
+                <!-- Quincho y parrilla -->
+                <li class="feature-item">
+                  <span class="feature-icon" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" width="16"
+                      height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                      stroke-linecap="round" stroke-linejoin="round">
+                      <path
+                        d="M8.5 14.5A2.5 2.5 0 0011 12c0-1.38-.5-2-1-3-1.072-2.143-.224-4.054 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 11-14 0c0-1.153.433-2.294 1-3a2.5 2.5 0 002.5 2.5z" />
+                    </svg></span> Quincho y Parrilla
                 </li>
-                <li class="feature-item" role="listitem">
-                  <span class="feature-icon" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="2.18" ry="2.18"/><line x1="7" y1="2" x2="7" y2="22"/><line x1="17" y1="2" x2="17" y2="22"/><line x1="2" y1="12" x2="22" y2="12"/><line x1="2" y1="7" x2="7" y2="7"/><line x1="2" y1="17" x2="7" y2="17"/><line x1="17" y1="17" x2="22" y2="17"/><line x1="17" y1="7" x2="22" y2="7"/></svg></span> Home Theater
+
+                <!-- Teatro en casa -->
+                <li class="feature-item">
+                  <span class="feature-icon" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" width="16"
+                      height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                      stroke-linecap="round" stroke-linejoin="round">
+                      <rect x="2" y="2" width="20" height="20" rx="2.18" ry="2.18" />
+                      <line x1="7" y1="2" x2="7" y2="22" />
+                      <line x1="17" y1="2" x2="17" y2="22" />
+                      <line x1="2" y1="12" x2="22" y2="12" />
+                      <line x1="2" y1="7" x2="7" y2="7" />
+                      <line x1="2" y1="17" x2="7" y2="17" />
+                      <line x1="17" y1="17" x2="22" y2="17" />
+                      <line x1="17" y1="7" x2="22" y2="7" />
+                    </svg></span> Home Theater
                 </li>
-                <li class="feature-item" role="listitem">
-                  <span class="feature-icon" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></span> Seguridad 24hs
+
+                <!-- Seguridad 24hs -->
+                <li class="feature-item">
+                  <span class="feature-icon" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" width="16"
+                      height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                      stroke-linecap="round" stroke-linejoin="round">
+                      <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+                    </svg></span> Seguridad 24hs
                 </li>
-                <li class="feature-item" role="listitem">
-                  <span class="feature-icon" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg></span> Paneles Solares
+                <li class="feature-item">
+                  <span class="feature-icon" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" width="16"
+                      height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                      stroke-linecap="round" stroke-linejoin="round">
+                      <circle cx="12" cy="12" r="5" />
+                      <line x1="12" y1="1" x2="12" y2="3" />
+                      <line x1="12" y1="21" x2="12" y2="23" />
+                      <line x1="4.22" y1="4.22" x2="5.64" y2="5.64" />
+                      <line x1="18.36" y1="18.36" x2="19.78" y2="19.78" />
+                      <line x1="1" y1="12" x2="3" y2="12" />
+                      <line x1="21" y1="12" x2="23" y2="12" />
+                      <line x1="4.22" y1="19.78" x2="5.64" y2="18.36" />
+                      <line x1="18.36" y1="5.64" x2="19.78" y2="4.22" />
+                    </svg></span> Paneles Solares
                 </li>
               </ul>
             </div>
 
             <!-- Detalles del inmueble -->
             <div class="prop-section reveal">
+
               <h2 class="prop-section-title">Ficha Técnica</h2>
               <div style="display:grid;grid-template-columns:1fr 1fr;gap:0.5rem 2rem;">
+
+                <!-- Tipo dde Inmueble -->
                 <div class="info-row" style="padding:0.65rem 0;border-bottom:1px solid var(--gray-100);">
                   <span class="info-row-label">Tipo</span>
                   <span class="info-row-value">Casa</span>
                 </div>
+
+                <!-- Operación: alquiler o venta -->
                 <div class="info-row" style="padding:0.65rem 0;border-bottom:1px solid var(--gray-100);">
                   <span class="info-row-label">Operación</span>
                   <span class="info-row-value">Venta</span>
                 </div>
+
+                <!-- Superficie cubierta -->
                 <div class="info-row" style="padding:0.65rem 0;border-bottom:1px solid var(--gray-100);">
                   <span class="info-row-label">Superficie cubierta</span>
                   <span class="info-row-value">480 m²</span>
                 </div>
+
+                <!-- Superficie total -->
                 <div class="info-row" style="padding:0.65rem 0;border-bottom:1px solid var(--gray-100);">
                   <span class="info-row-label">Superficie total</span>
                   <span class="info-row-value">900 m²</span>
                 </div>
+
+                <!-- Ambientes -->
                 <div class="info-row" style="padding:0.65rem 0;border-bottom:1px solid var(--gray-100);">
                   <span class="info-row-label">Ambientes</span>
                   <span class="info-row-value">5</span>
                 </div>
+
+                <!-- Dormitorios -->
                 <div class="info-row" style="padding:0.65rem 0;border-bottom:1px solid var(--gray-100);">
                   <span class="info-row-label">Dormitorios</span>
                   <span class="info-row-value">4</span>
                 </div>
+
+                <!-- Baños -->
                 <div class="info-row" style="padding:0.65rem 0;border-bottom:1px solid var(--gray-100);">
                   <span class="info-row-label">Baños</span>
                   <span class="info-row-value">4 completos + 1 toilette</span>
                 </div>
+
+                <!-- Antigüedad -->
                 <div class="info-row" style="padding:0.65rem 0;border-bottom:1px solid var(--gray-100);">
                   <span class="info-row-label">Antigüedad</span>
                   <span class="info-row-value">A estrenar</span>
                 </div>
+
+                <!-- Cocheras -->
                 <div class="info-row" style="padding:0.65rem 0;border-bottom:1px solid var(--gray-100);">
                   <span class="info-row-label">Cocheras</span>
                   <span class="info-row-value">3 cubiertas</span>
                 </div>
+
+                <!-- Barrio -->
                 <div class="info-row" style="padding:0.65rem 0;border-bottom:1px solid var(--gray-100);">
                   <span class="info-row-label">Barrio</span>
                   <span class="info-row-value">Palermo, CABA</span>
                 </div>
+
+                <!-- Expensas -->
                 <div class="info-row" style="padding:0.65rem 0;border-bottom:1px solid var(--gray-100);">
                   <span class="info-row-label">Expensas</span>
                   <span class="info-row-value">$85.000/mes</span>
                 </div>
+
+                <!-- Precio/m² -->
                 <div class="info-row" style="padding:0.65rem 0;border-bottom:1px solid var(--gray-100);">
                   <span class="info-row-label">Precio/m²</span>
                   <span class="info-row-value highlight">USD 1.083/m²</span>
@@ -332,91 +597,154 @@
             <!-- Mapa -->
             <div class="prop-section reveal">
               <h2 class="prop-section-title">Ubicación</h2>
-              <div class="map-placeholder" role="button" tabindex="0" aria-label="Abrir mapa de la ubicación" onclick="window.open('https://maps.google.com/?q=Av.+Del+Libertador+8500+Palermo+Buenos+Aires','_blank')">
-                <span class="map-pin" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg></span>
+              <div class="map-placeholder" role="button" tabindex="0"
+                onclick="window.open('https://maps.google.com/?q=Av.+Del+Libertador+8500+Palermo+Buenos+Aires','_blank')">
+                <span class="map-pin" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"
+                    viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                    stroke-linejoin="round">
+                    <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                    <circle cx="12" cy="10" r="3"></circle>
+                  </svg></span>
                 <span class="map-address">Av. Del Libertador 8500, Palermo, CABA</span>
                 <span class="map-label">Clic para ver en Google Maps</span>
               </div>
             </div>
 
-          </div><!-- /detail-main -->
+          </div><!-- fin de Información del inmueble -->
 
-          <!-- ── SIDEBAR ──────────────────────── -->
+          <!-- ========== SIDEBAR ========== -->
           <aside class="detail-sidebar" aria-label="Panel lateral de contacto">
 
-            <!-- Agent card + form -->
+            <!-- AAsesor/a Card-->
             <div class="agent-card reveal">
               <div class="agent-card-header">
-                <div class="agent-avatar" aria-hidden="true">MG</div>
+
+                <!-- Foto Asesor/a -->
+                <img src="../assets/media/fotoAsesor.png" alt="Asesor/a" class="agent-avatar">
+
+                <!-- Datos Asesor/a -->
                 <div>
                   <div class="agent-name">María Gómez</div>
                   <div class="agent-title">Asesora Premier</div>
                   <div class="agent-phone">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.41 2 2 0 0 1 3.6 1h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.56a16 16 0 0 0 6.63 6.63l.91-.91a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="11" height="11" viewBox="0 0 24 24" fill="none"
+                      stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                      aria-hidden="true">
+                      <path
+                        d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.41 2 2 0 0 1 3.6 1h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.56a16 16 0 0 0 6.63 6.63l.91-.91a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z" />
+                    </svg>
                     +54 11 5555-1234
                   </div>
                 </div>
               </div>
 
+              <!-- Formulario -->
               <div class="agent-card-body">
                 <div class="contact-form-title">Solicitar Información</div>
+
+                <!-- Formulario de contacto -->
                 <form id="contactForm" novalidate>
+
+                  <!-- Nombre completo -->
                   <div class="form-group">
                     <label for="contactNombre">Nombre completo</label>
-                    <input type="text" id="contactNombre" name="nombre" placeholder="Tu nombre" required autocomplete="name" />
+                    <input type="text" id="contactNombre" name="nombre" placeholder="Tu nombre" required
+                      autocomplete="name">
                   </div>
+
+                  <!-- Email -->
                   <div class="form-group">
                     <label for="contactEmail">Email</label>
-                    <input type="email" id="contactEmail" name="email" placeholder="ejemplo@gmail.com" required autocomplete="email" />
+                    <input type="email" id="contactEmail" name="email" placeholder="ejemplo@gmail.com" required
+                      autocomplete="email">
                   </div>
+
+                  <!-- Teléfono -->
                   <div class="form-group">
                     <label for="contactTel">Teléfono (opcional)</label>
-                    <input type="tel" id="contactTel" name="tel" placeholder="+54 11 0000-0000" autocomplete="tel" />
+                    <input type="tel" id="contactTel" name="tel" placeholder="+54 11 0000-0000" autocomplete="tel">
                   </div>
+
+                  <!-- Mensaje -->
                   <div class="form-group">
                     <label for="contactMensaje">Mensaje</label>
-                    <textarea id="contactMensaje" name="mensaje" placeholder="Hola, me interesa esta propiedad. Quisiera agendar una visita…" required></textarea>
+                    <textarea id="contactMensaje" name="mensaje"
+                      placeholder="Hola, me interesa esta propiedad. Quisiera agendar una visita…" required></textarea>
                   </div>
+
+                  <!-- Botón de enviar -->
                   <button type="submit" class="btn-contact" id="btn-contact-submit">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.41 2 2 0 0 1 3.6 1h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.56a16 16 0 0 0 6.63 6.63l.91-.91a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none"
+                      stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"
+                      aria-hidden="true">
+                      <path
+                        d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.41 2 2 0 0 1 3.6 1h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.56a16 16 0 0 0 6.63 6.63l.91-.91a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z" />
+                    </svg>
                     Contactar Asesora
                   </button>
-                  <a href="https://wa.me/5491155551234?text=Hola,%20me%20interesa%20esta%20propiedad." target="_blank" rel="noopener noreferrer" class="btn-whatsapp-contact" id="btn-whatsapp-detail" aria-label="Consultar por WhatsApp">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
+
+                  <!-- Botón de WhatsApp -->
+                  <a href="https://wa.me/5491155551234?text=Hola,%20me%20interesa%20esta%20propiedad." target="_blank"
+                    rel="noopener noreferrer" class="btn-whatsapp-contact" id="btn-whatsapp-detail"
+                    aria-label="Consultar por WhatsApp">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none"
+                      stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                      aria-hidden="true">
+                      <path
+                        d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z" />
+                    </svg>
                     Consultar por WhatsApp
                   </a>
                 </form>
               </div>
             </div>
 
-            <!-- Info card -->
-            <div class="info-card reveal reveal-delay-1" aria-label="Resumen de la propiedad">
+            <!-- RESUMEN CARD -->
+            <div class="info-card reveal reveal-delay-1">
+
+              <!-- Título -->
               <div class="info-card-title">Resumen</div>
+
+              <!-- Filas de información -->
               <div class="info-rows">
+
+                <!-- Precio -->
                 <div class="info-row">
                   <span class="info-row-label">Precio</span>
                   <span class="info-row-value highlight">USD 520.000</span>
                 </div>
+
+                <!-- Tipo -->
                 <div class="info-row">
                   <span class="info-row-label">Tipo</span>
                   <span class="info-row-value">Casa · Venta</span>
                 </div>
+
+                <!-- Sup. cubierta -->
                 <div class="info-row">
                   <span class="info-row-label">Sup. cubierta</span>
                   <span class="info-row-value">480 m²</span>
                 </div>
+
+                <!-- Terreno -->
                 <div class="info-row">
                   <span class="info-row-label">Terreno</span>
                   <span class="info-row-value">900 m²</span>
                 </div>
+
+                <!-- Ambientes -->
                 <div class="info-row">
                   <span class="info-row-label">Ambientes</span>
                   <span class="info-row-value">5 | 4 dorm.</span>
                 </div>
+
+                <!-- Baños -->
                 <div class="info-row">
                   <span class="info-row-label">Baños</span>
                   <span class="info-row-value">4 + toilette</span>
                 </div>
+
+                <!-- Cocheras -->
                 <div class="info-row">
                   <span class="info-row-label">Cocheras</span>
                   <span class="info-row-value">3 cubiertas</span>
@@ -431,45 +759,106 @@
       </div>
     </section>
 
-    <!-- ── PROPIEDADES SIMILARES ──────────────── -->
+    <!-- ========== PROPIEDADES SIMILARES ========== -->
     <section class="similar-section" aria-labelledby="similar-title">
       <div class="container">
         <div class="section-header reveal">
+
+          <!-- Header de la sección -->
           <div>
             <span class="section-tag">También te puede interesar</span>
             <h2 class="section-title" id="similar-title">Propiedades <strong>Similares</strong></h2>
           </div>
+
+          <!-- Enlace para ver todas las propiedades -->
           <a href="../index.html#propiedades" class="section-link" id="link-ver-similares">
             Ver todas
-            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
+              stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"
+              aria-hidden="true">
+              <path d="M5 12h14" />
+              <path d="m12 5 7 7-7 7" />
+            </svg>
           </a>
         </div>
 
+        <!-- ========== Grid de propiedades similares ========== -->
         <div class="similar-grid">
+
           <!-- Similar card 1 -->
-          <article class="property-card reveal reveal-delay-1" data-id="2" aria-label="Departamento con Terraza en Palermo">
+          <article class="property-card reveal reveal-delay-1" data-id="2"
+            aria-label="Departamento con Terraza en Palermo">
+
+            <!-- Wrapper de la imagen -->
             <div class="card-image-wrap">
+
+              <!-- Enlace a la propiedad -->
               <a href="verInmueble.html">
-                <img src="../assets/media/prop2.jpg" alt="Departamento con terraza en Palermo" loading="lazy" width="400" height="300" />
-                <span class="card-badge badge-disponible">Disponible</span>
+                <img src="../assets/media/prop2.jpg" alt="Departamento con terraza en Palermo" loading="lazy"
+                  width="400" height="300">
                 <span class="card-type">Alquiler</span>
               </a>
-              <button class="card-favorite" data-fav-id="2" aria-label="Guardar en favoritos" aria-pressed="false" type="button">
-                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg>
+
+              <!-- Botón de favoritos -->
+              <button class="card-favorite" data-fav-id="2" aria-label="Guardar en favoritos" aria-pressed="false"
+                type="button">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
+                  stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"
+                  aria-hidden="true">
+                  <path
+                    d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z">
+                  </path>
+                </svg>
               </button>
             </div>
+
+            <!-- Cuerpo de la tarjeta -->
             <div class="card-body">
               <a href="verInmueble.html" style="text-decoration:none; color:inherit;">
+
+                <!-- Precio -->
                 <div class="card-price">USD 1.800<span class="card-price-unit">/mes</span></div>
+
+                <!-- Título -->
                 <h3 class="card-title">Departamento con Terraza</h3>
+
+                <!-- Ubicación -->
                 <p class="card-location">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+                  <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"
+                    aria-hidden="true">
+                    <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z" />
+                    <circle cx="12" cy="10" r="3" />
+                  </svg>
                   Palermo, CABA
                 </p>
+
+                <!-- Características (Pie de la Card) -->
                 <div class="card-features">
-                  <div class="card-feature"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-right:4px;"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg> 3 Amb.</div>
-                  <div class="card-feature"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-right:4px;"><path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z"></path></svg> 2 Baños</div>
-                  <div class="card-feature"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-right:4px;"><path d="M8 3H5a2 2 0 0 0-2 2v3m18 0V5a2 2 0 0 0-2-2h-3m0 18h3a2 2 0 0 0 2-2v-3M3 16v3a2 2 0 0 0 2 2h3"></path></svg> 120 m²</div>
+
+                  <!-- Ambientes -->
+                  <div class="card-feature"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14"
+                      viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                      stroke-linejoin="round" style="margin-right:4px;">
+                      <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+                      <polyline points="9 22 9 12 15 12 15 22"></polyline>
+                    </svg> 3 Amb.</div>
+
+                  <!-- Baños -->
+                  <div class="card-feature"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14"
+                      viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                      stroke-linejoin="round" style="margin-right:4px;">
+                      <path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z"></path>
+                    </svg> 2 Baños</div>
+
+                  <!-- Superficie -->
+                  <div class="card-feature"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14"
+                      viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                      stroke-linejoin="round" style="margin-right:4px;">
+                      <path
+                        d="M8 3H5a2 2 0 0 0-2 2v3m18 0V5a2 2 0 0 0-2-2h-3m0 18h3a2 2 0 0 0 2-2v-3M3 16v3a2 2 0 0 0 2 2h3">
+                      </path>
+                    </svg> 120 m²</div>
                 </div>
               </a>
             </div>
@@ -478,27 +867,76 @@
           <!-- Similar card 2 -->
           <article class="property-card reveal reveal-delay-2" data-id="3" aria-label="Casa Familiar en Tigre">
             <div class="card-image-wrap">
+
+              <!-- Enlace a la propiedad -->
               <a href="verInmueble.html">
-                <img src="../assets/media/prop3.jpg" alt="Casa familiar con jardín en Tigre" loading="lazy" width="400" height="300" />
-                <span class="card-badge badge-reservado">Reservado</span>
+                <img src="../assets/media/prop3.jpg" alt="Casa familiar con jardín en Tigre" loading="lazy" width="400"
+                  height="300">
                 <span class="card-type">Venta</span>
               </a>
-              <button class="card-favorite" data-fav-id="3" aria-label="Guardar en favoritos" aria-pressed="false" type="button">
-                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg>
+
+              <!-- Botón de favoritos -->
+              <button class="card-favorite" data-fav-id="3" aria-label="Guardar en favoritos" aria-pressed="false"
+                type="button">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
+                  stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"
+                  aria-hidden="true">
+                  <path
+                    d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z">
+                  </path>
+                </svg>
               </button>
             </div>
+
+            <!-- Cuerpo de la tarjeta -->
             <div class="card-body">
+
+              <!-- Enlace a la propiedad -->
               <a href="verInmueble.html" style="text-decoration:none; color:inherit;">
+
+                <!-- Precio -->
                 <div class="card-price">USD 195.000</div>
+
+                <!-- Título -->
                 <h3 class="card-title">Casa Familiar con Jardín y Pileta</h3>
+
+                <!-- Ubicación -->
                 <p class="card-location">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+                  <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"
+                    aria-hidden="true">
+                    <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z" />
+                    <circle cx="12" cy="10" r="3" />
+                  </svg>
                   Tigre, Buenos Aires
                 </p>
+
+                <!-- Características (Pie de la Card) -->
                 <div class="card-features">
-                  <div class="card-feature"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-right:4px;"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg> 5 Amb.</div>
-                  <div class="card-feature"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-right:4px;"><path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z"></path></svg> 3 Baños</div>
-                  <div class="card-feature"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-right:4px;"><path d="M8 3H5a2 2 0 0 0-2 2v3m18 0V5a2 2 0 0 0-2-2h-3m0 18h3a2 2 0 0 0 2-2v-3M3 16v3a2 2 0 0 0 2 2h3"></path></svg> 480 m²</div>
+
+                  <!-- Ambientes -->
+                  <div class="card-feature"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14"
+                      viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                      stroke-linejoin="round" style="margin-right:4px;">
+                      <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+                      <polyline points="9 22 9 12 15 12 15 22"></polyline>
+                    </svg> 5 Amb.</div>
+
+                  <!-- Baños -->
+                  <div class="card-feature"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14"
+                      viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                      stroke-linejoin="round" style="margin-right:4px;">
+                      <path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z"></path>
+                    </svg> 3 Baños</div>
+
+                  <!-- Superficie -->
+                  <div class="card-feature"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14"
+                      viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                      stroke-linejoin="round" style="margin-right:4px;">
+                      <path
+                        d="M8 3H5a2 2 0 0 0-2 2v3m18 0V5a2 2 0 0 0-2-2h-3m0 18h3a2 2 0 0 0 2-2v-3M3 16v3a2 2 0 0 0 2 2h3">
+                      </path>
+                    </svg> 480 m²</div>
                 </div>
               </a>
             </div>
@@ -507,27 +945,76 @@
           <!-- Similar card 3 -->
           <article class="property-card reveal reveal-delay-3" data-id="1" aria-label="Casa Moderna en Nordelta">
             <div class="card-image-wrap">
+
+              <!-- Enlace a la propiedad -->
               <a href="verInmueble.html">
-                <img src="../assets/media/prop1.jpg" alt="Casa moderna con vista panorámica en Nordelta" loading="lazy" width="400" height="300" />
-                <span class="card-badge badge-disponible">Disponible</span>
+                <img src="../assets/media/prop1.jpg" alt="Casa moderna con vista panorámica en Nordelta" loading="lazy"
+                  width="400" height="300">
                 <span class="card-type">Venta</span>
               </a>
-              <button class="card-favorite" data-fav-id="1" aria-label="Guardar en favoritos" aria-pressed="false" type="button">
-                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg>
+
+              <!-- Botón de favoritos -->
+              <button class="card-favorite" data-fav-id="1" aria-label="Guardar en favoritos" aria-pressed="false"
+                type="button">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
+                  stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"
+                  aria-hidden="true">
+                  <path
+                    d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z">
+                  </path>
+                </svg>
               </button>
             </div>
+
+            <!-- Cuerpo de la tarjeta -->
             <div class="card-body">
+
+              <!-- Enlace a la propiedad -->
               <a href="verInmueble.html" style="text-decoration:none; color:inherit;">
+
+                <!-- Precio -->
                 <div class="card-price">USD 280.000</div>
+
+                <!-- Título -->
                 <h3 class="card-title">Casa Moderna con Vista Panorámica</h3>
+
+                <!-- Ubicación -->
                 <p class="card-location">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+                  <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"
+                    aria-hidden="true">
+                    <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z" />
+                    <circle cx="12" cy="10" r="3" />
+                  </svg>
                   Nordelta, Buenos Aires
                 </p>
+
+                <!-- Características (Pie de la Card) -->
                 <div class="card-features">
-                  <div class="card-feature"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-right:4px;"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg> 4 Amb.</div>
-                  <div class="card-feature"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-right:4px;"><path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z"></path></svg> 3 Baños</div>
-                  <div class="card-feature"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-right:4px;"><path d="M8 3H5a2 2 0 0 0-2 2v3m18 0V5a2 2 0 0 0-2-2h-3m0 18h3a2 2 0 0 0 2-2v-3M3 16v3a2 2 0 0 0 2 2h3"></path></svg> 320 m²</div>
+
+                  <!-- Ambientes -->
+                  <div class="card-feature"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14"
+                      viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                      stroke-linejoin="round" style="margin-right:4px;">
+                      <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+                      <polyline points="9 22 9 12 15 12 15 22"></polyline>
+                    </svg> 4 Amb.</div>
+
+                  <!-- Baños -->
+                  <div class="card-feature"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14"
+                      viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                      stroke-linejoin="round" style="margin-right:4px;">
+                      <path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z"></path>
+                    </svg> 3 Baños</div>
+
+                  <!-- Superficie -->
+                  <div class="card-feature"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14"
+                      viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                      stroke-linejoin="round" style="margin-right:4px;">
+                      <path
+                        d="M8 3H5a2 2 0 0 0-2 2v3m18 0V5a2 2 0 0 0-2-2h-3m0 18h3a2 2 0 0 0 2-2v-3M3 16v3a2 2 0 0 0 2 2h3">
+                      </path>
+                    </svg> 320 m²</div>
                 </div>
               </a>
             </div>
@@ -539,18 +1026,21 @@
   </main>
 
   <!-- =============================================
-       FOOTER — idéntico al index.html
+       FOOTER 
        ============================================= -->
-  <footer class="footer" role="contentinfo">
+  <footer class="footer">
     <div class="container">
 
       <!-- Fila principal: 3 columnas -->
       <div class="footer-main">
 
-        <!-- Columna 1: Brand -->
+        <!-- Columna 1: MARCA -->
         <div class="footer-col footer-col--brand">
           <a href="../index.html" class="nav-logo footer-logo" aria-label="Negocios Inmobiliarios">
-            <img src="../assets/media/logoLight.png" alt="Negocios Inmobiliarios" style="height: 52px; width: auto;" />
+            <!-- Logo -->
+            <img src="../assets/media/logoLight.png" alt="Negocios Inmobiliarios" style="height: 52px; width: auto;">
+
+            <!-- Nombre -->
             <span class="logo-text">Negocios Inmobiliarios</span>
           </a>
         </div>
@@ -582,30 +1072,72 @@
         <div class="footer-col footer-col--center">
           <div class="footer-col-title">Contacto</div>
           <address class="footer-contact" style="font-style:normal;">
+
+            <!-- Dirección -->
             <div class="footer-contact-item">
-              <span class="footer-contact-icon" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg></span>
+              <span class="footer-contact-icon" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" width="15"
+                  height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                  stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                  <circle cx="12" cy="10" r="3"></circle>
+                </svg></span>
               <span>Av. Corrientes 1234, Piso 5 — CABA</span>
             </div>
+
+            <!-- Teléfono -->
             <div class="footer-contact-item">
-              <span class="footer-contact-icon" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg></span>
+              <span class="footer-contact-icon" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" width="15"
+                  height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                  stroke-linecap="round" stroke-linejoin="round">
+                  <path
+                    d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z">
+                  </path>
+                </svg></span>
               <a href="tel:+541100000000" style="color:inherit;">+54 11 0000-0000</a>
             </div>
+
+            <!-- Email -->
             <div class="footer-contact-item">
-              <span class="footer-contact-icon" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg></span>
-              <a href="mailto:info@negociosinmobiliarios.com.ar" style="color:inherit;">info@negociosinmobiliarios.com.ar</a>
+              <span class="footer-contact-icon" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" width="15"
+                  height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                  stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                  <polyline points="22,6 12,13 2,6"></polyline>
+                </svg></span>
+              <a href="mailto:info@negociosinmobiliarios.com.ar"
+                style="color:inherit;">info@negociosinmobiliarios.com.ar</a>
             </div>
           </address>
 
           <!-- Redes sociales debajo del mail -->
-          <div class="footer-socials" aria-label="Redes sociales">
+          <div class="footer-socials">
+
+            <!-- Instagram -->
             <a href="#" class="social-btn" aria-label="Instagram" title="Instagram">
-              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="20" x="2" y="2" rx="5" ry="5" /><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" /><line x1="17.5" x2="17.51" y1="6.5" y2="6.5" /></svg>
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <rect width="20" height="20" x="2" y="2" rx="5" ry="5" />
+                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
+                <line x1="17.5" x2="17.51" y1="6.5" y2="6.5" />
+              </svg>
             </a>
+
+            <!-- Facebook -->
             <a href="#" class="social-btn" aria-label="Facebook" title="Facebook">
-              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" /></svg>
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" />
+              </svg>
             </a>
-            <a href="https://wa.me/541100000000" class="social-btn" aria-label="WhatsApp" title="WhatsApp" target="_blank" rel="noopener noreferrer">
-              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z" /></svg>
+
+            <!-- WhatsApp -->
+            <a href="https://wa.me/541100000000" class="social-btn" aria-label="WhatsApp" title="WhatsApp"
+              target="_blank" rel="noopener noreferrer">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path
+                  d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z" />
+              </svg>
             </a>
           </div>
         </div>
@@ -623,27 +1155,19 @@
   </footer>
 
 
-  <!-- ── Gallery Modal ───────────────────────── -->
-  <div id="galleryModal" class="gallery-modal" role="dialog" aria-modal="true" aria-label="Galería de fotos" aria-hidden="true">
-    <div class="modal-img-wrap">
-      <button class="modal-close" id="modalClose" aria-label="Cerrar galería">✕</button>
-      <button class="modal-prev" id="modalPrev" aria-label="Foto anterior">‹</button>
-      <img src="" alt="" id="modalImg" />
-      <button class="modal-next" id="modalNext" aria-label="Siguiente foto">›</button>
-      <div class="modal-counter" id="modalCounter" aria-live="polite">1 / 5</div>
-    </div>
-  </div>
-
   <!-- JS: base (navbar + hamburger) + específico de página -->
   <script src="../assets/js/main.js" defer></script>
   <script src="../assets/js/verInmueble.js" defer></script>
 
   <!-- WhatsApp Flotante -->
-  <a href="https://wa.me/541100000000" class="whatsapp-float" target="_blank" rel="noopener noreferrer" aria-label="Contactar por WhatsApp">
+  <a href="https://wa.me/541100000000" class="whatsapp-float" target="_blank" rel="noopener noreferrer"
+    aria-label="Contactar por WhatsApp">
     <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="currentColor">
-      <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a12.8 12.8 0 0 0-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/>
+      <path
+        d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a12.8 12.8 0 0 0-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z" />
     </svg>
   </a>
 
 </body>
+
 </html>

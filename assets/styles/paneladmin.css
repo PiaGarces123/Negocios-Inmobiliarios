@@ -208,6 +208,9 @@ html, body { height: 100%; overflow: hidden; }
   gap: 1rem;
   margin-bottom: 2rem;
 }
+.stats-grid-3 {
+  grid-template-columns: repeat(3, 1fr);
+}
 .stat-card {
   background: var(--white);
   border-radius: var(--radius-lg);
@@ -707,7 +710,7 @@ html, body { height: 100%; overflow: hidden; }
 .admin-overlay.open { display: block; }
 
 @media (max-width: 1024px) {
-  .stats-grid { grid-template-columns: repeat(2, 1fr); }
+  .stats-grid, .stats-grid-3 { grid-template-columns: repeat(2, 1fr); }
 }
 @media (max-width: 900px) {
   .admin-hamburger { display: flex; }
@@ -717,9 +720,12 @@ html, body { height: 100%; overflow: hidden; }
   .edit-panel { width: 100%; max-width: 420px; }
 }
 @media (max-width: 640px) {
-  .stats-grid { grid-template-columns: 1fr 1fr; }
+  .stats-grid, .stats-grid-3 { grid-template-columns: repeat(2, 1fr); }
   .admin-content { padding: 1rem; }
   .admin-topbar { padding: 0 1rem; }
+}
+@media (max-width: 560px) {
+  .stats-grid, .stats-grid-3 { grid-template-columns: 1fr; }
 }
 
 /* --- Formulario de configuración 2 columnas --- */
@@ -737,4 +743,163 @@ html, body { height: 100%; overflow: hidden; }
   .settings-grid-form .full-width {
     grid-column: span 2;
   }
+}
+
+/* Avatar Upload & Profile Picture Styles */
+.avatar-edit-container {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+  margin-bottom: 1.5rem;
+}
+
+.avatar-preview-box {
+  width: 88px;
+  height: 88px;
+  border-radius: 50%;
+  overflow: hidden;
+  background: linear-gradient(135deg, var(--navy-800), var(--navy-600));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--gold-300);
+  font-size: 2rem;
+  font-weight: 700;
+  border: 3px solid var(--gold-400);
+  box-shadow: 0 4px 12px rgba(10, 22, 40, 0.15);
+  flex-shrink: 0;
+  position: relative;
+}
+
+.avatar-preview-box img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.avatar-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.avatar-btn-group {
+  display: flex;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+
+.btn-upload-photo {
+  padding: 0.55rem 1.1rem;
+  background: var(--navy-900);
+  color: var(--white);
+  border-radius: var(--radius-md);
+  font-size: 0.82rem;
+  font-weight: 600;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  transition: all var(--transition);
+  border: none;
+}
+
+.btn-upload-photo:hover {
+  background: var(--navy-700);
+}
+
+.btn-remove-photo {
+  padding: 0.55rem 1.1rem;
+  background: var(--gray-100);
+  color: var(--gray-700);
+  border-radius: var(--radius-md);
+  font-size: 0.82rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all var(--transition);
+  border: 1px solid var(--gray-200);
+}
+
+.btn-remove-photo:hover {
+  background: var(--gray-200);
+  color: var(--navy-900);
+}
+
+.avatar-hint {
+  font-size: 0.75rem;
+  color: var(--gray-500);
+}
+
+/* ── Profile / Contact Info Form (Admin-Client Sync) ─── */
+.profile-section {
+  margin-bottom: 2rem;
+  padding-bottom: 2rem;
+  border-bottom: 1px solid var(--gray-100);
+}
+
+.profile-section:last-of-type {
+  border-bottom: none;
+  margin-bottom: 1.5rem;
+  padding-bottom: 0;
+}
+
+.profile-section-title {
+  font-family: var(--font-heading);
+  font-size: 1.15rem;
+  font-weight: 600;
+  color: var(--navy-900);
+  margin-bottom: 1.25rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+/* 2-Column Responsive Grid Form */
+.profile-grid-form {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.25rem 1.5rem;
+}
+
+@media (min-width: 640px) {
+  .profile-grid-form {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .profile-grid-form .full-col {
+    grid-column: span 2;
+  }
+}
+
+.profile-input-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.profile-input-group label {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--navy-900);
+}
+
+.profile-input-group input,
+.profile-input-group select {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  border-radius: var(--radius-md);
+  border: 1.5px solid var(--gray-200);
+  font-size: 0.875rem;
+  font-family: inherit;
+  color: var(--navy-900);
+  background: var(--white);
+  transition: border-color var(--transition);
+  outline: none;
+}
+
+.profile-input-group input:focus,
+.profile-input-group select:focus {
+  border-color: var(--navy-700);
+  box-shadow: 0 0 0 3px rgba(30, 58, 115, 0.08);
 }

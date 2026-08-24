@@ -356,23 +356,26 @@ document.addEventListener('DOMContentLoaded', () => {
     if (!grid) return;
     grid.innerHTML = data.map(p => `
       <article class="property-card reveal" data-id="${p.id}" aria-label="${p.title}">
-        <a href="${p.href}">
-          <div class="card-image-wrap">
+        <div class="card-image-wrap">
+          <a href="${p.href}">
             <img src="${p.img}" alt="${p.title}" loading="lazy" width="400" height="300" />
-            <span class="card-badge ${badgeClass(p.status)}">${p.statusLabel}</span>
             <span class="card-type">${p.tipo}</span>
-          </div>
-        </a>
-        <button class="card-favorite active" data-fav-id="${p.id}" aria-label="Quitar de favoritos" aria-pressed="true">${iconSVG('heartRed')}</button>
+          </a>
+          <button class="card-favorite active" data-fav-id="${p.id}" aria-label="Quitar de favoritos" aria-pressed="true" type="button">
+            ${iconSVG('heartRed')}
+          </button>
+        </div>
         <div class="card-body">
-          <div class="card-price">${p.price}<span class="card-price-unit">${p.priceUnit}</span></div>
-          <h3 class="card-title">${p.title}</h3>
-          <p class="card-location">${iconSVG('pin')} ${p.location}</p>
-          <div class="card-features">
-            <div class="card-feature">${iconSVG('home')} ${p.amb} Amb.</div>
-            <div class="card-feature">${iconSVG('bath')} ${p.banos} Baños</div>
-            <div class="card-feature">${iconSVG('ruler')} ${p.m2} m²</div>
-          </div>
+          <a href="${p.href}" style="text-decoration:none; color:inherit;">
+            <div class="card-price">${p.price}<span class="card-price-unit">${p.priceUnit}</span></div>
+            <h3 class="card-title">${p.title}</h3>
+            <p class="card-location">${iconSVG('pin')} ${p.location}</p>
+            <div class="card-features">
+              <div class="card-feature">${iconSVG('home')} ${p.amb} Amb.</div>
+              <div class="card-feature">${iconSVG('bath')} ${p.banos} Baños</div>
+              <div class="card-feature">${iconSVG('ruler')} ${p.m2} m²</div>
+            </div>
+          </a>
         </div>
       </article>
     `).join('');
@@ -514,16 +517,15 @@ document.addEventListener('DOMContentLoaded', () => {
       const isFav = favorites.some(f => f.id === p.id);
       return `
         <article class="property-card reveal" data-id="${p.id}" aria-label="${p.title}">
-          <a href="${p.href}">
-            <div class="card-image-wrap">
+          <div class="card-image-wrap">
+            <a href="${p.href}">
               <img src="${p.img}" alt="${p.title}" loading="lazy" width="400" height="300" />
-              <span class="card-badge ${badgeClass(p.status)}">${p.statusLabel}</span>
               <span class="card-type">${p.tipo}</span>
-            </div>
-          </a>
-          <button class="card-favorite ${isFav ? 'active' : ''}" data-alert-fav-id="${p.id}" aria-label="${isFav ? 'Quitar de favoritos' : 'Guardar en favoritos'}" aria-pressed="${isFav}">
-            ${isFav ? iconSVG('heartRed') : iconSVG('heartOutline')}
-          </button>
+            </a>
+            <button class="card-favorite ${isFav ? 'active' : ''}" data-alert-fav-id="${p.id}" aria-label="${isFav ? 'Quitar de favoritos' : 'Guardar en favoritos'}" aria-pressed="${isFav}" type="button">
+              ${isFav ? iconSVG('heartRed') : iconSVG('heartOutline')}
+            </button>
+          </div>
           <div class="card-body">
             <div class="alert-deal-badge">
               <svg xmlns="http://www.w3.org/2000/svg" width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg>

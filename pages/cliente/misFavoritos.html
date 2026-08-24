@@ -5,24 +5,24 @@
     <!-- =============================================
        SEO — Mis Favoritos
        ============================================= -->
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mis Favoritos | Mi Cuenta — Negocios Inmobiliarios</title>
     <meta name="description"
-        content="Tus propiedades guardadas en Negocios Inmobiliarios. Accedé rápidamente a las casas y departamentos que más te interesaron." />
-    <meta name="robots" content="noindex, nofollow" />
+        content="Tus propiedades guardadas en Negocios Inmobiliarios. Accedé rápidamente a las casas y departamentos que más te interesaron.">
+    <meta name="robots" content="noindex, nofollow">
 
     <!-- Favicon -->
-    <link rel="icon" href="../../assets/media/logo.ico" />
+    <link rel="icon" href="../../assets/media/logo.ico">
 
     <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
     <!-- Stylesheets: base → página (mínimo) -->
-    <link rel="stylesheet" href="../../assets/styles/style.css" />
-    <link rel="stylesheet" href="../../assets/styles/verInmueble.css" />
-    <link rel="stylesheet" href="../../assets/styles/misFavoritos.css" />
+    <link rel="stylesheet" href="../../assets/styles/style.css">
+    <link rel="stylesheet" href="../../assets/styles/verInmueble.css">
+    <link rel="stylesheet" href="../../assets/styles/misFavoritos.css">
 </head>
 
 <body class="inner-page page-top">
@@ -31,14 +31,14 @@
        NAVBAR — igual al resto del sitio
        ============================================= -->
     <header>
-        <nav id="navbar" class="navbar scrolled" role="navigation" aria-label="Navegación principal">
+        <nav id="navbar" class="navbar scrolled" aria-label="Navegación principal">
             <a href="../../index.html" class="nav-logo" aria-label="Negocios Inmobiliarios - Inicio">
-                <img src="../../assets/media/logoLight.png" alt="Negocios Inmobiliarios" class="logo-light" />
-                <img src="../../assets/media/logoDark.png" alt="Negocios Inmobiliarios" class="logo-dark" />
+                <img src="../../assets/media/logoLight.png" alt="Negocios Inmobiliarios" class="logo-light">
+                <img src="../../assets/media/logoDark.png" alt="Negocios Inmobiliarios" class="logo-dark">
                 <span class="logo-text">Negocios Inmobiliarios</span>
             </a>
 
-            <ul class="nav-menu" role="list">
+            <ul class="nav-menu">
                 <li><a href="../../index.html#propiedades" class="nav-link">Comprar</a></li>
                 <li><a href="../../index.html#propiedades" class="nav-link">Alquilar</a></li>
                 <li><a href="../nosotros.html" class="nav-link">Nosotros</a></li>
@@ -227,7 +227,7 @@
                                             </select>
                                         </div>
                                         <!-- View toggle -->
-                                        <div class="view-toggle" role="group" aria-label="Cambiar vista">
+                                        <div class="view-toggle" role="group">
                                             <button class="view-toggle-btn" id="btnList" title="Vista lista"
                                                 aria-label="Vista lista" aria-pressed="false">
                                                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
@@ -259,15 +259,15 @@
                                 </div>
 
                                 <!-- Grid view (default) -->
-                                <div class="properties-grid" id="favsGrid" role="list"
-                                    aria-label="Propiedades favoritas en cuadrícula"
+                                <div class="properties-grid" id="favsGrid"
+                                   
                                     style="grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));">
                                     <!-- JS renderiza aquí -->
                                 </div>
 
                                 <!-- List view -->
-                                <div class="favs-list-view" id="favsList" role="list"
-                                    aria-label="Propiedades favoritas en lista" style="display:none;">
+                                <div class="favs-list-view" id="favsList"
+                                    style="display:none;">
                                     <!-- JS renderiza aquí -->
                                 </div>
 
@@ -327,7 +327,7 @@
                                         <div class="avatar-edit-container">
                                             <div class="avatar-preview-box" id="avatarPreviewBox">
                                                 <span id="avatarInitials">JP</span>
-                                                <img src="" alt="Avatar" id="avatarImg" style="display:none;" />
+                                                <img src="" alt="Avatar" id="avatarImg" style="display:none;">
                                             </div>
                                             <div class="avatar-actions">
                                                 <div class="avatar-btn-group">
@@ -346,7 +346,7 @@
                                                         Quitar foto
                                                     </button>
                                                     <input type="file" id="userPhotoInput" accept="image/*"
-                                                        style="display:none;" />
+                                                        style="display:none;">
                                                 </div>
                                                 <span class="avatar-hint">Formatos soportados: JPG, PNG o WEBP (máx.
                                                     2MB).</span>
@@ -368,15 +368,15 @@
                                         <div class="profile-grid-form">
                                             <div class="profile-input-group">
                                                 <label for="userNombre">Nombre completo</label>
-                                                <input type="text" id="userNombre" value="Juan Manuel Pérez" required />
+                                                <input type="text" id="userNombre" value="Juan Manuel Pérez" required>
                                             </div>
                                             <div class="profile-input-group">
                                                 <label for="userEmail">Correo electrónico</label>
-                                                <input type="email" id="userEmail" value="ejemplo@gmail.com" required />
+                                                <input type="email" id="userEmail" value="ejemplo@gmail.com" required>
                                             </div>
                                             <div class="profile-input-group">
                                                 <label for="userTel">Teléfono / Celular</label>
-                                                <input type="tel" id="userTel" value="+54 11 4444-5555" required />
+                                                <input type="tel" id="userTel" value="+54 11 4444-5555" required>
                                             </div>
                                             <div class="profile-input-group">
                                                 <label for="userPref">Preferencia de contacto</label>
@@ -403,17 +403,17 @@
                                         <div class="profile-grid-form">
                                             <div class="profile-input-group full-col">
                                                 <label for="userOldPass">Contraseña actual</label>
-                                                <input type="password" id="userOldPass" placeholder="••••••••" />
+                                                <input type="password" id="userOldPass" placeholder="••••••••">
                                             </div>
                                             <div class="profile-input-group">
                                                 <label for="userNewPass">Nueva contraseña</label>
                                                 <input type="password" id="userNewPass"
-                                                    placeholder="Mínimo 6 caracteres" />
+                                                    placeholder="Mínimo 6 caracteres">
                                             </div>
                                             <div class="profile-input-group">
                                                 <label for="userConfirmPass">Confirmar nueva contraseña</label>
                                                 <input type="password" id="userConfirmPass"
-                                                    placeholder="Repetir nueva contraseña" />
+                                                    placeholder="Repetir nueva contraseña">
                                             </div>
                                         </div>
                                     </div>
@@ -447,7 +447,7 @@
                             </div>
                             <div class="account-main-body">
                                 <!-- Filter Pills -->
-                                <div class="filter-pills" role="tablist" aria-label="Filtro de alertas de precio">
+                                <div class="filter-pills">
                                     <span
                                         style="font-size:0.8rem;font-weight:600;color:var(--navy-900);margin-right:0.25rem;">Filtrar:</span>
                                     <button class="filter-pill-btn active" data-filter="all"
@@ -458,8 +458,8 @@
                                 </div>
 
                                 <!-- Grid de las 6 más económicas -->
-                                <div class="properties-grid" id="alertasGrid" role="list"
-                                    aria-label="Propiedades económicas en alerta de precio"
+                                <div class="properties-grid" id="alertasGrid"
+                                   
                                     style="grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));">
                                     <!-- JS renderiza dinámicamente aquí -->
                                 </div>
@@ -477,7 +477,7 @@
     <!-- =============================================
        FOOTER — igual al resto del sitio
        ============================================= -->
-    <footer class="footer" role="contentinfo">
+    <footer class="footer">
         <div class="container">
 
             <!-- Fila principal: 3 columnas -->
@@ -487,7 +487,7 @@
                 <div class="footer-col footer-col--brand">
                     <a href="../../index.html" class="nav-logo footer-logo" aria-label="Negocios Inmobiliarios">
                         <img src="../../assets/media/logoLight.png" alt="Negocios Inmobiliarios"
-                            style="height: 52px; width: auto;" />
+                            style="height: 52px; width: auto;">
                         <span class="logo-text">Negocios Inmobiliarios</span>
                     </a>
                 </div>
@@ -553,7 +553,7 @@
                     </address>
 
                     <!-- Redes sociales debajo del mail -->
-                    <div class="footer-socials" aria-label="Redes sociales">
+                    <div class="footer-socials">
                         <a href="#" class="social-btn" aria-label="Instagram" title="Instagram">
                             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"
                                 fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
