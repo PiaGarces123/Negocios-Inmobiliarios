@@ -432,7 +432,7 @@ document.addEventListener('DOMContentLoaded', () => {
     else renderList(data);
   }
 
-  // ── Favoritos Heart Buttons ─────────────────
+  // ── Botones de Corazón de Favoritos ─────────────────
   function attachFavButtons() {
     document.querySelectorAll('[data-fav-id]').forEach(btn => {
       btn.addEventListener('click', e => {
@@ -444,7 +444,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // ── Confirm dialog ──────────────────────────
+  // ── Diálogo de confirmación ──────────────────────────
   function openConfirm() {
     confirmDlg.classList.add('open');
     confirmDlg.setAttribute('aria-hidden', 'false');
@@ -472,7 +472,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if (e.key === 'Escape') closeConfirm();
   });
 
-  // ── View toggle ─────────────────────────────
+  // ── Alternar vista ─────────────────────────────
   btnGrid?.addEventListener('click', () => {
     currentView = 'grid';
     btnGrid.classList.add('active');
@@ -486,10 +486,10 @@ document.addEventListener('DOMContentLoaded', () => {
     render();
   });
 
-  // ── Sort ────────────────────────────────────
+  // ── Ordenamiento ────────────────────────────────────
   sortSel?.addEventListener('change', render);
 
-  // ── Scroll reveal ───────────────────────────
+  // ── Revelación al hacer scroll (Scroll Reveal) ───────────────────────────
   function revealCards() {
     const items = document.querySelectorAll('.reveal:not(.visible)');
     const ro = new IntersectionObserver(entries => {
@@ -730,7 +730,7 @@ document.addEventListener('DOMContentLoaded', () => {
     showToast('✓ Información de contacto actualizada');
   });
 
-  // ── Toast Notification ───────────────────────
+  // ── Notificación Toast ───────────────────────
   function showToast(msg) {
     let t = document.querySelector('.toast-account');
     if (!t) {
@@ -756,7 +756,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }, 3200);
   }
 
-  // ── Logout ────────────────────────────────────
+  // ── Cerrar sesión (Logout) ────────────────────────────────────
   document.getElementById('nav-salir')?.addEventListener('click', () => {
     showToast('✓ Sesión cerrada');
     setTimeout(() => window.location.href = '../../index.html', 1000);

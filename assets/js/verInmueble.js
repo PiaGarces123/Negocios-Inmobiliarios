@@ -7,7 +7,7 @@ document.addEventListener('DOMContentLoaded', () => {
   // ── Reutilizar navbar scroll + hamburger de main.js
   // (main.js se carga también en esta página)
 
-  // ── Gallery modal ───────────────────────────
+  // ── Modal de galería ───────────────────────────
   const galleryModal   = document.getElementById('galleryModal');
   const modalImg       = document.getElementById('modalImg');
   const modalCounter   = document.getElementById('modalCounter');
@@ -51,7 +51,7 @@ document.addEventListener('DOMContentLoaded', () => {
   if (modalNext)  modalNext.addEventListener('click', () => { currentIdx = (currentIdx + 1) % galleryImages.length; updateModal(); });
   if (galleryModal) galleryModal.addEventListener('click', e => { if (e.target === galleryModal) closeModal(); });
 
-  // Keyboard nav
+  // Navegación por teclado
   document.addEventListener('keydown', e => {
     if (!galleryModal?.classList.contains('open')) return;
     if (e.key === 'Escape') closeModal();
@@ -59,7 +59,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if (e.key === 'ArrowRight') { currentIdx = (currentIdx + 1) % galleryImages.length; updateModal(); }
   });
 
-  // ── Favorite button (Main) ─────────────────
+  // ── Botón de favorito (Principal) ─────────────────
   const favBtn = document.getElementById('propFavBtn');
   if (favBtn) {
     favBtn.addEventListener('click', () => {
@@ -72,7 +72,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // ── Favorite buttons in Similar Cards ──────
+  // ── Botones de favorito en tarjetas similares ──────
   document.querySelectorAll('.similar-grid .card-favorite').forEach(btn => {
     btn.addEventListener('click', e => {
       e.preventDefault();
@@ -89,7 +89,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
-  // ── Carousel ──────────────────────────────────
+  // ── Carrusel ──────────────────────────────────
   const track = document.getElementById('carouselTrack');
   const prevBtn = document.querySelector('.prev-btn');
   const nextBtn = document.querySelector('.next-btn');
@@ -110,7 +110,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // ── Similar Properties Carousel ────────────────
+  // ── Carrusel de propiedades similares ────────────────
   const similarTrack = document.getElementById('similarGridTrack');
   const similarPrevBtn = document.getElementById('btnSimilarPrev');
   const similarNextBtn = document.getElementById('btnSimilarNext');
@@ -121,7 +121,7 @@ document.addEventListener('DOMContentLoaded', () => {
       const trackLeft = similarTrack.getBoundingClientRect().left;
       let activeIndex = cards.findIndex(card => {
         const cardLeft = card.getBoundingClientRect().left;
-        return Math.abs(cardLeft - trackLeft) < 30; // 30px threshold for snapping detection
+        return Math.abs(cardLeft - trackLeft) < 30; // Umbral de 30px para la detección de ajuste (snap)
       });
       if (activeIndex === -1) activeIndex = 0;
       const prevIndex = (activeIndex - 1 + cards.length) % cards.length;
@@ -141,7 +141,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // ── Contact form ────────────────────────────
+  // ── Formulario de contacto ────────────────────────────
   const contactForm = document.getElementById('contactForm');
   if (contactForm) {
     contactForm.addEventListener('submit', e => {
@@ -160,7 +160,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // ── Share button ────────────────────────────
+  // ── Botón de compartir ────────────────────────────
   const shareBtn = document.getElementById('shareBtn');
   if (shareBtn) {
     shareBtn.addEventListener('click', async () => {
@@ -180,11 +180,11 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // ── Print ───────────────────────────────────
+  // ── Imprimir ───────────────────────────────────
   const printBtn = document.getElementById('printBtn');
   if (printBtn) printBtn.addEventListener('click', () => window.print());
 
-  // ── Toast (inline, no depende de main.js) ──
+  // ── Toast (en línea, no depende de main.js) ──
   function showToast(msg) {
     const t = document.createElement('div');
     t.className = 'toast';
@@ -207,7 +207,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }, 3000);
   }
 
-  // ── Scroll reveal (reutiliza clase .reveal de style.css) ──
+  // ── Revelación al hacer scroll (Scroll Reveal - reutiliza clase .reveal de style.css) ──
   const revealEls = document.querySelectorAll('.reveal');
   const ro = new IntersectionObserver(entries => {
     entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); ro.unobserve(e.target); } });

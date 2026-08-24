@@ -1,4 +1,4 @@
-﻿// =============================================
+// =============================================
 // NEGOCIOS INMOBILIARIOS — customSelect.js
 // Dropdown con position:fixed para escapar
 // cualquier stacking context del DOM.
@@ -18,7 +18,7 @@
     if (nativeSelect.dataset.csInit) return;
     nativeSelect.dataset.csInit = 'true';
 
-    // ── Wrapper ──────────────────────────────
+    // ── Contenedor (Wrapper) ──────────────────────────────
     const wrapper = document.createElement('div');
     wrapper.className = 'cs-wrapper';
     if (nativeSelect.dataset.csTheme) wrapper.classList.add(nativeSelect.dataset.csTheme);
@@ -26,7 +26,7 @@
     nativeSelect.parentNode.insertBefore(wrapper, nativeSelect);
     wrapper.appendChild(nativeSelect);
 
-    // ── Trigger ──────────────────────────────
+    // ── Disparador (Trigger) ──────────────────────────────
     const trigger = document.createElement('button');
     trigger.type = 'button';
     trigger.className = 'cs-trigger';
@@ -87,7 +87,7 @@
 
     renderOptions();
 
-    // ── Open / Close ─────────────────────────
+    // ── Abrir / Cerrar ─────────────────────────
     function openDropdown() {
       // Cerrar cualquier otro abierto primero
       document.querySelectorAll('.cs-wrapper.open').forEach(w => {

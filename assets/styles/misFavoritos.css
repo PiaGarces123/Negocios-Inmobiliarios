@@ -3,12 +3,12 @@
    de cuenta. Reutiliza todo de style.css.
    ============================================= */
 
-/* ── Page offset ─── */
+/* ── Desplazamiento de página (Page offset) ─── */
 .page-top {
   padding-top: 72px;
 }
 
-/* ── Account layout ─── */
+/* ── Diseño de cuenta (Account layout) ─── */
 .account-page {
   background: var(--off-white);
   min-height: calc(100vh - 72px);
@@ -22,7 +22,7 @@
   align-items: start;
 }
 
-/* ── Sidebar ─── */
+/* ── Barra lateral (Sidebar) ─── */
 .account-sidebar {
   background: var(--white);
   border: 1px solid var(--gray-200);
@@ -98,7 +98,7 @@
   margin: 0.5rem 1rem;
 }
 
-/* ── Main panel ─── */
+/* ── Panel principal (Main panel) ─── */
 .account-main {
   background: var(--white);
   border: 1px solid var(--gray-200);
@@ -137,7 +137,7 @@
   text-align: center;
 }
 
-/* ── View toggle ─── */
+/* ── Alternancia de vista (View toggle) ─── */
 .view-toggle {
   display: flex;
   gap: 0.25rem;
@@ -168,12 +168,12 @@
   box-shadow: var(--shadow-sm);
 }
 
-/* ── Content body ─── */
+/* ── Cuerpo del contenido (Content body) ─── */
 .account-main-body {
   padding: 1.5rem 1.75rem;
 }
 
-/* ── Sort/filter bar ─── */
+/* ── Barra de ordenamiento y filtrado ─── */
 .favs-toolbar {
   display: flex;
   align-items: center;
@@ -221,8 +221,8 @@
   border-color: var(--navy-600);
 }
 
-/* ── Grid view: reusa .properties-grid de style.css ─── */
-/* ── List view ─── */
+/* ── Vista de cuadrícula (Grid view): reutiliza .properties-grid de style.css ─── */
+/* ── Vista de lista (List view) ─── */
 .favs-list-view {
   display: flex;
   flex-direction: column;
@@ -336,7 +336,7 @@
   border-color: #dc2626;
 }
 
-/* ── Empty state ─── */
+/* ── Estado vacío (Empty state) ─── */
 .empty-state {
   display: flex;
   flex-direction: column;
@@ -366,7 +366,7 @@
   line-height: 1.7;
 }
 
-/* ── Remove confirm overlay ─── */
+/* ── Capa superpuesta de confirmación de eliminación ─── */
 .remove-confirm {
   display: none;
   position: fixed;
@@ -458,7 +458,7 @@
   background: #b91c1c;
 }
 
-/* ── Responsive ─── */
+/* ── Diseño responsivo (Responsive) ─── */
 @media (max-width: 900px) {
   .account-layout {
     grid-template-columns: 1fr;
@@ -509,7 +509,7 @@
   }
 }
 
-/* ── Views switcher ─── */
+/* ── Selector de vistas (Views switcher) ─── */
 .account-view {
   display: block;
 }
@@ -518,7 +518,7 @@
   display: none !important;
 }
 
-/* ── Profile / Contact Info Form ─── */
+/* ── Perfil / Formulario de información de contacto ─── */
 .profile-section {
   margin-bottom: 2rem;
   padding-bottom: 2rem;
@@ -542,7 +542,7 @@
   gap: 0.5rem;
 }
 
-/* Avatar Upload */
+/* Carga de avatar */
 .avatar-edit-container {
   display: flex;
   align-items: center;
@@ -627,7 +627,7 @@
   color: var(--gray-500);
 }
 
-/* 2-Column Responsive Grid Form */
+/* Formulario en cuadrícula responsiva de 2 columnas */
 .profile-grid-form {
   display: grid;
   grid-template-columns: 1fr;
@@ -684,7 +684,7 @@
   padding-right: 2.5rem;
 }
 
-/* Price Alerts Filter Pills */
+/* Botones de filtrado para alertas de precio */
 .filter-pills {
   display: flex;
   gap: 0.5rem;

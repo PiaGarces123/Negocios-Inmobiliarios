@@ -15,7 +15,7 @@
     <!-- Favicon -->
     <link rel="icon" href="../../assets/media/logo.ico">
 
-    <!-- Google Fonts -->
+    <!-- Fuentes de Google -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
@@ -96,12 +96,12 @@
     <main>
 
         <!-- ── BREADCRUMB ELIMINADO ──────────────── -->
-        <!-- ── ACCOUNT PAGE ──────────────────────── -->
+        <!-- ── PÁGINA DE CUENTA (ACCOUNT PAGE) ──────────────────────── -->
         <div class="account-page">
             <div class="container">
                 <div class="account-layout">
 
-                    <!-- ── SIDEBAR ─────────────────────── -->
+                    <!-- ── BARRA LATERAL (SIDEBAR) ─────────────────────── -->
                     <aside class="account-sidebar" aria-label="Menú de cuenta">
                         <div class="account-sidebar-title">Mi Cuenta</div>
 
@@ -175,11 +175,11 @@
                         </nav>
                     </aside>
 
-                    <!-- ── MAIN PANEL ───────────────────── -->
+                    <!-- ── PANEL PRINCIPAL (MAIN PANEL) ───────────────────── -->
                     <section class="account-main" aria-labelledby="page-title">
 
                         <!-- ══════════════════════════════════════
-                             VIEW 1: MIS FAVORITOS
+                             VISTA 1: MIS FAVORITOS
                              ══════════════════════════════════════ -->
                         <div class="account-view" id="view-favoritos">
                             <!-- Header -->
@@ -216,7 +216,7 @@
                                         </p>
                                     </div>
                                     <div style="display:flex;align-items:center;gap:1rem;flex-wrap:wrap;">
-                                        <!-- Sort -->
+                                        <!-- Ordenamiento (Sort) -->
                                         <div class="favs-sort">
                                             <label for="favsSortSelect" style="white-space:nowrap;">Ordenar:</label>
                                             <select id="favsSortSelect" aria-label="Ordenar favoritos">
@@ -226,7 +226,7 @@
                                                 <option value="price-desc">Mayor precio</option>
                                             </select>
                                         </div>
-                                        <!-- View toggle -->
+                                        <!-- Alternancia de vista (View toggle) -->
                                         <div class="view-toggle" role="group">
                                             <button class="view-toggle-btn" id="btnList" title="Vista lista"
                                                 aria-label="Vista lista" aria-pressed="false">
@@ -258,20 +258,20 @@
                                     </div>
                                 </div>
 
-                                <!-- Grid view (default) -->
+                                <!-- Vista de cuadrícula (predeterminada) -->
                                 <div class="properties-grid" id="favsGrid"
                                    
                                     style="grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));">
                                     <!-- JS renderiza aquí -->
                                 </div>
 
-                                <!-- List view -->
+                                <!-- Vista de lista (List view) -->
                                 <div class="favs-list-view" id="favsList"
                                     style="display:none;">
                                     <!-- JS renderiza aquí -->
                                 </div>
 
-                                <!-- Empty state -->
+                                <!-- Estado vacío (Empty state) -->
                                 <div class="empty-state" id="emptyState" style="display:none;" aria-live="polite">
                                     <span class="empty-icon" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg"
                                             width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor"
@@ -302,7 +302,7 @@
                         </div>
 
                         <!-- ══════════════════════════════════════
-                             VIEW 2: INFORMACIÓN DE CONTACTO & PERFIL
+                             VISTA 2: INFORMACIÓN DE CONTACTO Y PERFIL
                              ══════════════════════════════════════ -->
                         <div class="account-view hidden" id="view-perfil">
                             <div class="account-main-header">
@@ -437,7 +437,7 @@
                         </div>
 
                         <!-- ══════════════════════════════════════
-                             VIEW 3: ALERTAS DE PRECIO (Las 6 más económicas)
+                             VISTA 3: ALERTAS DE PRECIO (Las 6 más económicas)
                              ══════════════════════════════════════ -->
                         <div class="account-view hidden" id="view-alertas">
                             <div class="account-main-header">
@@ -446,7 +446,7 @@
                                     disponibles hoy</p>
                             </div>
                             <div class="account-main-body">
-                                <!-- Filter Pills -->
+                                <!-- Botones de filtrado para alertas (Filter Pills) -->
                                 <div class="filter-pills">
                                     <span
                                         style="font-size:0.8rem;font-weight:600;color:var(--navy-900);margin-right:0.25rem;">Filtrar:</span>
@@ -595,7 +595,7 @@
     </footer>
 
 
-    <!-- Confirm dialog — quitar favorito -->
+    <!-- Diálogo de confirmación — quitar favorito -->
     <div id="removeConfirm" class="remove-confirm" role="dialog" aria-modal="true" aria-labelledby="confirmTitle"
         aria-hidden="true">
         <div class="remove-confirm-box">

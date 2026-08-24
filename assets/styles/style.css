@@ -3,10 +3,10 @@
    Paleta: Navy · Blanco · Dorado
    ============================================= */
 
-/* --- Google Fonts --- */
+/* --- Fuentes de Google --- */
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap');
 
-/* --- CSS Custom Properties --- */
+/* --- Propiedades personalizadas CSS (Variables) --- */
 :root {
   --navy-900: #0a1628;
   --navy-800: #0f2044;
@@ -45,7 +45,7 @@
   --transition-slow: 0.5s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-/* --- Reset & Base --- */
+/* --- Restablecimiento y Base --- */
 *,
 *::before,
 *::after {
@@ -108,7 +108,7 @@ select {
 }
 
 /* =============================================
-   CUSTOM SELECT DROPDOWN
+   MENÚ DESPLEGABLE DE SELECCIÓN PERSONALIZADO
    ============================================= */
 .cs-wrapper {
   position: relative;
@@ -245,7 +245,7 @@ select {
 }
 
 /* =============================================
-   NAVBAR
+   BARRA DE NAVEGACIÓN (NAVBAR)
    ============================================= */
 .navbar {
   position: fixed;
@@ -328,7 +328,7 @@ select {
   color: var(--navy-900);
 }
 
-/* Default (transparent navbar, on top of hero): show light logo, hide dark */
+/* Predeterminado (barra de navegación transparente, sobre el hero): muestra logotipo claro, oculta oscuro */
 .nav-logo .logo-light {
   display: block;
 }
@@ -337,7 +337,7 @@ select {
   display: none;
 }
 
-/* Scrolled navbar (white background): show dark logo, hide light */
+/* Barra de navegación con scroll (fondo blanco): muestra logotipo oscuro, oculta claro */
 .navbar.scrolled .nav-logo .logo-light {
   display: none;
 }
@@ -346,7 +346,7 @@ select {
   display: block;
 }
 
-/* Mobile nav open state on navbar */
+/* Estado abierto de navegación móvil en la barra de navegación */
 .navbar.nav-open {
   background: rgba(255, 255, 255, 0.96) !important;
   backdrop-filter: blur(16px);
@@ -579,7 +579,7 @@ select {
 }
 
 /* =============================================
-   HERO SECTION
+   SECCIÓN PRINCIPAL (HERO)
    ============================================= */
 .hero {
   position: relative;
@@ -710,7 +710,7 @@ select {
   text-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
 }
 
-/* Search Bar */
+/* Barra de búsqueda */
 .hero-search {
   background: rgba(255, 255, 255, 0.97);
   backdrop-filter: blur(20px);
@@ -888,7 +888,7 @@ select {
 }
 
 /* =============================================
-   COMMONS
+   COMUNES
    ============================================= */
 section {
   padding: 6rem 0;
@@ -957,7 +957,7 @@ section {
 }
 
 /* =============================================
-   FILTERS & GRID
+   FILTROS Y CUADRÍCULA
    ============================================= */
 .listings-controls {
   display: flex;
@@ -1020,7 +1020,7 @@ section {
 }
 
 /* =============================================
-   PROPERTY CARDS
+   TARJETAS DE PROPIEDAD
    ============================================= */
 .properties-grid {
   display: grid;
@@ -1186,7 +1186,7 @@ section {
 }
 
 /* =============================================
-   LOAD MORE
+   CARGAR MÁS
    ============================================= */
 .load-more-wrap {
   text-align: center;
@@ -1214,7 +1214,7 @@ section {
 }
 
 /* =============================================
-   WHY US
+   POR QUÉ ELEGIRNOS
    ============================================= */
 .why-us {
   background: var(--navy-900);
@@ -1344,7 +1344,7 @@ section {
 }
 
 /* =============================================
-   TESTIMONIALS
+   TESTIMONIOS
    ============================================= */
 .testimonials {
   background: var(--off-white);
@@ -1453,7 +1453,7 @@ section {
 }
 
 /* =============================================
-   CTA
+   LLAMADA A LA ACCIÓN (CTA)
    ============================================= */
 .cta-section {
   background: linear-gradient(135deg, var(--navy-900) 0%, var(--navy-700) 60%, var(--navy-800) 100%);
@@ -1544,7 +1544,7 @@ section {
 }
 
 /* =============================================
-   FOOTER
+   PIE DE PÁGINA (FOOTER)
    ============================================= */
 .footer {
   background: linear-gradient(160deg, var(--navy-900) 0%, #0d1c3a 60%, var(--navy-800) 100%);
@@ -1788,7 +1788,7 @@ section {
 }
 
 /* =============================================
-   SCROLL REVEAL
+   REVELACIÓN AL HACER SCROLL (SCROLL REVEAL)
    ============================================= */
 .reveal {
   opacity: 0;
@@ -1814,7 +1814,7 @@ section {
 }
 
 /* =============================================
-   RESPONSIVE
+   DISEÑO RESPONSIVO (RESPONSIVE)
    ============================================= */
 @media (max-width: 1200px) {
   .properties-grid {
@@ -2018,7 +2018,7 @@ section {
 }
 
 /* =============================================
-   CONTACT SECTION & FORM (index.html)
+   SECCIÓN Y FORMULARIO DE CONTACTO (index.html)
    ============================================= */
 .contact-section {
   padding: 6rem 0;
@@ -2098,7 +2098,7 @@ section {
   color: var(--navy-900);
 }
 
-/* Form Styles */
+/* Estilos de formulario */
 .contact-form-wrap {
   background: var(--white);
   padding: 2.5rem;
@@ -2123,7 +2123,7 @@ section {
   grid-column: span 1;
 }
 
-/* Make full-width forms standard if not half */
+/* Hacer que los formularios de ancho completo sean estándar si no son de la mitad */
 .contact-main-form .form-group:not(.half) {
   grid-column: span 2;
 }
@@ -2160,7 +2160,7 @@ section {
   color: var(--gray-300);
 }
 
-/* Responsive form */
+/* Formulario responsivo */
 @media (max-width: 900px) {
   .contact-grid {
     grid-template-columns: 1fr;
@@ -2182,7 +2182,7 @@ section {
   }
 }
 
-/* ── Inner Pages Navbar Override ────────────────── */
+/* ── Anulación de la barra de navegación para páginas internas ────────────────── */
 body.inner-page .navbar {
   background: rgba(255, 255, 255, 0.98) !important;
   backdrop-filter: blur(16px);

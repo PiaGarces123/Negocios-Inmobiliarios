@@ -4,7 +4,7 @@
 
 document.addEventListener('DOMContentLoaded', () => {
 
-  // ── Navbar scroll effect ──────────────────
+  // ── Efecto de scroll en la barra de navegación ──────────────────
   const navbar = document.getElementById('navbar');
   const handleScroll = () => {
     if (window.scrollY > 40) {
@@ -15,7 +15,7 @@ document.addEventListener('DOMContentLoaded', () => {
   };
   window.addEventListener('scroll', handleScroll, { passive: true });
 
-  // ── Hamburger menu ────────────────────────
+  // ── Menú hamburguesa ────────────────────────
   const hamburger = document.getElementById('hamburger');
   const mobileNav = document.getElementById('mobileNav');
   hamburger.addEventListener('click', () => {
@@ -25,7 +25,7 @@ document.addEventListener('DOMContentLoaded', () => {
     navbar.classList.toggle('nav-open', isOpen);
   });
 
-  // Close mobile nav on link click
+  // Cerrar navegación móvil al hacer clic en un enlace
   mobileNav.querySelectorAll('.nav-link').forEach(link => {
     link.addEventListener('click', () => {
       mobileNav.classList.remove('open');
@@ -35,7 +35,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  // ── Filter tabs ───────────────────────────
+  // ── Pestañas de filtrado ───────────────────
   const filterTabs = document.querySelectorAll('.filter-tab');
   filterTabs.forEach(tab => {
     tab.addEventListener('click', () => {
@@ -46,7 +46,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  // ── Sort control ──────────────────────────
+  // ── Control de ordenamiento ────────────────
   const sortSelect = document.getElementById('sortSelect');
   if (sortSelect) {
     sortSelect.addEventListener('change', () => {
@@ -81,7 +81,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // ── Counter animation ─────────────────────
+  // ── Animación del contador ─────────────────
   const statValues = document.querySelectorAll('[data-count]');
   const animateCounters = () => {
     statValues.forEach(el => {
@@ -97,7 +97,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   };
 
-  // Trigger counters when hero stats are visible
+  // Activar contadores cuando las estadísticas del hero son visibles
   const statsSection = document.querySelector('.hero-stats');
   if (statsSection) {
     const observer = new IntersectionObserver(([entry]) => {
@@ -106,7 +106,7 @@ document.addEventListener('DOMContentLoaded', () => {
     observer.observe(statsSection);
   }
 
-  // ── Scroll Reveal ─────────────────────────
+  // ── Revelación al hacer scroll (Scroll Reveal) ─────────────────────────
   const revealEls = document.querySelectorAll('.reveal');
   const revealObserver = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
@@ -118,7 +118,7 @@ document.addEventListener('DOMContentLoaded', () => {
   }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
   revealEls.forEach(el => revealObserver.observe(el));
 
-  // ── Search form ───────────────────────────
+  // ── Formulario de búsqueda ───────────────────────────
   const searchForm = document.getElementById('searchForm');
   if (searchForm) {
     searchForm.addEventListener('submit', (e) => {
@@ -132,7 +132,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // ── Load More ─────────────────────────────
+  // ── Cargar más ─────────────────────────────
   const loadMoreBtn = document.getElementById('loadMoreBtn');
   const hiddenCards = document.querySelectorAll('.property-card.hidden');
   if (loadMoreBtn && hiddenCards.length) {
@@ -147,7 +147,7 @@ document.addEventListener('DOMContentLoaded', () => {
     loadMoreBtn.closest('.load-more-wrap').style.display = 'none';
   }
 
-  // ── Toast notification ────────────────────
+  // ── Notificación Toast ────────────────────
   function showToast(msg) {
     const existing = document.querySelector('.toast');
     if (existing) existing.remove();
@@ -177,7 +177,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }, 3200);
   }
 
-  // ── Filter properties ─────────────────────
+  // ── Filtrar propiedades ─────────────────────
   const allCards = document.querySelectorAll('.property-card');
 
   function filterProperties(filter) {
@@ -197,12 +197,12 @@ document.addEventListener('DOMContentLoaded', () => {
       const priceB = parseInt(b.dataset.price || 0);
       if (order === 'price-asc') return priceA - priceB;
       if (order === 'price-desc') return priceB - priceA;
-      return parseInt(b.dataset.id) - parseInt(a.dataset.id); // newest
+      return parseInt(b.dataset.id) - parseInt(a.dataset.id); // el más nuevo
     });
     cards.forEach(card => grid.appendChild(card));
   }
 
-  // ── Active nav link on scroll ─────────────
+  // ── Enlace de navegación activo al hacer scroll ─────────────
   const sections = document.querySelectorAll('section[id]');
   const navLinks = document.querySelectorAll('.nav-link[href^="#"]');
   const sectionObserver = new IntersectionObserver((entries) => {
@@ -216,7 +216,7 @@ document.addEventListener('DOMContentLoaded', () => {
   }, { rootMargin: '-40% 0px -55% 0px' });
   sections.forEach(s => sectionObserver.observe(s));
 
-  // ── Smooth scroll for anchor links ───────
+  // ── Desplazamiento suave para enlaces de anclaje ───────
   document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function(e) {
       const target = document.querySelector(this.getAttribute('href'));
@@ -229,7 +229,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  // ── Contact Form in index.html ────────────
+  // ── Formulario de contacto en index.html ────────────
   const mainContactForm = document.getElementById('mainContactForm');
   const selectorBuscando = document.getElementById('cBuscando');
   const groupPresupuesto = document.getElementById('groupPresupuesto');
@@ -244,14 +244,14 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     };
     selectorBuscando.addEventListener('change', togglePresupuesto);
-    togglePresupuesto(); // Run on init
+    togglePresupuesto(); // Ejecutar al iniciar
   }
 
   if (mainContactForm) {
     mainContactForm.addEventListener('submit', (e) => {
       e.preventDefault();
       
-      // Basic validation
+      // Validación básica
       const fields = ['cNombre', 'cEmail', 'cTel', 'cUbicacion'];
       let valid = true;
       fields.forEach(fid => {
@@ -293,14 +293,14 @@ document.addEventListener('DOMContentLoaded', () => {
         submitBtn.disabled = false;
         mainContactForm.reset();
         if (selectorBuscando) {
-          // Reset conditional field visibility
+          // Restablecer la visibilidad condicional del campo
           selectorBuscando.dispatchEvent(new Event('change'));
         }
       }, 3500);
     });
   }
 
-  // ── Testimonials Carousel (Mobile) ─────────────
+  // ── Carrusel de testimonios (Móvil) ─────────────
   const testTrack = document.getElementById('testimonialsTrack');
   const testPrevBtn = document.getElementById('btnTestimonialsPrev');
   const testNextBtn = document.getElementById('btnTestimonialsNext');
@@ -311,7 +311,7 @@ document.addEventListener('DOMContentLoaded', () => {
       const trackLeft = testTrack.getBoundingClientRect().left;
       let activeIndex = cards.findIndex(card => {
         const cardLeft = card.getBoundingClientRect().left;
-        return Math.abs(cardLeft - trackLeft) < 30; // 30px threshold for snapping detection
+        return Math.abs(cardLeft - trackLeft) < 30; // Umbral de 30px para la detección de ajuste (snap)
       });
       if (activeIndex === -1) activeIndex = 0;
       const prevIndex = (activeIndex - 1 + cards.length) % cards.length;

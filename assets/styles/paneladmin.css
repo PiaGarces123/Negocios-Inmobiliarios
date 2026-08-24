@@ -1,12 +1,12 @@
 /* =============================================
-   paneladmin.css — Admin Panel
+   paneladmin.css — Panel de administración
    Reutiliza variables de style.css
    ============================================= */
 
 /* ── Reset base (style.css ya lo hace) ── */
 html, body { height: 100%; overflow: hidden; }
 
-/* ── Admin Shell ─── */
+/* ── Estructura principal del Administrador (Admin Shell) ─── */
 .admin-shell {
   height: 100vh;
   background: var(--off-white);
@@ -15,7 +15,7 @@ html, body { height: 100%; overflow: hidden; }
 }
 
 /* =============================================
-   SIDEBAR
+   BARRA LATERAL (SIDEBAR)
    ============================================= */
 .admin-sidebar {
   background: var(--navy-900);
@@ -28,7 +28,7 @@ html, body { height: 100%; overflow: hidden; }
   overflow: hidden;
 }
 
-/* Brand */
+/* Marca (Brand) */
 .admin-brand {
   padding: 1.5rem 1.25rem 1.25rem;
   border-bottom: 1px solid rgba(255,255,255,0.07);
@@ -59,7 +59,7 @@ html, body { height: 100%; overflow: hidden; }
   font-weight: 500;
 }
 
-/* Nav */
+/* Navegación (Nav) */
 .admin-nav {
   flex: 1;
   padding: 1rem 0.75rem;
@@ -115,7 +115,7 @@ html, body { height: 100%; overflow: hidden; }
   margin: 0.5rem 0;
 }
 
-/* Badge count */
+/* Contador de notificaciones / etiquetas (Badge count) */
 .nav-badge {
   margin-left: auto;
   background: var(--gold-500);
@@ -128,7 +128,7 @@ html, body { height: 100%; overflow: hidden; }
   text-align: center;
 }
 
-/* Sidebar footer */
+/* Pie de la barra lateral (Sidebar footer) */
 .admin-sidebar-footer {
   padding: 0.75rem;
   border-top: 1px solid rgba(255,255,255,0.07);
@@ -138,7 +138,7 @@ html, body { height: 100%; overflow: hidden; }
 }
 
 /* =============================================
-   MAIN AREA
+   ÁREA PRINCIPAL (MAIN AREA)
    ============================================= */
 .admin-main {
   margin-left: 220px;
@@ -148,7 +148,7 @@ html, body { height: 100%; overflow: hidden; }
   overflow: hidden;
 }
 
-/* Top bar */
+/* Barra superior (Top bar) */
 .admin-topbar {
   background: var(--white);
   border-bottom: 1px solid var(--gray-100);
@@ -192,7 +192,7 @@ html, body { height: 100%; overflow: hidden; }
   box-shadow: 0 4px 14px rgba(201,168,76,0.35);
 }
 
-/* Content scroll area */
+/* Área de desplazamiento de contenido (Content scroll area) */
 .admin-content {
   flex: 1;
   overflow-y: auto;
@@ -200,7 +200,7 @@ html, body { height: 100%; overflow: hidden; }
 }
 
 /* =============================================
-   DASHBOARD STATS
+   ESTADÍSTICAS DEL TABLERO (DASHBOARD STATS)
    ============================================= */
 .stats-grid {
   display: grid;
@@ -250,7 +250,7 @@ html, body { height: 100%; overflow: hidden; }
 .stat-card-delta.down { color: #ef4444; }
 
 /* =============================================
-   TABLE CARD
+   TARJETA DE TABLA (TABLE CARD)
    ============================================= */
 .table-card {
   background: var(--white);
@@ -260,7 +260,7 @@ html, body { height: 100%; overflow: hidden; }
   overflow: hidden;
 }
 
-/* Table toolbar */
+/* Barra de herramientas de la tabla (Table toolbar) */
 .table-toolbar {
   padding: 1rem 1.5rem;
   border-bottom: 1px solid var(--gray-100);
@@ -308,7 +308,7 @@ html, body { height: 100%; overflow: hidden; }
 }
 .table-filter-select:focus { outline: none; border-color: var(--navy-600); }
 
-/* Table */
+/* Tabla (Table) */
 .admin-table {
   width: 100%;
   border-collapse: collapse;
@@ -343,7 +343,7 @@ html, body { height: 100%; overflow: hidden; }
   color: var(--gray-900);
 }
 
-/* Thumbnail */
+/* Miniatura (Thumbnail) */
 .prop-thumb {
   width: 56px; height: 42px;
   border-radius: var(--radius-sm);
@@ -351,15 +351,15 @@ html, body { height: 100%; overflow: hidden; }
   border: 1px solid var(--gray-200);
 }
 
-/* Title cell */
+/* Celda de título (Title cell) */
 .prop-table-title { font-weight: 600; color: var(--navy-900); margin-bottom: 2px; font-size: 0.875rem; }
 .prop-table-addr  { font-size: 0.75rem; color: var(--gray-500); }
 
-/* Price */
+/* Precio (Price) */
 .prop-table-price { font-weight: 600; color: var(--navy-900); white-space: nowrap; }
 .prop-table-price-unit { font-size: 0.72rem; color: var(--gray-500); font-weight: 400; }
 
-/* Status badges — reusa nomenclatura de style.css */
+/* Etiquetas de estado (Status badges) — reusa nomenclatura de style.css */
 .badge-sm {
   font-size: 0.65rem; font-weight: 700;
   letter-spacing: 0.07em; text-transform: uppercase;
@@ -374,7 +374,7 @@ html, body { height: 100%; overflow: hidden; }
 .badge-alquiler-sm   { background: rgba(99,102,241,0.1);  color: #6366f1; border: 1px solid rgba(99,102,241,0.25); }
 .badge-venta-sm      { background: rgba(30,58,115,0.08);  color: var(--navy-800); border: 1px solid rgba(30,58,115,0.2); }
 
-/* Actions */
+/* Acciones (Actions) */
 .table-actions { display: flex; align-items: center; gap: 0.4rem; }
 .tbl-btn {
   width: 30px; height: 30px;
@@ -391,7 +391,7 @@ html, body { height: 100%; overflow: hidden; }
 .tbl-btn.edit:hover  { border-color: var(--gold-400); color: var(--gold-500); }
 .tbl-btn.del:hover   { border-color: #dc2626; color: #dc2626; }
 
-/* Pagination */
+/* Paginación (Pagination) */
 .table-footer {
   padding: 1rem 1.5rem;
   border-top: 1px solid var(--gray-100);
@@ -420,7 +420,7 @@ html, body { height: 100%; overflow: hidden; }
 .page-btn:disabled { opacity: 0.4; cursor: not-allowed; }
 
 /* =============================================
-   EDIT / CREATE PANEL (slide-in)
+   PANEL DE EDICIÓN / CREACIÓN (Desplazamiento lateral)
    ============================================= */
 .edit-panel-overlay {
   display: none;
@@ -482,7 +482,7 @@ html, body { height: 100%; overflow: hidden; }
   gap: 1rem;
 }
 
-/* Upload zone */
+/* Zona de carga (Upload zone) */
 .upload-zone {
   border: 2px dashed var(--gray-200);
   border-radius: var(--radius-md);
@@ -523,7 +523,7 @@ html, body { height: 100%; overflow: hidden; }
 }
 .upload-thumb-remove:hover { transform: scale(1.15); }
 
-/* Form group — reutiliza de verInmueble.css */
+/* Grupo de formulario (Form group) — reutiliza de verInmueble.css */
 .form-group { margin-bottom: 0; }
 .form-group label {
   display: block; font-size: 0.72rem; font-weight: 700;
@@ -555,7 +555,7 @@ html, body { height: 100%; overflow: hidden; }
 
 .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 0.75rem; }
 
-/* Panel footer */
+/* Pie de panel (Panel footer) */
 .edit-panel-footer {
   padding: 1rem 1.5rem;
   border-top: 1px solid var(--gray-100);
@@ -591,7 +591,7 @@ html, body { height: 100%; overflow: hidden; }
 }
 
 /* =============================================
-   DELETE CONFIRM
+   CONFIRMACIÓN DE ELIMINACIÓN (DELETE CONFIRM)
    ============================================= */
 .delete-modal {
   display: none;
@@ -631,13 +631,13 @@ html, body { height: 100%; overflow: hidden; }
 .btn-del-confirm:hover { background: #b91c1c; }
 
 /* =============================================
-   VIEWS (sections)
+   VISTAS (secciones)
    ============================================= */
 .admin-view { display: none; }
 .admin-view.active { display: block; }
 
 /* =============================================
-   TOAST
+   TOAST (Notificación emergente)
    ============================================= */
 .admin-toast {
   position: fixed; bottom: 2rem; right: 2rem;
@@ -655,7 +655,7 @@ html, body { height: 100%; overflow: hidden; }
 .admin-toast.show { transform: translateY(0); opacity: 1; }
 
 /* =============================================
-   CLIENTS TABLE (similar a property table)
+   TABLA DE CLIENTES / ASESORES (similar a tabla de propiedades)
    ============================================= */
 .client-avatar {
   width: 34px; height: 34px; border-radius: 50%;
@@ -666,7 +666,7 @@ html, body { height: 100%; overflow: hidden; }
 }
 
 /* =============================================
-   ANIMATIONS
+   ANIMACIONES
    ============================================= */
 @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
 
@@ -745,7 +745,7 @@ html, body { height: 100%; overflow: hidden; }
   }
 }
 
-/* Avatar Upload & Profile Picture Styles */
+/* Carga de avatar y estilos de foto de perfil */
 .avatar-edit-container {
   display: flex;
   align-items: center;
@@ -831,7 +831,7 @@ html, body { height: 100%; overflow: hidden; }
   color: var(--gray-500);
 }
 
-/* ── Profile / Contact Info Form (Admin-Client Sync) ─── */
+/* ── Perfil / Formulario de información de contacto (Sincronización Admin-Cliente) ─── */
 .profile-section {
   margin-bottom: 2rem;
   padding-bottom: 2rem;
@@ -855,7 +855,7 @@ html, body { height: 100%; overflow: hidden; }
   gap: 0.5rem;
 }
 
-/* 2-Column Responsive Grid Form */
+/* Formulario en cuadrícula responsiva de 2 columnas */
 .profile-grid-form {
   display: grid;
   grid-template-columns: 1fr;

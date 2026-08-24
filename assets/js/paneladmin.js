@@ -4,9 +4,9 @@
 
 document.addEventListener('DOMContentLoaded', () => {
 
-  // ── Hamburger menu (Mobile) will be here after DOM refs ──
+  // ── El menú hamburguesa (Móvil) estará aquí después de las referencias DOM ──
 
-  // ── Data ────────────────────────────────────
+  // ── Datos ────────────────────────────────────
   let properties = [
     { id: 1, title: 'Casa Moderna con Vista Panorámica', addr: 'Av. Del Libertador 8500, Palermo', price: 280000, unit: '', tipo: 'venta', status: 'disponible', amb: 4, banos: 3, m2: 320, img: '../../assets/media/prop1.jpg', desc: 'Casa moderna de autor con vistas panorámicas al río en Nordelta.', asesorId: 1 },
     { id: 2, title: 'Departamento con Terraza y Vista', addr: 'Armenia 1234, Palermo, CABA', price: 1800, unit: '/mes', tipo: 'alquiler', status: 'disponible', amb: 3, banos: 2, m2: 120, img: '../../assets/media/prop2.jpg', desc: 'Departamento luminoso con terraza privada y vistas al parque.', asesorId: 2 },
@@ -39,7 +39,7 @@ document.addEventListener('DOMContentLoaded', () => {
   let currentPage = 1;
   const PER_PAGE = 6;
 
-  // ── DOM refs ─────────────────────────────────
+  // ── Referencias DOM ─────────────────────────────────
   const views = { propiedades: document.getElementById('viewPropiedades'), clientes: document.getElementById('viewClientes'), settings: document.getElementById('viewSettings'), dashboard: document.getElementById('viewDashboard'), perfil: document.getElementById('viewPerfil') };
   const navItems = document.querySelectorAll('.admin-nav-item[data-view]');
   const topbarTitle = document.getElementById('adminTopbarTitle');
@@ -77,7 +77,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const uploadPreview = document.getElementById('uploadPreview');
   const clientTableBody = document.getElementById('clientTableBody');
 
-  // ── Hamburger menu (Mobile) ────────────────
+  // ── Menú hamburguesa (Móvil) ────────────────
   if (adminHamburger && adminSidebar && adminOverlay) {
     const toggleMenu = () => {
       const isOpen = adminSidebar.classList.toggle('open');
@@ -89,7 +89,7 @@ document.addEventListener('DOMContentLoaded', () => {
     adminHamburger.addEventListener('click', toggleMenu);
     adminOverlay.addEventListener('click', toggleMenu);
 
-    // Close menu when clicking a nav item on mobile
+    // Cerrar el menú al hacer clic en un elemento de navegación en móvil
     navItems.forEach(item => {
       item.addEventListener('click', () => {
         if (window.innerWidth <= 900 && adminSidebar.classList.contains('open')) {
@@ -99,7 +99,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // ── Navigation ────────────────────────────────
+  // ── Navegación ────────────────────────────────
   function switchView(viewName) {
     currentView = viewName;
     Object.values(views).forEach(v => v?.classList.remove('active'));
@@ -115,7 +115,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   navItems.forEach(n => n.addEventListener('click', () => switchView(n.dataset.view)));
 
-  // ── Dashboard ─────────────────────────────────
+  // ── Tablero / Panel (Dashboard) ─────────────────────────────────
   function renderDashboard() {
     const total = properties.length;
     const disponibles = properties.filter(p => p.status === 'disponible').length;
@@ -146,7 +146,7 @@ document.addEventListener('DOMContentLoaded', () => {
   }
   function setEl(id, val) { const el = document.getElementById(id); if (el) el.textContent = val; }
 
-  // ── Property Table ────────────────────────────
+  // ── Tabla de propiedades ────────────────────────────
   function getFiltered() {
     return properties.filter(p => {
       const q = searchQuery.toLowerCase();
@@ -255,7 +255,7 @@ document.addEventListener('DOMContentLoaded', () => {
   filterSel?.addEventListener('change', () => { filterStatus = filterSel.value; currentPage = 1; renderTable(); });
   filterTipoSel?.addEventListener('change', () => { filterTipo = filterTipoSel.value; currentPage = 1; renderTable(); });
 
-  // ── Edit Panel ────────────────────────────────
+  // ── Panel de edición ────────────────────────────────
   function populateAsesorDropdown() {
     const fAsesor = document.getElementById('fAsesor');
     if (fAsesor) {
@@ -354,7 +354,7 @@ document.addEventListener('DOMContentLoaded', () => {
     renderDashboard();
   });
 
-  // ── Delete ────────────────────────────────────
+  // ── Eliminar ────────────────────────────────────
   function openDelete(id) {
     deletePropId = id;
     deleteClientId = null;
@@ -386,7 +386,7 @@ document.addEventListener('DOMContentLoaded', () => {
   });
   deleteModal?.addEventListener('click', e => { if (e.target === deleteModal) { deleteModal.classList.remove('open'); deletePropId = null; } });
 
-  // ── Upload Zone ───────────────────────────────
+  // ── Zona de carga (Upload) ───────────────────────────────
   uploadZone?.addEventListener('click', () => uploadInput?.click());
   uploadInput?.addEventListener('change', () => {
     const files = Array.from(uploadInput.files).slice(0, 5);
@@ -571,7 +571,7 @@ document.addEventListener('DOMContentLoaded', () => {
       `;
     }).join('') || `<tr><td colspan="6" style="text-align:center;padding:3rem;color:var(--gray-500)">No se encontraron asesores</td></tr>`;
 
-    // Footer info
+    // Información del pie de página
     const footerCount = document.querySelector('#viewClientes .table-footer .table-info');
     if (footerCount) {
       footerCount.textContent = `${filteredClients.length} asesores registrados`;
@@ -579,7 +579,7 @@ document.addEventListener('DOMContentLoaded', () => {
     attachClientTableEvents();
   }
 
-  // ── Toast ─────────────────────────────────────
+  // ── Toast (Notificación) ─────────────────────────────────────
   function showToast(msg) {
     let toast = document.querySelector('.admin-toast');
     if (!toast) { toast = document.createElement('div'); toast.className = 'admin-toast'; document.body.appendChild(toast); }
@@ -589,7 +589,7 @@ document.addEventListener('DOMContentLoaded', () => {
     toast._t = setTimeout(() => toast.classList.remove('show'), 3200);
   }
 
-  // ── Keyboard shortcuts ────────────────────────
+  // ── Atajos de teclado ────────────────────────
   document.addEventListener('keydown', e => {
     if (e.key === 'Escape') {
       closePanel();
@@ -599,7 +599,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if ((e.ctrlKey || e.metaKey) && e.key === 'k') { e.preventDefault(); searchInput?.focus(); }
   });
 
-  // ── Admin Avatar Photo Upload ─────────────────
+  // ── Carga de foto de avatar de administrador ─────────────────
   const btnUploadAdmPhoto = document.getElementById('btnUploadAdmPhoto');
   const btnRemoveAdmPhoto = document.getElementById('btnRemoveAdmPhoto');
   const admPhotoInput = document.getElementById('admPhotoInput');
@@ -638,7 +638,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 
-  // ── Admin Profile Submit ─────────────────────
+  // ── Envío del perfil de administrador ─────────────────────
   const formAdminPerfil = document.getElementById('formAdminPerfil');
   formAdminPerfil?.addEventListener('submit', e => {
     e.preventDefault();
@@ -668,13 +668,13 @@ document.addEventListener('DOMContentLoaded', () => {
     showToast('✓ Perfil guardado correctamente');
   });
 
-  // ── Logout ────────────────────────────────────
+  // ── Cerrar sesión (Logout) ────────────────────────────────────
   document.getElementById('btnLogout')?.addEventListener('click', () => {
     showToast('✓ Sesión cerrada');
     setTimeout(() => window.location.href = '../../index.html', 1000);
   });
 
-  // ── Init ─────────────────────────────────────
+  // ── Inicialización ─────────────────────────────────────
   switchView('dashboard');
 
 });
