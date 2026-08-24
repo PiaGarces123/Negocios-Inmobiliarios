@@ -111,6 +111,10 @@ document.addEventListener('DOMContentLoaded', () => {
   function iconSVG(type) {
     const icons = {
       pin: `<svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>`,
+      home: `<svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-right:4px;"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg>`,
+      bath: `<svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-right:4px;"><path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z"></path></svg>`,
+      ruler: `<svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-right:4px;"><path d="M8 3H5a2 2 0 0 0-2 2v3m18 0V5a2 2 0 0 0-2-2h-3m0 18h3a2 2 0 0 0 2-2v-3M3 16v3a2 2 0 0 0 2 2h3"></path></svg>`,
+      heartRed: `<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg>`
     };
     return icons[type] || '';
   }
@@ -125,15 +129,15 @@ document.addEventListener('DOMContentLoaded', () => {
             <span class="card-type">${p.tipo}</span>
           </div>
         </a>
-        <button class="card-favorite active" data-fav-id="${p.id}" aria-label="Quitar de favoritos" aria-pressed="true">❤️</button>
+        <button class="card-favorite active" data-fav-id="${p.id}" aria-label="Quitar de favoritos" aria-pressed="true">${iconSVG('heartRed')}</button>
         <div class="card-body">
           <div class="card-price">${p.price}<span class="card-price-unit">${p.priceUnit}</span></div>
           <h3 class="card-title">${p.title}</h3>
           <p class="card-location">${iconSVG('pin')} ${p.location}</p>
           <div class="card-features">
-            <div class="card-feature">🏠 ${p.amb} Amb.</div>
-            <div class="card-feature">🚿 ${p.banos} Baños</div>
-            <div class="card-feature">📐 ${p.m2} m²</div>
+            <div class="card-feature">${iconSVG('home')} ${p.amb} Amb.</div>
+            <div class="card-feature">${iconSVG('bath')} ${p.banos} Baños</div>
+            <div class="card-feature">${iconSVG('ruler')} ${p.m2} m²</div>
           </div>
         </div>
       </article>
@@ -154,9 +158,9 @@ document.addEventListener('DOMContentLoaded', () => {
           <h3 class="card-title">${p.title}</h3>
           <p class="card-location">${iconSVG('pin')} ${p.location}</p>
           <div class="card-features">
-            <div class="card-feature">🏠 ${p.amb} Amb.</div>
-            <div class="card-feature">🚿 ${p.banos} Baños</div>
-            <div class="card-feature">📐 ${p.m2} m²</div>
+            <div class="card-feature">${iconSVG('home')} ${p.amb} Amb.</div>
+            <div class="card-feature">${iconSVG('bath')} ${p.banos} Baños</div>
+            <div class="card-feature">${iconSVG('ruler')} ${p.m2} m²</div>
             <span class="topbar-badge venta" style="font-size:0.62rem;padding:0.2rem 0.6rem;">${p.tipo}</span>
           </div>
         </div>

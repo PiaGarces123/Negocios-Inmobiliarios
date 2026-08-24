@@ -64,7 +64,9 @@ document.addEventListener('DOMContentLoaded', () => {
   if (favBtn) {
     favBtn.addEventListener('click', () => {
       const active = favBtn.classList.toggle('active');
-      favBtn.querySelector('.fav-icon').textContent = active ? '❤️' : '🤍';
+      const svgFavRed = `<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg>`;
+      const svgFavWhite = `<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg>`;
+      favBtn.querySelector('.fav-icon').innerHTML = active ? svgFavRed : svgFavWhite;
       favBtn.querySelector('.fav-text').textContent = active ? 'Guardado' : 'Guardar';
     });
   }
@@ -78,6 +80,27 @@ document.addEventListener('DOMContentLoaded', () => {
       readMoreBtn.innerHTML = expanded
         ? 'Ver menos <span>↑</span>'
         : 'Leer descripción completa <span>↓</span>';
+    });
+  }
+
+  // ── Carousel ──────────────────────────────────
+  const track = document.getElementById('carouselTrack');
+  const prevBtn = document.querySelector('.prev-btn');
+  const nextBtn = document.querySelector('.next-btn');
+  if (track && prevBtn && nextBtn) {
+    prevBtn.addEventListener('click', () => {
+      if (track.scrollLeft <= 0) {
+        track.scrollTo({ left: track.scrollWidth, behavior: 'smooth' });
+      } else {
+        track.scrollBy({ left: -track.clientWidth, behavior: 'smooth' });
+      }
+    });
+    nextBtn.addEventListener('click', () => {
+      if (Math.ceil(track.scrollLeft + track.clientWidth) >= track.scrollWidth) {
+        track.scrollTo({ left: 0, behavior: 'smooth' });
+      } else {
+        track.scrollBy({ left: track.clientWidth, behavior: 'smooth' });
+      }
     });
   }
 

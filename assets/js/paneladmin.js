@@ -4,6 +4,8 @@
 
 document.addEventListener('DOMContentLoaded', () => {
 
+  // ── Hamburger menu (Mobile) will be here after DOM refs ──
+
   // ── Data ────────────────────────────────────
   let properties = [
     { id: 1, title: 'Casa Moderna con Vista Panorámica',    addr: 'Av. Del Libertador 8500, Palermo',     price: 280000, unit: '',     tipo: 'venta',    status: 'disponible', amb: 4, banos: 3, m2: 320, img: '../../assets/media/prop1.jpg', desc: 'Casa moderna de autor con vistas panorámicas al río en Nordelta.' },
@@ -48,6 +50,10 @@ document.addEventListener('DOMContentLoaded', () => {
   const searchInput  = document.getElementById('tableSearch');
   const filterSel    = document.getElementById('filterStatus');
   const filterTipoSel = document.getElementById('filterTipo');
+  
+  const adminHamburger = document.getElementById('adminHamburger');
+  const adminSidebar   = document.getElementById('adminSidebar');
+  const adminOverlay   = document.getElementById('adminOverlay');
   const tableInfo    = document.getElementById('tableInfo');
   const pagination   = document.getElementById('tablePagination');
   const deleteModal  = document.getElementById('deleteModal');
@@ -57,6 +63,28 @@ document.addEventListener('DOMContentLoaded', () => {
   const uploadInput   = document.getElementById('uploadInput');
   const uploadPreview = document.getElementById('uploadPreview');
   const clientTableBody = document.getElementById('clientTableBody');
+
+  // ── Hamburger menu (Mobile) ────────────────
+  if (adminHamburger && adminSidebar && adminOverlay) {
+    const toggleMenu = () => {
+      const isOpen = adminSidebar.classList.toggle('open');
+      adminHamburger.classList.toggle('open', isOpen);
+      adminHamburger.setAttribute('aria-expanded', isOpen);
+      adminOverlay.classList.toggle('open', isOpen);
+    };
+
+    adminHamburger.addEventListener('click', toggleMenu);
+    adminOverlay.addEventListener('click', toggleMenu);
+
+    // Close menu when clicking a nav item on mobile
+    navItems.forEach(item => {
+      item.addEventListener('click', () => {
+        if (window.innerWidth <= 900 && adminSidebar.classList.contains('open')) {
+          toggleMenu();
+        }
+      });
+    });
+  }
 
   // ── Navigation ────────────────────────────────
   function switchView(viewName) {

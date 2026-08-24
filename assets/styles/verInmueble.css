@@ -43,8 +43,8 @@
   font-size: 0.7rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase;
   padding: 0.3rem 0.85rem; border-radius: 100px;
 }
-.topbar-badge.venta     { background: var(--gold-100); color: var(--gold-500); border: 1px solid rgba(201,168,76,0.3); }
-.topbar-badge.disponible { background: rgba(16,185,129,0.1); color: #059669; border: 1px solid rgba(16,185,129,0.3); }
+.topbar-badge.venta     { background: var(--navy-800); color: var(--white); border: 1px solid var(--navy-800); }
+.topbar-badge.disponible { background: var(--gold-400); color: var(--navy-900); border: 1px solid var(--gold-400); }
 .topbar-ref { font-size: 0.78rem; color: var(--gray-500); }
 .topbar-ref span { font-weight: 600; color: var(--navy-800); }
 
@@ -67,62 +67,44 @@
 }
 .topbar-btn.primary-action:hover { transform: translateY(-1px); box-shadow: 0 4px 14px rgba(201,168,76,0.4); }
 
-/* ── Gallery ─────────────────────────────────── */
+/* ── Gallery Carousel ────────────────────────── */
 .gallery-section { background: var(--white); padding: 1.5rem 0 0; }
 
-.gallery-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-template-rows: auto auto;
-  gap: 0.5rem;
+.property-carousel {
+  position: relative;
   border-radius: var(--radius-lg);
   overflow: hidden;
+  background: var(--off-white);
+  box-shadow: var(--shadow-md);
 }
-.gallery-main {
-  grid-column: 1;
-  grid-row: 1 / 3;
-  position: relative;
-  cursor: pointer;
-  overflow: hidden;
-  aspect-ratio: 4/3;
+.carousel-track {
+  display: flex;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: none;
+  scroll-behavior: smooth;
 }
-.gallery-main img {
-  width: 100%; height: 100%;
+.carousel-track::-webkit-scrollbar { display: none; }
+.carousel-track img {
+  flex: 0 0 100%;
+  width: 100%;
+  aspect-ratio: 16/7;
   object-fit: cover;
-  transition: transform var(--transition-slow);
+  scroll-snap-align: center;
 }
-.gallery-main:hover img { transform: scale(1.03); }
-
-.gallery-thumb {
-  position: relative;
-  overflow: hidden;
-  cursor: pointer;
-  aspect-ratio: 16/9;
+.carousel-btn {
+  position: absolute; top: 50%; transform: translateY(-50%);
+  background: rgba(255,255,255,0.7);
+  border-radius: 50%;
+  width: 44px; height: 44px;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 1.8rem; color: var(--navy-900);
+  cursor: pointer; transition: all var(--transition);
+  z-index: 10; border: none; padding-bottom: 3px;
 }
-.gallery-thumb img {
-  width: 100%; height: 100%;
-  object-fit: cover;
-  transition: transform var(--transition-slow);
-}
-.gallery-thumb:hover img { transform: scale(1.05); }
-
-.gallery-thumb.more-overlay {
-  position: relative;
-}
-.gallery-more-mask {
-  position: absolute; inset: 0;
-  background: rgba(10,22,40,0.58);
-  display: flex; flex-direction: column;
-  align-items: center; justify-content: center;
-  gap: 0.25rem; backdrop-filter: blur(2px);
-  transition: background var(--transition);
-}
-.gallery-thumb.more-overlay:hover .gallery-more-mask { background: rgba(10,22,40,0.72); }
-.gallery-more-count {
-  font-family: var(--font-heading);
-  font-size: 2rem; font-weight: 600; color: var(--white); line-height: 1;
-}
-.gallery-more-label { font-size: 0.72rem; font-weight: 600; color: rgba(255,255,255,0.8); letter-spacing: 0.08em; }
+.carousel-btn:hover { background: rgba(255,255,255,0.95); transform: translateY(-50%) scale(1.05); }
+.carousel-btn.prev-btn { left: 1.5rem; }
+.carousel-btn.next-btn { right: 1.5rem; }
 
 /* Gallery fullscreen modal */
 .gallery-modal {
@@ -411,13 +393,7 @@
 @media (max-width: 1100px) {
   .detail-layout { grid-template-columns: 1fr; }
   .detail-sidebar { position: static; }
-  .gallery-grid { grid-template-columns: 2fr 1fr; }
-}
-@media (max-width: 768px) {
-  .gallery-grid { grid-template-columns: 1fr; grid-template-rows: auto; }
-  .gallery-main { grid-column: 1; grid-row: 1; aspect-ratio: 16/9; }
-  .gallery-thumb { display: none; }
-  .gallery-thumb:first-of-type + .gallery-thumb { display: block; }
+
   .features-grid { grid-template-columns: repeat(2, 1fr); }
   .similar-grid { grid-template-columns: 1fr 1fr; }
   .prop-stats { flex-wrap: wrap; }
