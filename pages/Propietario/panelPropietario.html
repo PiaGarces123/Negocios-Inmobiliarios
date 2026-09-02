@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Mis Propiedades | Negocios Inmobiliarios</title>
+
+    <!-- Estilos generales del proyecto -->
+    <link rel="stylesheet" href="../../assets/styles/style.css">
+
+    <!-- Estilos específicos del panel -->
+    <link rel="stylesheet" href="../../assets/styles/panelPropietario.css">
+</head>
+
+<body>
+
+    <div class="propietario-shell">
+
+        <!-- SIDEBAR -->
+        <aside class="propietario-sidebar">
+
+            <div class="propietario-brand">
+                <img
+                    src="../../assets/media/logoLight.png"
+                    alt="Negocios Inmobiliarios"
+                >
+            </div>
+
+            <nav class="propietario-nav">
+
+                <div class="propietario-nav-section">
+                    CUENTA
+                </div>
+
+                <a href="../../index.html" class="propietario-nav-item">
+                    <span>⌂</span>
+                    <span>Inicio</span>
+                </a>
+
+                <a href="../cliente/misFavoritos.html" class="propietario-nav-item">
+                    <span>♡</span>
+                    <span>Mis favoritos</span>
+                </a>
+
+                <div class="propietario-nav-divider"></div>
+
+                <div class="propietario-nav-section">
+                    PROPIETARIO
+                </div>
+
+                <a href="panelPropietario.html"
+                   class="propietario-nav-item active">
+                    <span>▣</span>
+                    <span>Mis propiedades</span>
+                </a>
+
+                <div class="propietario-nav-divider"></div>
+
+                <a href="../../index.html" class="propietario-nav-item">
+                    <span>←</span>
+                    <span>Cerrar sesión</span>
+                </a>
+
+            </nav>
+
+        </aside>
+
+
+        <!-- CONTENIDO PRINCIPAL -->
+        <main class="propietario-main">
+
+            <!-- HEADER -->
+            <header class="propietario-header">
+
+                <div>
+                    <h1>Mis propiedades</h1>
+                    <p>Consultá el estado actual de tus propiedades.</p>
+                </div>
+
+                <div class="propietario-user">
+                    <div class="propietario-avatar">
+                        MG
+                    </div>
+
+                    <div>
+                        <strong>María Gómez</strong>
+                        <span>Propietario</span>
+                    </div>
+                </div>
+
+            </header>
+
+
+            <!-- CONTENIDO -->
+            <section class="propietario-content">
+
+                <!-- RESUMEN -->
+                <div class="propietario-summary">
+
+                    <div class="summary-card">
+                        <span class="summary-label">
+                            Total de propiedades
+                        </span>
+
+                        <strong id="totalPropiedades">
+                            0
+                        </strong>
+                    </div>
+
+                    <div class="summary-card">
+                        <span class="summary-label">
+                            Disponibles
+                        </span>
+
+                        <strong id="propiedadesDisponibles">
+                            0
+                        </strong>
+                    </div>
+
+                    <div class="summary-card">
+                        <span class="summary-label">
+                            Alquiladas
+                        </span>
+
+                        <strong id="propiedadesAlquiladas">
+                            0
+                        </strong>
+                    </div>
+
+                    <div class="summary-card">
+                        <span class="summary-label">
+                            Vendidas
+                        </span>
+
+                        <strong id="propiedadesVendidas">
+                            0
+                        </strong>
+                    </div>
+
+                </div>
+
+
+                <!-- LISTADO -->
+                <div class="propiedades-section">
+
+                    <div class="section-header">
+                        <div>
+                            <h2>Mis propiedades</h2>
+                            <p>
+                                Propiedades registradas a tu nombre.
+                            </p>
+                        </div>
+
+                        <select id="filtroEstado" class="filtro-estado">
+                            <option value="todos">Todos los estados</option>
+                            <option value="disponible">Disponible</option>
+                            <option value="alquilado">Alquilada</option>
+                            <option value="vendido">Vendida</option>
+                            <option value="reservado">Reservada</option>
+                        </select>
+                    </div>
+
+
+                    <div id="listaPropiedades" class="propiedades-lista">
+                        <!-- Las propiedades se cargan mediante JavaScript -->
+                    </div>
+
+                </div>
+
+            </section>
+
+        </main>
+
+    </div>
+
+
+    <script src="../../assets/js/panelPropietario.js" defer></script>
+
+</body>
+</html>
