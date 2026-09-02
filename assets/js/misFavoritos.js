@@ -1,5 +1,5 @@
 // =============================================
-// misFavoritos.js — Mi Cuenta, Favoritos, Perfil y Alertas
+// misFavoritos.js — Mi Cuenta, Favoritos, Perfil, Alertas y Citas
 // =============================================
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -70,6 +70,32 @@ document.addEventListener('DOMContentLoaded', () => {
 
   let currentView  = 'grid'; // 'grid' | 'list'
   let pendingRemoveId = null;
+
+  // ── Catálogo de Citas ────────────────────────
+  let citas = JSON.parse(localStorage.getItem('ni_citas') || 'null') || [
+    {
+      id: 201,
+      title: 'Casa Moderna con Vista Panorámica',
+      location: 'Nordelta, Buenos Aires',
+      fecha: '15 de Octubre, 2025',
+      hora: '10:30 hs',
+      agente: 'Carlos Gómez',
+      estado: 'Confirmada',
+      img: '../../assets/media/prop1.jpg',
+      href: '../verInmueble.html'
+    },
+    {
+      id: 202,
+      title: 'Departamento con Terraza y Vista',
+      location: 'Palermo, CABA',
+      fecha: '22 de Octubre, 2025',
+      hora: '16:00 hs',
+      agente: 'María Rodríguez',
+      estado: 'Pendiente',
+      img: '../../assets/media/prop2.jpg',
+      href: '../verInmueble.html'
+    }
+  ];
 
   // ── Catálogo de Propiedades para Alertas de Precio ──
   const priceAlertCatalog = [
@@ -258,6 +284,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const btnCancel   = document.getElementById('btnCancelRemove');
   const btnConfirm  = document.getElementById('btnConfirmRemove');
   const alertasGrid = document.getElementById('alertasGrid');
+  const citasGrid   = document.getElementById('citasGrid');
 
   // ── Navegación entre Vistas de Cuenta ──────
   const navItems = document.querySelectorAll('.account-nav-item[data-view]');
@@ -265,6 +292,7 @@ document.addEventListener('DOMContentLoaded', () => {
     favoritos: document.getElementById('view-favoritos'),
     perfil:    document.getElementById('view-perfil'),
     alertas:   document.getElementById('view-alertas'),
+    citas:     document.getElementById('view-citas'),
   };
 
   function switchAccountView(viewKey) {
@@ -295,6 +323,8 @@ document.addEventListener('DOMContentLoaded', () => {
       renderAlertas();
     } else if (viewKey === 'favoritos') {
       render();
+    } else if (viewKey === 'citas') {
+      renderCitas();
     } else if (viewKey === 'seguridad') {
       setTimeout(() => {
         const sec = document.getElementById('section-seguridad');
@@ -347,7 +377,10 @@ document.addEventListener('DOMContentLoaded', () => {
       bath: `<svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-right:4px;"><path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z"></path></svg>`,
       ruler: `<svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-right:4px;"><path d="M8 3H5a2 2 0 0 0-2 2v3m18 0V5a2 2 0 0 0-2-2h-3m0 18h3a2 2 0 0 0 2-2v-3M3 16v3a2 2 0 0 0 2 2h3"></path></svg>`,
       heartRed: `<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg>`,
-      heartOutline: `<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg>`
+      heartOutline: `<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg>`,
+      calendar: `<svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-right:4px;"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>`,
+      clock: `<svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-right:4px;"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>`,
+      user: `<svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-right:4px;"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>`
     };
     return icons[type] || '';
   }
@@ -430,6 +463,45 @@ document.addEventListener('DOMContentLoaded', () => {
     if (isEmpty) return;
     if (currentView === 'grid') renderGrid(data);
     else renderList(data);
+  }
+
+  // ── Render Citas con Imagen de Propiedad ─────
+  function renderCitas() {
+    if (!citasGrid) return;
+
+    if (citas.length === 0) {
+      citasGrid.innerHTML = `<p style="grid-column: 1/-1; text-align: center; color: var(--navy-500);">No tienes citas programadas.</p>`;
+      return;
+    }
+
+    citasGrid.innerHTML = citas.map(c => `
+      <article class="property-card reveal" data-id="${c.id}" aria-label="Cita para ${c.title}">
+        <div class="card-image-wrap">
+          <a href="${c.href}" style="position: relative; display: block; overflow: hidden; border-radius: 8px;">
+          <img src="${c.img}" alt="${c.title}" loading="lazy" width="400" height="300" style="width: 100%; height: auto; display: block;" />
+          <span class="card-type ${c.estado === 'Confirmada' ? 'badge-disponible' : 'badge-reservado'}" >
+            ${c.estado}
+         </span>
+        </a>
+        </div>
+        <div class="card-body">
+          <h3 class="card-title">${c.title}</h3>
+          <p class="card-location">${iconSVG('pin')} ${c.location}</p>
+          <div class="card-features" style="flex-direction: column; gap: 0.4rem; align-items: flex-start; margin-top: 0.75rem;">
+            <div class="card-feature">${iconSVG('calendar')} ${c.fecha}</div>
+            <div class="card-feature">${iconSVG('clock')} ${c.hora}</div>
+            <div class="card-feature">${iconSVG('user')} Agente: ${c.agente}</div>
+          </div>
+          <div style="margin-top: 1rem; text-align: right;">
+            <a href="${c.href}" class="list-action-btn" style="display: inline-flex; width: auto; text-decoration: none;">
+              Ver Propiedad
+            </a>
+          </div>
+        </div>
+      </article>
+    `).join('');
+
+    revealCards();
   }
 
   // ── Botones de Corazón de Favoritos ─────────────────
@@ -721,8 +793,7 @@ document.addEventListener('DOMContentLoaded', () => {
     userProfile.tel    = tel;
     userProfile.pref   = pref;
     localStorage.setItem('ni_user_profile', JSON.stringify(userProfile));
-
-    // Limpiar campos de contraseña tras guardar
+ // Limpiar campos de contraseña tras guardar
     if (document.getElementById('userOldPass')) document.getElementById('userOldPass').value = '';
     if (document.getElementById('userNewPass')) document.getElementById('userNewPass').value = '';
     if (document.getElementById('userConfirmPass')) document.getElementById('userConfirmPass').value = '';

@@ -667,6 +667,30 @@
                     <input type="tel" id="contactTel" name="tel" placeholder="+54 11 0000-0000" autocomplete="tel">
                   </div>
 
+  <!-- Agendamiento de Visita: Fecha y Horario Tentativo SOLO SERIA VISIBLE PARA EL CLIENTE -->
+                  <div class="form-group-row" style="display: flex; gap: 1rem;">
+
+                      <!-- Fecha -->
+                      <div class="form-group" style="flex: 1;">
+                        <label for="contactFecha">Fecha de visita</label>
+                        <input type="date" id="contactFecha" name="fecha_visita" required>
+                      </div>
+                    
+                      <!-- Horario -->
+                      <div class="form-group" style="flex: 1;">
+                        <label for="contactHora">Horario</label>
+                        <select id="contactHora" name="hora_visita" class="custom-select" required>
+                          <option value="" disabled selected>Seleccionar</option>
+                          <option value="10:00">10:00 hs</option>
+                          <option value="12:00">12:00 hs</option>
+                          <option value="14:00">14:00 hs</option>
+                          <option value="16:00">16:00 hs</option>
+                          <option value="18:00">18:00 hs</option>
+                        </select>
+                      </div>
+                    
+                    </div>
+                    
                   <!-- Mensaje -->
                   <div class="form-group">
                     <label for="contactMensaje">Mensaje</label>

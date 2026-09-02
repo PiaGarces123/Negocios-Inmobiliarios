@@ -730,3 +730,15 @@
   font-weight: 700;
   margin-bottom: 0.5rem;
 }
+
+/* MIS CITAS - etiquetas de estado */
+
+.badge-disponible {
+  background-color: rgba(209, 250, 229, 0.95);
+  color: #065f46;
+}
+
+.badge-reservado {
+  background-color: rgba(254, 243, 199, 0.95); 
+  color: #92400e;
+}
