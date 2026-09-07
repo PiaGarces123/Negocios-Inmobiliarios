@@ -2262,7 +2262,7 @@ body.inner-page .navbar .nav-logo .logo-dark {
   display: block;
 }
 .calculadora-section{
-  padding: 6rem 0;
+  padding: 3.5rem 0;
   background: var(--off-white);
   border-bottom: 1px solid var(--gray-200);
 }
