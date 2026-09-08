@@ -105,7 +105,7 @@ document.addEventListener('DOMContentLoaded', () => {
     Object.values(views).forEach(v => v?.classList.remove('active'));
     views[viewName]?.classList.add('active');
     navItems.forEach(n => { n.classList.toggle('active', n.dataset.view === viewName); });
-    const titles = { dashboard: 'Dashboard', propiedades: 'Listado de Propiedades', clientes: 'Usuarios (Asesores)', settings: 'Configuración', perfil: 'Información de contacto' };
+    const titles = { dashboard: 'Dashboard', propiedades: 'Listado de Propiedades', clientes: 'Usuarios', settings: 'Configuración', perfil: 'Información de contacto' };
     topbarTitle.textContent = titles[viewName] || 'Admin';
     btnCreate.style.display = viewName === 'propiedades' ? 'flex' : 'none';
     if (viewName === 'propiedades') renderTable();
